@@ -24,7 +24,7 @@ def get_combined_metrics(symbols, years, output_format="json"):
         lambda row: round(math.sqrt(22.5 * row["EPS"] * row["BVPS"]), 2), axis=1
     )
      # Calculate the BG_Perc column
-    combined_df["BG_Perc"] = combined_df.apply(
+    combined_df["gr%"] = combined_df.apply(
         lambda row: round(((row["closing_price"]-row["Graham Number"]) / row["closing_price"]) * 100, 2),
         axis=1
     )
@@ -32,7 +32,7 @@ def get_combined_metrics(symbols, years, output_format="json"):
 
 
     # Select and reorder columns for the final dataframe
-    combined_df = combined_df[["Symbol", "Graham Number", "closing_price", "BG_Perc","BVPS", "EPS"]]
+    combined_df = combined_df[["Symbol", "Graham Number", "closing_price", "gr%","BVPS", "EPS"]]
 
     # Return the combined data in the specified output format
     if output_format == "json":
@@ -47,7 +47,7 @@ def get_combined_metrics(symbols, years, output_format="json"):
         return "Invalid output format"
 
 # Example usage:
-symbols = ["TD", "TOU", "CNQ", "ACO.X", "NA", "ENB", "TRP", "RY", "CM", "BNS"]
+symbols = ["TD", "TOU", "CNQ", "ACO.X", "NA", "ENB", "TRP", "RY", "CM", "BNS","CJ"]
 years = 5
 output_format = "csv"
 result = get_combined_metrics(symbols, years, output_format)
