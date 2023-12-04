@@ -13,20 +13,8 @@ def avg_div_grwth(symbols, num_years):
         ogSymbol=str(symbol)
         symbol=cleanSymbol(symbol)
         stock = yf.Ticker(f"{symbol}.to")
-        dividend_data = stock.dividends
-        total_dividends = dividend_data.resample('Y').sum()
-        dividend_growth_rate = total_dividends.pct_change() * 100
-        last_years_data = dividend_growth_rate.loc[(dividend_growth_rate.index.year >= current_year - num_years) & (dividend_growth_rate.index.year < current_year)]
-        average_growth_rate = round(last_years_data.mean(), 2)
-        results.append({"Symbol": ogSymbol, "avg_div_grwth": average_growth_rate, "yrs": num_years})
-
-    # Create a DataFrame from the results
-    df = pd.DataFrame(results)
-
-    # Sort the DataFrame in descending order by "Average Growth Rate"
-    df = df.sort_values(by="avg_div_grwth", ascending=False).reset_index(drop=True)
-
-    return df
+        dividend_data = stock.info["exDividendDate"]
+        print (datetime.datetime.utcfromtimestamp(dividend_data ))
 
 def cleanSymbol(input_string):
     # Check if the string contains a period
@@ -40,7 +28,7 @@ def cleanSymbol(input_string):
 
 if __name__ == "__main__":
     # Example usage:
-    symbols = ["cj"]
+    symbols = ["bce"]
     num_years = 5
     result_df = avg_div_grwth(symbols, num_years)
-    print(result_df)
+

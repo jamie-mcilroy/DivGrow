@@ -1,15 +1,16 @@
 import pandas as pd
 from eps import scrape_average_annual_eps
 from bvps import get_book_value
+from divhist import avg_div_grwth
 import math
 
-def get_combined_metrics(symbols, years, output_format="json"):
-    # Get EPS dataframe
+def get_combined_metrics(symbols, years):
     eps_df = scrape_average_annual_eps(symbols, years)
-    # Get BVPS dataframe
     bvps_df = get_book_value(symbols)
+    avgYield_df = avg_div_grwth(symbols, years)
     # Merge dataframes on the "Symbol" column
     combined_df = pd.merge(eps_df, bvps_df, on="Symbol")
+    combined_df = pd.merge(combined_df, avgYield_df, on="Symbol")
 
     # Convert "EPS" and "BVPS" columns to numeric, handling non-numeric values as NaN
     combined_df["EPS"] = pd.to_numeric(combined_df["EPS"], errors="coerce")
@@ -32,23 +33,13 @@ def get_combined_metrics(symbols, years, output_format="json"):
 
 
     # Select and reorder columns for the final dataframe
-    combined_df = combined_df[["Symbol", "Graham Number", "closing_price", "gr%","BVPS", "EPS"]]
+    combined_df = combined_df[["Symbol", "Graham Number", "closing_price", "gr%","BVPS", "EPS","yield","avg_div_grwth","exDivDate","daysToExDiv"]]
+    combined_df.sort_values(by="gr%", inplace=True)
+    return combined_df
 
-    # Return the combined data in the specified output format
-    if output_format == "json":
-        return combined_df.to_json(orient="records", indent=4)
-    elif output_format == "csv":
-        return combined_df.to_csv(index=False)
-    elif output_format == "xml":
-        # Convert to XML format (you may need to implement this)
-        combined_xml_data = convert_to_xml(combined_df)
-        return combined_xml_data
-    else:
-        return "Invalid output format"
-
-# Example usage:
-symbols = ["TD", "TOU", "CNQ", "ACO.X", "NA", "ENB", "TRP", "RY", "CM", "BNS","CJ"]
-years = 5
-output_format = "csv"
-result = get_combined_metrics(symbols, years, output_format)
-print(result)
+if __name__ == "__main__":
+    symbols = ["TD", "TOU", "CNQ", "ACO.X", "NA", "ENB", "TRP", "RY", "CM", "BNS","CJ"]
+    years = 5
+    output_format = "csv"
+    result = get_combined_metrics(symbols, years)
+    print(result)
