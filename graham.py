@@ -6,20 +6,19 @@ import math
 def get_combined_metrics(symbols, years, output_format="json"):
     # Get EPS dataframe
     eps_df = scrape_average_annual_eps(symbols, years)
-
     # Get BVPS dataframe
     bvps_df = get_book_value(symbols)
-
     # Merge dataframes on the "Symbol" column
     combined_df = pd.merge(eps_df, bvps_df, on="Symbol")
 
-    # Calculate the Graham number and add it as a new column
-    combined_df["Graham Number"] = combined_df.apply(
-        lambda row: math.sqrt(22.5 * row["EPS"] * row["BVPS"]), axis=1
-    )
+    # Convert "EPS" and "BVPS" columns to numeric, handling non-numeric values as NaN
+    combined_df["EPS"] = pd.to_numeric(combined_df["EPS"], errors="coerce")
+    combined_df["BVPS"] = pd.to_numeric(combined_df["BVPS"], errors="coerce")
 
-    # Round the "Graham Number" column to 2 decimal places
-    combined_df["Graham Number"] = combined_df["Graham Number"].round(2)
+    # Calculate the Graham number and add it as a new column, rounded to 2 decimal places
+    combined_df["Graham Number"] = combined_df.apply(
+        lambda row: round(math.sqrt(22.5 * row["EPS"] * row["BVPS"]), 2), axis=1
+    )
 
     # Select and reorder columns for the final dataframe
     combined_df = combined_df[["Symbol", "Graham Number", "BVPS", "EPS"]]
@@ -37,7 +36,7 @@ def get_combined_metrics(symbols, years, output_format="json"):
         return "Invalid output format"
 
 # Example usage:
-symbols = ["TD", "TOU", "CNQ", "BCE","NA"]
+symbols = ["TD", "TOU", "CNQ", "ACO.X", "NA"]
 years = 5
 output_format = "csv"
 result = get_combined_metrics(symbols, years, output_format)

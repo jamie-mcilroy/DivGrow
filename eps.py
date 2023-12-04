@@ -6,9 +6,10 @@ def scrape_average_annual_eps(symbols, num_years):
     results = []
 
     for symbol in symbols:
+        ogSymbol = str(symbol)
+        symbol = cleanSymbol(symbol)
         try:
             url = f'https://www.alphaquery.com/stock/T.{symbol}/earnings-history'
-            print(url)
             response = requests.get(url)
 
             if response.status_code == 200:
@@ -40,7 +41,7 @@ def scrape_average_annual_eps(symbols, num_years):
                 annual_eps = filtered_df.groupby(filtered_df['Announcement Date'].dt.year)['Actual EPS'].sum()
                 annual_eps = annual_eps.mean()  # Calculate the mean of annual EPS
 
-                results.append({"Symbol": symbol, "EPS": round(annual_eps, 2)})  # Round to 2 decimal places
+                results.append({"Symbol": ogSymbol, "EPS": round(annual_eps, 2)})  # Round to 2 decimal places
 
             else:
                 print(f"Failed to retrieve data for symbol {symbol}. Status code:", response.status_code)
@@ -52,9 +53,18 @@ def scrape_average_annual_eps(symbols, num_years):
 
     # Return the results as a DataFrame
     return pd.DataFrame(results)
+def cleanSymbol(input_string):
+    # Check if the string contains a period
+    if "." in input_string:
+        # Split the string at the first period and keep the part before it
+        parts = input_string.split(".", 1)
+        return parts[0]
+    else:
+        # If no period is found, return the original string
+        return input_string
 
 if __name__ == "__main__":
-    symbols = ["BCE"]  # Example symbols including an invalid one
+    symbols = ["BCE", "ACO.X"]  # Example symbols including an invalid one
     num_years = 3
     result_df = scrape_average_annual_eps(symbols, num_years)
     print(result_df)
