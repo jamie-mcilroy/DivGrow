@@ -40,7 +40,8 @@ def get_total_shares_outstanding(symbols, output_format="json"):
         return "Invalid output format"
 
 # Example usage:
-symbols = ["AAPL", "MSFT", "GOOGL"]  # Example list of symbols
-output_format = "xml"
-result = get_total_shares_outstanding(symbols, output_format)
-print(result)
+if __name__ == "__main__":
+    symbols = ["AAPL", "MSFT", "GOOGL"]  # Example list of symbols
+    output_format = "xml"
+    result = get_total_shares_outstanding(symbols, output_format)
+    print(result)

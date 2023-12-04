@@ -49,9 +49,10 @@ def calculate_average_growth_rates(symbols, num_years, output_format="json"):
             ET.SubElement(entry, "AverageGrowthRate").text = str(result["Average Growth Rate"])
         return ET.tostring(root, encoding="utf-8", method="xml").decode()
 
-# Example usage:
-symbols = ["bce.to", "cnq.to", "td.to", "na.to", "aco-x.to", "tou.to", "enb.to"]
-num_years = 10
-output_format = "csv"
-result = calculate_average_growth_rates(symbols, num_years, output_format)
-print(result)
+if __name__ == "__main__":
+    # Example usage:
+    symbols = ["bce.to", "cnq.to", "td.to", "na.to", "aco-x.to", "tou.to", "enb.to"]
+    num_years = 10
+    output_format = "csv"
+    result = calculate_average_growth_rates(symbols, num_years, output_format)
+    print(result)

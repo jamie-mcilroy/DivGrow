@@ -1,15 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import json
-from xml.etree import ElementTree as ET
 
-def scrape_average_annual_eps(symbols, num_years, output_format="json"):
+def scrape_average_annual_eps(symbols, num_years):
     results = []
 
     for symbol in symbols:
         try:
-            url = f'https://www.alphaquery.com/stock/{symbol}/earnings-history'
+            url = f'https://www.alphaquery.com/stock/T.{symbol}/earnings-history'
+            print(url)
             response = requests.get(url)
 
             if response.status_code == 200:
@@ -34,11 +33,14 @@ def scrape_average_annual_eps(symbols, num_years, output_format="json"):
                 start_year = current_year - num_years
                 filtered_df = df[(df['Announcement Date'].dt.year >= start_year) & (df['Announcement Date'].dt.year < current_year)]
 
-                # Calculate the average Annual EPS and round it to 2 decimal places
-                average_annual_eps = filtered_df['Actual EPS'].astype(float).mean()
-                average_annual_eps = round(average_annual_eps, 2)  # Round to 2 decimal places
+                # Clean and convert the 'Actual EPS' values to numeric using .loc
+                filtered_df.loc[:, 'Actual EPS'] = filtered_df['Actual EPS'].str.replace('[^\d.]', '', regex=True).astype(float)
 
-                results.append({"Symbol": symbol, "Average Annual EPS": average_annual_eps})
+                # Calculate the annual EPS by summing the quarters for each year
+                annual_eps = filtered_df.groupby(filtered_df['Announcement Date'].dt.year)['Actual EPS'].sum()
+                annual_eps = annual_eps.mean()  # Calculate the mean of annual EPS
+
+                results.append({"Symbol": symbol, "EPS": round(annual_eps, 2)})  # Round to 2 decimal places
 
             else:
                 print(f"Failed to retrieve data for symbol {symbol}. Status code:", response.status_code)
@@ -48,23 +50,12 @@ def scrape_average_annual_eps(symbols, num_years, output_format="json"):
             print(f"An error occurred for symbol {symbol}: {str(e)}")
             results.append({"Symbol": symbol, "Average Annual EPS": "unavailable"})
 
-    # Return the results in the specified format
-    if output_format == "json":
-        return json.dumps(results, indent=4)
-    elif output_format == "csv":
-        df = pd.DataFrame(results)
-        return df.to_csv(index=False)
-    elif output_format == "xml":
-        root = ET.Element("Results")
-        for result in results:
-            entry = ET.SubElement(root, "Entry")
-            ET.SubElement(entry, "Symbol").text = result["Symbol"]
-            ET.SubElement(entry, "AverageAnnualEPS").text = str(result["Average Annual EPS"])
-        return ET.tostring(root, encoding="utf-8", method="xml").decode()
+    # Return the results as a DataFrame
+    return pd.DataFrame(results)
 
-# Example usage:
-""" symbols = ["T.TD", "INVALID_SYMBOL"]  # Example symbols including an invalid one
-num_years = 5
-output_format = "json"
-result = scrape_average_annual_eps(symbols, num_years, output_format)
-print(result) """
+if __name__ == "__main__":
+    symbols = ["BCE"]  # Example symbols including an invalid one
+    num_years = 3
+    result_df = scrape_average_annual_eps(symbols, num_years)
+    print(result_df)
+
