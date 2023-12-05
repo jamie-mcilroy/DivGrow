@@ -1,9 +1,9 @@
 name: Run Graham Script
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "35 17 * * 1-5" # 4 AM ET, Monday to Friday
+    workflow_dispatch:
+    schedule:
+        - cron: "*/10 * * * *"
 
 
 jobs:
