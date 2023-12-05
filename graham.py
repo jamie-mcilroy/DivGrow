@@ -29,11 +29,15 @@ def get_combined_metrics(symbols, years):
         lambda row: round(((row["closing_price"]-row["Graham Number"]) / row["closing_price"]) * 100, 2),
         axis=1
     )
+    combined_df["chwdr"] = combined_df.apply(
+        lambda row: round(row["yield"] + row["avg_div_grwth"], 2),
+        axis=1
+    )
 
 
 
     # Select and reorder columns for the final dataframe
-    combined_df = combined_df[["Symbol", "Graham Number", "closing_price", "gr%","BVPS", "EPS","yield","avg_div_grwth","exDivDate","daysToExDiv"]]
+    combined_df = combined_df[["Symbol", "Graham Number", "closing_price", "gr%","BVPS", "EPS","yield","5_yr_avg_yield","avg_div_grwth","chwdr","exDivDate","daysToExDiv"]]
     combined_df.sort_values(by="gr%", inplace=True)
     return combined_df
 

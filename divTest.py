@@ -13,8 +13,8 @@ def avg_div_grwth(symbols, num_years):
         ogSymbol=str(symbol)
         symbol=cleanSymbol(symbol)
         stock = yf.Ticker(f"{symbol}.to")
-        dividend_data = stock.info["exDividendDate"]
-        print (datetime.datetime.utcfromtimestamp(dividend_data ))
+       
+        print (stock.info)
 
 def cleanSymbol(input_string):
     # Check if the string contains a period
