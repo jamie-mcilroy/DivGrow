@@ -26,8 +26,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
+        git config --global user.name "Jamie McIlroy"
+        git config --global user.email "jmcilroy@gmail.com"
         git add .
         git commit -m "Update data"  # You can customize the commit message
         git remote set-url origin https://github.com/${{ github.repository }}
