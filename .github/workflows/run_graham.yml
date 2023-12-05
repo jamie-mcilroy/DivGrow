@@ -3,7 +3,7 @@ name: Run Graham Script
 on:
   workflow_dispatch:
   schedule:
-    - cron: '11 20 * * 1-5' # 4 AM ET, Monday to Friday
+    - cron: '47 20 * * 1-5' # 4 AM ET, Monday to Friday
 
 jobs:
   build:
@@ -23,11 +23,15 @@ jobs:
 
     - name: Run Python script
       run: python graham.py  # Replace with your script filename
-
-    - name: Commit and push changes
+    
+    name: Set up Git
       run: |
         git config --global user.name "Jamie McIlroy"
         git config --global user.email "jmcilroy@gmail.com"
+        git remote set-url origin https://$GH_PAT@github.com/jamie-mcilroy/DivGrow.git
+
+    - name: Commit and push changes
+      run: |
         git add .
         git commit -m "Update data"  # You can customize the commit message
         git remote set-url origin https://github.com/${{ github.repository }}
