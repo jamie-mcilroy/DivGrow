@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="white-space: normal;">Symbol</th>
+                <th style="width: 100px;">Graham Number</th>
+                <th style="width: 100px;">Closing Price</th>
+                <th style="width: 100px;">Graham %</th>
+                <th style="width: 100px;">BVPS</th>
+                <th style="width: 100px;">EPS</th>
+                <th style="width: 100px;">Yield</th>
+                <th style="width: 100px;">5-Year Avg Yield</th>
+                <th style="width: 100px;">Avg Div Growth</th>
+                <th style="width: 100px; text-align: right;">Chowder</th>
+                <th style="width: 100px;">Ex-Dividend Date</th>
+                <th style="width: 100px;">Days to Ex-Dividend</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.Symbol }}</td>
+                <td style="text-align: right;">{{ "${:,.2f}".format(row.BG) }}</td>
+                <td style="text-align: right;">{{ "${:,.2f}".format(row.closing_price) }}</td>
+                <td style="background-color: {% if row.gr < 0 %}lightgreen{% endif %};text-align: right;">{{ row.gr }}</td>
+                <td style="text-align: right;">{{ "${:,.2f}".format(row.BVPS) }}</td> 
+                <td style="text-align: right;">{{ "${:,.2f}".format(row.EPS) }}</td>
+                <td style="text-align: right;">{{ row.div_yield }}</td>
+                <td style="text-align: right;">{{ row.avg_yield }}</td>
+                <td style="text-align: right;">{{ row.avg_div_grwth }}</td>
+                <td style="background-color: {% if row.chowder > 12 %}lightgreen{% endif %}; text-align: right">{{ row.chowder }}</td>
+                <td style="text-align: right;">{{ row.exDivDate.strftime("%Y-%m-%d") }}</td>
+                <td style="background-color: {% if row.daysToExDiv > 0 and row.daysToExDiv < 5 %}lightyellow{% endif %}; text-align: right;">{{ row.daysToExDiv }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

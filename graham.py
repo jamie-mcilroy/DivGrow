@@ -1,3 +1,4 @@
+from jinja2 import Environment, FileSystemLoader
 import pandas as pd
 from eps import scrape_average_annual_eps
 from bvps import get_book_value
@@ -19,46 +20,41 @@ def get_combined_metrics(symbols, years):
     # Convert the "closing_price" column to a numeric data type (float)
     combined_df["closing_price"] = pd.to_numeric(combined_df["closing_price"], errors="coerce")
 
-   
-
     # Calculate the Graham number and add it as a new column, rounded to 2 decimal places
-    combined_df["Graham Number"] = combined_df.apply(
+    combined_df["BG"] = combined_df.apply(
         lambda row: round(math.sqrt(22.5 * row["EPS"] * row["BVPS"]), 2), axis=1
     )
      # Calculate the BG_Perc column
-    combined_df["gr%"] = combined_df.apply(
-        lambda row: round(((row["closing_price"]-row["Graham Number"]) / row["closing_price"]) * 100, 2),
+    combined_df["gr"] = combined_df.apply(
+        lambda row: round(((row["closing_price"]-row["BG"]) / row["closing_price"]) * 100, 2),
         axis=1
     )
-    combined_df["chwdr"] = combined_df.apply(
-        lambda row: round(row["yield"] + row["avg_div_grwth"], 2),
+    combined_df["chowder"] = combined_df.apply(
+        lambda row: round(row["div_yield"] + row["avg_div_grwth"], 2),
         axis=1
     )
-
-
-
-    # Select and reorder columns for the final dataframe
-    combined_df = combined_df[["Symbol", "Graham Number", "closing_price", "gr%","BVPS", "EPS","yield","5_yr_avg_yield","avg_div_grwth","chwdr","exDivDate","daysToExDiv"]]
-    combined_df.sort_values(by="gr%", inplace=True)
+    combined_df = combined_df[["Symbol", "BG", "closing_price", "gr","BVPS", "EPS","div_yield","avg_yield","avg_div_grwth","chowder","exDivDate","daysToExDiv"]]
+    combined_df.sort_values(by="gr", inplace=True)
     return combined_df
+
+
 
 if __name__ == "__main__":
     with open('symbols.json', 'r') as file:
         symbols = json.load(file)
-    #symbols = ["TD", "TOU", "CNQ", "ACO.X", "NA", "ENB", "TRP", "RY", "CM", "BNS","CJ"]
     years = 5
-    output_format = "csv"
     result = get_combined_metrics(symbols, years)
-    # Convert DataFrame to HTML with custom formatting
-    html_table = result.to_html(
-        classes='table table-striped table-bordered',  # Add CSS classes for styling
-        index=False,  # Remove the DataFrame index column
-        escape=False,  # Disable escaping to allow HTML formatting
-    )
+
+    # Load the Jinja2 environment
+    env = Environment(loader=FileSystemLoader('.'))
+    template = env.get_template('template.html')
+
+    # Render the HTML using the template and DataFrame
+    html_output = template.render(rows=result.itertuples(index=False))
 
     # Write the HTML to a file
     with open('output.html', 'w') as file:
-        file.write(html_table)
+        file.write(html_output)
 
     print("HTML file 'output.html' has been created.")
-    print(result)
+    print (result)

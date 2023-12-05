@@ -1,496 +1,553 @@
-<table border="1" class="dataframe table table-striped table-bordered">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Symbol</th>
-      <th>Graham Number</th>
-      <th>closing_price</th>
-      <th>gr%</th>
-      <th>BVPS</th>
-      <th>EPS</th>
-      <th>yield</th>
-      <th>5_yr_avg_yield</th>
-      <th>avg_div_grwth</th>
-      <th>chwdr</th>
-      <th>exDivDate</th>
-      <th>daysToExDiv</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>LB</td>
-      <td>79.12</td>
-      <td>26.45</td>
-      <td>-199.13</td>
-      <td>61.969</td>
-      <td>4.49</td>
-      <td>7.11</td>
-      <td>5.71</td>
-      <td>-5.07</td>
-      <td>2.04</td>
-      <td>2023-09-29</td>
-      <td>-67</td>
-    </tr>
-    <tr>
-      <td>CCA</td>
-      <td>106.44</td>
-      <td>55.71</td>
-      <td>-91.06</td>
-      <td>66.786</td>
-      <td>7.54</td>
-      <td>6.13</td>
-      <td>2.91</td>
-      <td>10.37</td>
-      <td>16.50</td>
-      <td>2023-11-14</td>
-      <td>-21</td>
-    </tr>
-    <tr>
-      <td>CWB</td>
-      <td>53.43</td>
-      <td>30.12</td>
-      <td>-77.39</td>
-      <td>38.453</td>
-      <td>3.30</td>
-      <td>4.38</td>
-      <td>4.05</td>
-      <td>5.73</td>
-      <td>10.11</td>
-      <td>2023-09-13</td>
-      <td>-83</td>
-    </tr>
-    <tr>
-      <td>BNS</td>
-      <td>100.98</td>
-      <td>60.75</td>
-      <td>-66.22</td>
-      <td>63.118</td>
-      <td>7.18</td>
-      <td>6.98</td>
-      <td>5.33</td>
-      <td>3.49</td>
-      <td>10.47</td>
-      <td>2024-01-02</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <td>XTC</td>
-      <td>12.85</td>
-      <td>7.80</td>
-      <td>-64.74</td>
-      <td>9.535</td>
-      <td>0.77</td>
-      <td>5.38</td>
-      <td>4.70</td>
-      <td>5.59</td>
-      <td>10.97</td>
-      <td>2023-12-14</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>CM</td>
-      <td>85.54</td>
-      <td>56.94</td>
-      <td>-50.23</td>
-      <td>52.035</td>
-      <td>6.25</td>
-      <td>6.32</td>
-      <td>5.24</td>
-      <td>5.26</td>
-      <td>11.58</td>
-      <td>2023-12-27</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <td>MFC</td>
-      <td>40.22</td>
-      <td>26.86</td>
-      <td>-49.74</td>
-      <td>24.793</td>
-      <td>2.90</td>
-      <td>5.44</td>
-      <td>4.97</td>
-      <td>10.03</td>
-      <td>15.47</td>
-      <td>2023-11-21</td>
-      <td>-14</td>
-    </tr>
-    <tr>
-      <td>ACO.X</td>
-      <td>52.91</td>
-      <td>37.66</td>
-      <td>-40.49</td>
-      <td>38.647</td>
-      <td>3.22</td>
-      <td>5.05</td>
-      <td>4.12</td>
-      <td>7.18</td>
-      <td>12.23</td>
-      <td>2023-12-06</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>BMO</td>
-      <td>152.63</td>
-      <td>114.23</td>
-      <td>-33.62</td>
-      <td>98.892</td>
-      <td>10.47</td>
-      <td>5.29</td>
-      <td>4.26</td>
-      <td>9.26</td>
-      <td>14.55</td>
-      <td>2024-01-29</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <td>POW</td>
-      <td>49.11</td>
-      <td>37.92</td>
-      <td>-29.51</td>
-      <td>31.435</td>
-      <td>3.41</td>
-      <td>5.54</td>
-      <td>5.56</td>
-      <td>8.33</td>
-      <td>13.87</td>
-      <td>2023-12-28</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <td>TD</td>
-      <td>93.75</td>
-      <td>82.25</td>
-      <td>-13.98</td>
-      <td>56.121</td>
-      <td>6.96</td>
-      <td>4.96</td>
-      <td>4.09</td>
-      <td>8.73</td>
-      <td>13.69</td>
-      <td>2024-01-09</td>
-      <td>35</td>
-    </tr>
-    <tr>
-      <td>SU</td>
-      <td>49.33</td>
-      <td>44.12</td>
-      <td>-11.81</td>
-      <td>32.185</td>
-      <td>3.36</td>
-      <td>4.94</td>
-      <td>4.35</td>
-      <td>13.86</td>
-      <td>18.80</td>
-      <td>2023-11-30</td>
-      <td>-5</td>
-    </tr>
-    <tr>
-      <td>NA</td>
-      <td>99.53</td>
-      <td>93.47</td>
-      <td>-6.48</td>
-      <td>59.495</td>
-      <td>7.40</td>
-      <td>4.54</td>
-      <td>3.83</td>
-      <td>11.68</td>
-      <td>16.22</td>
-      <td>2023-12-21</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>RY</td>
-      <td>130.32</td>
-      <td>123.25</td>
-      <td>-5.74</td>
-      <td>78.791</td>
-      <td>9.58</td>
-      <td>4.48</td>
-      <td>3.91</td>
-      <td>7.44</td>
-      <td>11.92</td>
-      <td>2024-01-24</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <td>TRP</td>
-      <td>53.21</td>
-      <td>51.62</td>
-      <td>-3.08</td>
-      <td>30.032</td>
-      <td>4.19</td>
-      <td>7.21</td>
-      <td>5.56</td>
-      <td>7.59</td>
-      <td>14.80</td>
-      <td>2023-12-28</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <td>EMA</td>
-      <td>48.58</td>
-      <td>48.29</td>
-      <td>-0.60</td>
-      <td>37.725</td>
-      <td>2.78</td>
-      <td>5.94</td>
-      <td>4.64</td>
-      <td>4.66</td>
-      <td>10.60</td>
-      <td>2023-10-31</td>
-      <td>-35</td>
-    </tr>
-    <tr>
-      <td>CU</td>
-      <td>30.93</td>
-      <td>30.88</td>
-      <td>-0.16</td>
-      <td>19.239</td>
-      <td>2.21</td>
-      <td>5.81</td>
-      <td>4.91</td>
-      <td>4.46</td>
-      <td>10.27</td>
-      <td>2023-11-01</td>
-      <td>-34</td>
-    </tr>
-    <tr>
-      <td>GWO</td>
-      <td>42.13</td>
-      <td>43.51</td>
-      <td>3.17</td>
-      <td>25.614</td>
-      <td>3.08</td>
-      <td>4.78</td>
-      <td>5.50</td>
-      <td>5.97</td>
-      <td>10.75</td>
-      <td>2023-11-29</td>
-      <td>-6</td>
-    </tr>
-    <tr>
-      <td>EMP.A</td>
-      <td>32.75</td>
-      <td>37.38</td>
-      <td>12.39</td>
-      <td>21.190</td>
-      <td>2.25</td>
-      <td>1.95</td>
-      <td>1.52</td>
-      <td>8.71</td>
-      <td>10.66</td>
-      <td>2023-10-12</td>
-      <td>-54</td>
-    </tr>
-    <tr>
-      <td>ENB</td>
-      <td>41.03</td>
-      <td>47.61</td>
-      <td>13.82</td>
-      <td>27.410</td>
-      <td>2.73</td>
-      <td>7.69</td>
-      <td>6.68</td>
-      <td>7.41</td>
-      <td>15.10</td>
-      <td>2024-02-14</td>
-      <td>71</td>
-    </tr>
-    <tr>
-      <td>TOU</td>
-      <td>55.00</td>
-      <td>64.79</td>
-      <td>15.11</td>
-      <td>38.301</td>
-      <td>3.51</td>
-      <td>1.73</td>
-      <td>2.14</td>
-      <td>168.34</td>
-      <td>170.07</td>
-      <td>2023-12-14</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>PPL</td>
-      <td>37.31</td>
-      <td>45.89</td>
-      <td>18.70</td>
-      <td>24.355</td>
-      <td>2.54</td>
-      <td>5.82</td>
-      <td>6.02</td>
-      <td>4.64</td>
-      <td>10.46</td>
-      <td>2023-12-14</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>CPX</td>
-      <td>29.89</td>
-      <td>37.82</td>
-      <td>20.97</td>
-      <td>22.312</td>
-      <td>1.78</td>
-      <td>6.50</td>
-      <td>5.61</td>
-      <td>6.90</td>
-      <td>13.40</td>
-      <td>2023-12-28</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <td>FTT</td>
-      <td>26.96</td>
-      <td>34.97</td>
-      <td>22.91</td>
-      <td>17.278</td>
-      <td>1.87</td>
-      <td>2.86</td>
-      <td>3.12</td>
-      <td>4.61</td>
-      <td>7.47</td>
-      <td>2023-11-22</td>
-      <td>-13</td>
-    </tr>
-    <tr>
-      <td>IMO</td>
-      <td>58.74</td>
-      <td>77.12</td>
-      <td>23.83</td>
-      <td>42.014</td>
-      <td>3.65</td>
-      <td>2.59</td>
-      <td>2.65</td>
-      <td>18.93</td>
-      <td>21.52</td>
-      <td>2023-11-30</td>
-      <td>-5</td>
-    </tr>
-    <tr>
-      <td>T</td>
-      <td>17.76</td>
-      <td>25.23</td>
-      <td>29.61</td>
-      <td>11.214</td>
-      <td>1.25</td>
-      <td>5.96</td>
-      <td>4.74</td>
-      <td>6.59</td>
-      <td>12.55</td>
-      <td>2023-12-08</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>KEY</td>
-      <td>23.34</td>
-      <td>33.70</td>
-      <td>30.74</td>
-      <td>12.475</td>
-      <td>1.94</td>
-      <td>5.93</td>
-      <td>6.67</td>
-      <td>3.09</td>
-      <td>9.02</td>
-      <td>2023-12-14</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>BCE</td>
-      <td>37.62</td>
-      <td>54.97</td>
-      <td>31.56</td>
-      <td>18.885</td>
-      <td>3.33</td>
-      <td>7.04</td>
-      <td>5.69</td>
-      <td>5.08</td>
-      <td>12.12</td>
-      <td>2023-12-14</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>CNQ</td>
-      <td>61.49</td>
-      <td>90.32</td>
-      <td>31.92</td>
-      <td>36.451</td>
-      <td>4.61</td>
-      <td>4.43</td>
-      <td>4.40</td>
-      <td>39.62</td>
-      <td>44.05</td>
-      <td>2023-12-07</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>MRU</td>
-      <td>46.13</td>
-      <td>68.53</td>
-      <td>32.69</td>
-      <td>29.745</td>
-      <td>3.18</td>
-      <td>1.77</td>
-      <td>1.50</td>
-      <td>11.03</td>
-      <td>12.80</td>
-      <td>2023-10-26</td>
-      <td>-40</td>
-    </tr>
-    <tr>
-      <td>IFC</td>
-      <td>130.48</td>
-      <td>211.08</td>
-      <td>38.18</td>
-      <td>78.902</td>
-      <td>9.59</td>
-      <td>2.08</td>
-      <td>2.18</td>
-      <td>9.44</td>
-      <td>11.52</td>
-      <td>2023-12-14</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>SJ</td>
-      <td>44.52</td>
-      <td>78.87</td>
-      <td>43.55</td>
-      <td>29.363</td>
-      <td>3.00</td>
-      <td>1.17</td>
-      <td>1.51</td>
-      <td>12.80</td>
-      <td>13.97</td>
-      <td>2023-12-01</td>
-      <td>-4</td>
-    </tr>
-    <tr>
-      <td>L</td>
-      <td>63.16</td>
-      <td>118.78</td>
-      <td>46.83</td>
-      <td>35.814</td>
-      <td>4.95</td>
-      <td>1.50</td>
-      <td>1.61</td>
-      <td>13.17</td>
-      <td>14.67</td>
-      <td>2023-12-14</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>CNR</td>
-      <td>63.49</td>
-      <td>160.61</td>
-      <td>60.47</td>
-      <td>30.734</td>
-      <td>5.83</td>
-      <td>1.97</td>
-      <td>1.74</td>
-      <td>12.29</td>
-      <td>14.26</td>
-      <td>2023-12-06</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="white-space: normal;">Symbol</th>
+                <th style="width: 100px;">Graham Number</th>
+                <th style="width: 100px;">Closing Price</th>
+                <th style="width: 100px;">Graham %</th>
+                <th style="width: 100px;">BVPS</th>
+                <th style="width: 100px;">EPS</th>
+                <th style="width: 100px;">Yield</th>
+                <th style="width: 100px;">5-Year Avg Yield</th>
+                <th style="width: 100px;">Avg Div Growth</th>
+                <th style="width: 100px; text-align: right;">Chowder</th>
+                <th style="width: 100px;">Ex-Dividend Date</th>
+                <th style="width: 100px;">Days to Ex-Dividend</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>LB</td>
+                <td style="text-align: right;">$79.12</td>
+                <td style="text-align: right;">$26.40</td>
+                <td style="background-color: lightgreen;text-align: right;">-199.7</td>
+                <td style="text-align: right;">$61.97</td> 
+                <td style="text-align: right;">$4.49</td>
+                <td style="text-align: right;">7.11</td>
+                <td style="text-align: right;">5.71</td>
+                <td style="text-align: right;">-5.07</td>
+                <td style="background-color: ; text-align: right">2.04</td>
+                <td style="text-align: right;">2023-09-29</td>
+                <td style="background-color: ; text-align: right;">-67</td>
+            </tr>
+            
+            <tr>
+                <td>CCA</td>
+                <td style="text-align: right;">$106.44</td>
+                <td style="text-align: right;">$56.45</td>
+                <td style="background-color: lightgreen;text-align: right;">-88.56</td>
+                <td style="text-align: right;">$66.79</td> 
+                <td style="text-align: right;">$7.54</td>
+                <td style="text-align: right;">6.13</td>
+                <td style="text-align: right;">2.91</td>
+                <td style="text-align: right;">10.37</td>
+                <td style="background-color: lightgreen; text-align: right">16.5</td>
+                <td style="text-align: right;">2023-11-14</td>
+                <td style="background-color: ; text-align: right;">-21</td>
+            </tr>
+            
+            <tr>
+                <td>CWB</td>
+                <td style="text-align: right;">$53.43</td>
+                <td style="text-align: right;">$30.28</td>
+                <td style="background-color: lightgreen;text-align: right;">-76.45</td>
+                <td style="text-align: right;">$38.45</td> 
+                <td style="text-align: right;">$3.30</td>
+                <td style="text-align: right;">4.38</td>
+                <td style="text-align: right;">4.05</td>
+                <td style="text-align: right;">5.73</td>
+                <td style="background-color: ; text-align: right">10.11</td>
+                <td style="text-align: right;">2023-09-13</td>
+                <td style="background-color: ; text-align: right;">-83</td>
+            </tr>
+            
+            <tr>
+                <td>BNS</td>
+                <td style="text-align: right;">$100.98</td>
+                <td style="text-align: right;">$59.98</td>
+                <td style="background-color: lightgreen;text-align: right;">-68.36</td>
+                <td style="text-align: right;">$63.12</td> 
+                <td style="text-align: right;">$7.18</td>
+                <td style="text-align: right;">6.98</td>
+                <td style="text-align: right;">5.33</td>
+                <td style="text-align: right;">3.49</td>
+                <td style="background-color: ; text-align: right">10.47</td>
+                <td style="text-align: right;">2024-01-02</td>
+                <td style="background-color: ; text-align: right;">28</td>
+            </tr>
+            
+            <tr>
+                <td>XTC</td>
+                <td style="text-align: right;">$12.85</td>
+                <td style="text-align: right;">$7.80</td>
+                <td style="background-color: lightgreen;text-align: right;">-64.74</td>
+                <td style="text-align: right;">$9.54</td> 
+                <td style="text-align: right;">$0.77</td>
+                <td style="text-align: right;">5.38</td>
+                <td style="text-align: right;">4.7</td>
+                <td style="text-align: right;">5.59</td>
+                <td style="background-color: ; text-align: right">10.97</td>
+                <td style="text-align: right;">2023-12-14</td>
+                <td style="background-color: ; text-align: right;">9</td>
+            </tr>
+            
+            <tr>
+                <td>CM</td>
+                <td style="text-align: right;">$85.54</td>
+                <td style="text-align: right;">$56.98</td>
+                <td style="background-color: lightgreen;text-align: right;">-50.12</td>
+                <td style="text-align: right;">$52.03</td> 
+                <td style="text-align: right;">$6.25</td>
+                <td style="text-align: right;">6.32</td>
+                <td style="text-align: right;">5.24</td>
+                <td style="text-align: right;">5.26</td>
+                <td style="background-color: ; text-align: right">11.58</td>
+                <td style="text-align: right;">2023-12-27</td>
+                <td style="background-color: ; text-align: right;">22</td>
+            </tr>
+            
+            <tr>
+                <td>MFC</td>
+                <td style="text-align: right;">$40.22</td>
+                <td style="text-align: right;">$26.83</td>
+                <td style="background-color: lightgreen;text-align: right;">-49.91</td>
+                <td style="text-align: right;">$24.79</td> 
+                <td style="text-align: right;">$2.90</td>
+                <td style="text-align: right;">5.44</td>
+                <td style="text-align: right;">4.97</td>
+                <td style="text-align: right;">10.03</td>
+                <td style="background-color: lightgreen; text-align: right">15.47</td>
+                <td style="text-align: right;">2023-11-21</td>
+                <td style="background-color: ; text-align: right;">-14</td>
+            </tr>
+            
+            <tr>
+                <td>ACO.X</td>
+                <td style="text-align: right;">$52.91</td>
+                <td style="text-align: right;">$37.60</td>
+                <td style="background-color: lightgreen;text-align: right;">-40.72</td>
+                <td style="text-align: right;">$38.65</td> 
+                <td style="text-align: right;">$3.22</td>
+                <td style="text-align: right;">5.05</td>
+                <td style="text-align: right;">4.12</td>
+                <td style="text-align: right;">7.18</td>
+                <td style="background-color: lightgreen; text-align: right">12.23</td>
+                <td style="text-align: right;">2023-12-06</td>
+                <td style="background-color: lightyellow; text-align: right;">1</td>
+            </tr>
+            
+            <tr>
+                <td>BMO</td>
+                <td style="text-align: right;">$152.63</td>
+                <td style="text-align: right;">$114.95</td>
+                <td style="background-color: lightgreen;text-align: right;">-32.78</td>
+                <td style="text-align: right;">$98.89</td> 
+                <td style="text-align: right;">$10.47</td>
+                <td style="text-align: right;">5.29</td>
+                <td style="text-align: right;">4.26</td>
+                <td style="text-align: right;">9.26</td>
+                <td style="background-color: lightgreen; text-align: right">14.55</td>
+                <td style="text-align: right;">2024-01-29</td>
+                <td style="background-color: ; text-align: right;">55</td>
+            </tr>
+            
+            <tr>
+                <td>POW</td>
+                <td style="text-align: right;">$49.11</td>
+                <td style="text-align: right;">$37.92</td>
+                <td style="background-color: lightgreen;text-align: right;">-29.51</td>
+                <td style="text-align: right;">$31.43</td> 
+                <td style="text-align: right;">$3.41</td>
+                <td style="text-align: right;">5.54</td>
+                <td style="text-align: right;">5.56</td>
+                <td style="text-align: right;">8.33</td>
+                <td style="background-color: lightgreen; text-align: right">13.87</td>
+                <td style="text-align: right;">2023-12-28</td>
+                <td style="background-color: ; text-align: right;">23</td>
+            </tr>
+            
+            <tr>
+                <td>TD</td>
+                <td style="text-align: right;">$93.75</td>
+                <td style="text-align: right;">$82.24</td>
+                <td style="background-color: lightgreen;text-align: right;">-14.0</td>
+                <td style="text-align: right;">$56.12</td> 
+                <td style="text-align: right;">$6.96</td>
+                <td style="text-align: right;">4.96</td>
+                <td style="text-align: right;">4.09</td>
+                <td style="text-align: right;">8.73</td>
+                <td style="background-color: lightgreen; text-align: right">13.69</td>
+                <td style="text-align: right;">2024-01-09</td>
+                <td style="background-color: ; text-align: right;">35</td>
+            </tr>
+            
+            <tr>
+                <td>SU</td>
+                <td style="text-align: right;">$49.33</td>
+                <td style="text-align: right;">$43.79</td>
+                <td style="background-color: lightgreen;text-align: right;">-12.65</td>
+                <td style="text-align: right;">$32.19</td> 
+                <td style="text-align: right;">$3.36</td>
+                <td style="text-align: right;">4.94</td>
+                <td style="text-align: right;">4.35</td>
+                <td style="text-align: right;">13.86</td>
+                <td style="background-color: lightgreen; text-align: right">18.8</td>
+                <td style="text-align: right;">2023-11-30</td>
+                <td style="background-color: ; text-align: right;">-5</td>
+            </tr>
+            
+            <tr>
+                <td>NA</td>
+                <td style="text-align: right;">$99.53</td>
+                <td style="text-align: right;">$93.78</td>
+                <td style="background-color: lightgreen;text-align: right;">-6.13</td>
+                <td style="text-align: right;">$59.49</td> 
+                <td style="text-align: right;">$7.40</td>
+                <td style="text-align: right;">4.54</td>
+                <td style="text-align: right;">3.83</td>
+                <td style="text-align: right;">11.68</td>
+                <td style="background-color: lightgreen; text-align: right">16.22</td>
+                <td style="text-align: right;">2023-12-21</td>
+                <td style="background-color: ; text-align: right;">16</td>
+            </tr>
+            
+            <tr>
+                <td>RY</td>
+                <td style="text-align: right;">$130.32</td>
+                <td style="text-align: right;">$124.15</td>
+                <td style="background-color: lightgreen;text-align: right;">-4.97</td>
+                <td style="text-align: right;">$78.79</td> 
+                <td style="text-align: right;">$9.58</td>
+                <td style="text-align: right;">4.48</td>
+                <td style="text-align: right;">3.91</td>
+                <td style="text-align: right;">7.44</td>
+                <td style="background-color: ; text-align: right">11.92</td>
+                <td style="text-align: right;">2024-01-24</td>
+                <td style="background-color: ; text-align: right;">50</td>
+            </tr>
+            
+            <tr>
+                <td>TRP</td>
+                <td style="text-align: right;">$53.21</td>
+                <td style="text-align: right;">$51.72</td>
+                <td style="background-color: lightgreen;text-align: right;">-2.88</td>
+                <td style="text-align: right;">$30.03</td> 
+                <td style="text-align: right;">$4.19</td>
+                <td style="text-align: right;">7.21</td>
+                <td style="text-align: right;">5.56</td>
+                <td style="text-align: right;">7.59</td>
+                <td style="background-color: lightgreen; text-align: right">14.8</td>
+                <td style="text-align: right;">2023-12-28</td>
+                <td style="background-color: ; text-align: right;">23</td>
+            </tr>
+            
+            <tr>
+                <td>CU</td>
+                <td style="text-align: right;">$30.93</td>
+                <td style="text-align: right;">$30.65</td>
+                <td style="background-color: lightgreen;text-align: right;">-0.91</td>
+                <td style="text-align: right;">$19.24</td> 
+                <td style="text-align: right;">$2.21</td>
+                <td style="text-align: right;">5.81</td>
+                <td style="text-align: right;">4.91</td>
+                <td style="text-align: right;">4.46</td>
+                <td style="background-color: ; text-align: right">10.27</td>
+                <td style="text-align: right;">2023-11-01</td>
+                <td style="background-color: ; text-align: right;">-34</td>
+            </tr>
+            
+            <tr>
+                <td>EMA</td>
+                <td style="text-align: right;">$48.58</td>
+                <td style="text-align: right;">$48.24</td>
+                <td style="background-color: lightgreen;text-align: right;">-0.7</td>
+                <td style="text-align: right;">$37.73</td> 
+                <td style="text-align: right;">$2.78</td>
+                <td style="text-align: right;">5.94</td>
+                <td style="text-align: right;">4.64</td>
+                <td style="text-align: right;">4.66</td>
+                <td style="background-color: ; text-align: right">10.6</td>
+                <td style="text-align: right;">2023-10-31</td>
+                <td style="background-color: ; text-align: right;">-35</td>
+            </tr>
+            
+            <tr>
+                <td>GWO</td>
+                <td style="text-align: right;">$42.13</td>
+                <td style="text-align: right;">$43.54</td>
+                <td style="background-color: ;text-align: right;">3.24</td>
+                <td style="text-align: right;">$25.61</td> 
+                <td style="text-align: right;">$3.08</td>
+                <td style="text-align: right;">4.78</td>
+                <td style="text-align: right;">5.5</td>
+                <td style="text-align: right;">5.97</td>
+                <td style="background-color: ; text-align: right">10.75</td>
+                <td style="text-align: right;">2023-11-29</td>
+                <td style="background-color: ; text-align: right;">-6</td>
+            </tr>
+            
+            <tr>
+                <td>EMP.A</td>
+                <td style="text-align: right;">$32.75</td>
+                <td style="text-align: right;">$37.87</td>
+                <td style="background-color: ;text-align: right;">13.52</td>
+                <td style="text-align: right;">$21.19</td> 
+                <td style="text-align: right;">$2.25</td>
+                <td style="text-align: right;">1.95</td>
+                <td style="text-align: right;">1.52</td>
+                <td style="text-align: right;">8.71</td>
+                <td style="background-color: ; text-align: right">10.66</td>
+                <td style="text-align: right;">2023-10-12</td>
+                <td style="background-color: ; text-align: right;">-54</td>
+            </tr>
+            
+            <tr>
+                <td>ENB</td>
+                <td style="text-align: right;">$41.03</td>
+                <td style="text-align: right;">$47.75</td>
+                <td style="background-color: ;text-align: right;">14.07</td>
+                <td style="text-align: right;">$27.41</td> 
+                <td style="text-align: right;">$2.73</td>
+                <td style="text-align: right;">7.69</td>
+                <td style="text-align: right;">6.68</td>
+                <td style="text-align: right;">7.41</td>
+                <td style="background-color: lightgreen; text-align: right">15.1</td>
+                <td style="text-align: right;">2024-02-14</td>
+                <td style="background-color: ; text-align: right;">71</td>
+            </tr>
+            
+            <tr>
+                <td>TOU</td>
+                <td style="text-align: right;">$55.00</td>
+                <td style="text-align: right;">$64.49</td>
+                <td style="background-color: ;text-align: right;">14.72</td>
+                <td style="text-align: right;">$38.30</td> 
+                <td style="text-align: right;">$3.51</td>
+                <td style="text-align: right;">1.73</td>
+                <td style="text-align: right;">2.14</td>
+                <td style="text-align: right;">168.34</td>
+                <td style="background-color: lightgreen; text-align: right">170.07</td>
+                <td style="text-align: right;">2023-12-14</td>
+                <td style="background-color: ; text-align: right;">9</td>
+            </tr>
+            
+            <tr>
+                <td>PPL</td>
+                <td style="text-align: right;">$37.31</td>
+                <td style="text-align: right;">$45.71</td>
+                <td style="background-color: ;text-align: right;">18.38</td>
+                <td style="text-align: right;">$24.36</td> 
+                <td style="text-align: right;">$2.54</td>
+                <td style="text-align: right;">5.82</td>
+                <td style="text-align: right;">6.02</td>
+                <td style="text-align: right;">4.64</td>
+                <td style="background-color: ; text-align: right">10.46</td>
+                <td style="text-align: right;">2023-12-14</td>
+                <td style="background-color: ; text-align: right;">9</td>
+            </tr>
+            
+            <tr>
+                <td>CPX</td>
+                <td style="text-align: right;">$29.89</td>
+                <td style="text-align: right;">$37.64</td>
+                <td style="background-color: ;text-align: right;">20.59</td>
+                <td style="text-align: right;">$22.31</td> 
+                <td style="text-align: right;">$1.78</td>
+                <td style="text-align: right;">6.5</td>
+                <td style="text-align: right;">5.61</td>
+                <td style="text-align: right;">6.9</td>
+                <td style="background-color: lightgreen; text-align: right">13.4</td>
+                <td style="text-align: right;">2023-12-28</td>
+                <td style="background-color: ; text-align: right;">23</td>
+            </tr>
+            
+            <tr>
+                <td>FTT</td>
+                <td style="text-align: right;">$26.96</td>
+                <td style="text-align: right;">$34.96</td>
+                <td style="background-color: ;text-align: right;">22.88</td>
+                <td style="text-align: right;">$17.28</td> 
+                <td style="text-align: right;">$1.87</td>
+                <td style="text-align: right;">2.86</td>
+                <td style="text-align: right;">3.12</td>
+                <td style="text-align: right;">4.61</td>
+                <td style="background-color: ; text-align: right">7.47</td>
+                <td style="text-align: right;">2023-11-22</td>
+                <td style="background-color: ; text-align: right;">-13</td>
+            </tr>
+            
+            <tr>
+                <td>IMO</td>
+                <td style="text-align: right;">$58.74</td>
+                <td style="text-align: right;">$77.16</td>
+                <td style="background-color: ;text-align: right;">23.87</td>
+                <td style="text-align: right;">$42.01</td> 
+                <td style="text-align: right;">$3.65</td>
+                <td style="text-align: right;">2.59</td>
+                <td style="text-align: right;">2.65</td>
+                <td style="text-align: right;">18.93</td>
+                <td style="background-color: lightgreen; text-align: right">21.52</td>
+                <td style="text-align: right;">2023-11-30</td>
+                <td style="background-color: ; text-align: right;">-5</td>
+            </tr>
+            
+            <tr>
+                <td>T</td>
+                <td style="text-align: right;">$17.76</td>
+                <td style="text-align: right;">$25.35</td>
+                <td style="background-color: ;text-align: right;">29.94</td>
+                <td style="text-align: right;">$11.21</td> 
+                <td style="text-align: right;">$1.25</td>
+                <td style="text-align: right;">5.96</td>
+                <td style="text-align: right;">4.74</td>
+                <td style="text-align: right;">6.59</td>
+                <td style="background-color: lightgreen; text-align: right">12.55</td>
+                <td style="text-align: right;">2023-12-08</td>
+                <td style="background-color: lightyellow; text-align: right;">3</td>
+            </tr>
+            
+            <tr>
+                <td>KEY</td>
+                <td style="text-align: right;">$23.34</td>
+                <td style="text-align: right;">$33.60</td>
+                <td style="background-color: ;text-align: right;">30.54</td>
+                <td style="text-align: right;">$12.47</td> 
+                <td style="text-align: right;">$1.94</td>
+                <td style="text-align: right;">5.93</td>
+                <td style="text-align: right;">6.67</td>
+                <td style="text-align: right;">3.09</td>
+                <td style="background-color: ; text-align: right">9.02</td>
+                <td style="text-align: right;">2023-12-14</td>
+                <td style="background-color: ; text-align: right;">9</td>
+            </tr>
+            
+            <tr>
+                <td>BCE</td>
+                <td style="text-align: right;">$37.62</td>
+                <td style="text-align: right;">$55.32</td>
+                <td style="background-color: ;text-align: right;">32.0</td>
+                <td style="text-align: right;">$18.89</td> 
+                <td style="text-align: right;">$3.33</td>
+                <td style="text-align: right;">7.04</td>
+                <td style="text-align: right;">5.69</td>
+                <td style="text-align: right;">5.08</td>
+                <td style="background-color: lightgreen; text-align: right">12.12</td>
+                <td style="text-align: right;">2023-12-14</td>
+                <td style="background-color: ; text-align: right;">9</td>
+            </tr>
+            
+            <tr>
+                <td>CNQ</td>
+                <td style="text-align: right;">$61.49</td>
+                <td style="text-align: right;">$90.54</td>
+                <td style="background-color: ;text-align: right;">32.09</td>
+                <td style="text-align: right;">$36.45</td> 
+                <td style="text-align: right;">$4.61</td>
+                <td style="text-align: right;">4.43</td>
+                <td style="text-align: right;">4.4</td>
+                <td style="text-align: right;">39.62</td>
+                <td style="background-color: lightgreen; text-align: right">44.05</td>
+                <td style="text-align: right;">2023-12-07</td>
+                <td style="background-color: lightyellow; text-align: right;">2</td>
+            </tr>
+            
+            <tr>
+                <td>MRU</td>
+                <td style="text-align: right;">$46.13</td>
+                <td style="text-align: right;">$69.04</td>
+                <td style="background-color: ;text-align: right;">33.18</td>
+                <td style="text-align: right;">$29.75</td> 
+                <td style="text-align: right;">$3.18</td>
+                <td style="text-align: right;">1.77</td>
+                <td style="text-align: right;">1.5</td>
+                <td style="text-align: right;">11.03</td>
+                <td style="background-color: lightgreen; text-align: right">12.8</td>
+                <td style="text-align: right;">2023-10-26</td>
+                <td style="background-color: ; text-align: right;">-40</td>
+            </tr>
+            
+            <tr>
+                <td>IFC</td>
+                <td style="text-align: right;">$130.48</td>
+                <td style="text-align: right;">$212.60</td>
+                <td style="background-color: ;text-align: right;">38.63</td>
+                <td style="text-align: right;">$78.90</td> 
+                <td style="text-align: right;">$9.59</td>
+                <td style="text-align: right;">2.08</td>
+                <td style="text-align: right;">2.18</td>
+                <td style="text-align: right;">9.44</td>
+                <td style="background-color: ; text-align: right">11.52</td>
+                <td style="text-align: right;">2023-12-14</td>
+                <td style="background-color: ; text-align: right;">9</td>
+            </tr>
+            
+            <tr>
+                <td>SJ</td>
+                <td style="text-align: right;">$44.52</td>
+                <td style="text-align: right;">$78.23</td>
+                <td style="background-color: ;text-align: right;">43.09</td>
+                <td style="text-align: right;">$29.36</td> 
+                <td style="text-align: right;">$3.00</td>
+                <td style="text-align: right;">1.17</td>
+                <td style="text-align: right;">1.51</td>
+                <td style="text-align: right;">12.8</td>
+                <td style="background-color: lightgreen; text-align: right">13.97</td>
+                <td style="text-align: right;">2023-12-01</td>
+                <td style="background-color: ; text-align: right;">-4</td>
+            </tr>
+            
+            <tr>
+                <td>L</td>
+                <td style="text-align: right;">$63.16</td>
+                <td style="text-align: right;">$120.40</td>
+                <td style="background-color: ;text-align: right;">47.54</td>
+                <td style="text-align: right;">$35.81</td> 
+                <td style="text-align: right;">$4.95</td>
+                <td style="text-align: right;">1.5</td>
+                <td style="text-align: right;">1.61</td>
+                <td style="text-align: right;">13.17</td>
+                <td style="background-color: lightgreen; text-align: right">14.67</td>
+                <td style="text-align: right;">2023-12-14</td>
+                <td style="background-color: ; text-align: right;">9</td>
+            </tr>
+            
+            <tr>
+                <td>CNR</td>
+                <td style="text-align: right;">$63.49</td>
+                <td style="text-align: right;">$159.46</td>
+                <td style="background-color: ;text-align: right;">60.18</td>
+                <td style="text-align: right;">$30.73</td> 
+                <td style="text-align: right;">$5.83</td>
+                <td style="text-align: right;">1.97</td>
+                <td style="text-align: right;">1.74</td>
+                <td style="text-align: right;">12.29</td>
+                <td style="background-color: lightgreen; text-align: right">14.26</td>
+                <td style="text-align: right;">2023-12-06</td>
+                <td style="background-color: lightyellow; text-align: right;">1</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>

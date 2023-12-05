@@ -15,12 +15,12 @@ def get_book_value(symbols):
             close_price = ticker.history(period="1d")["Close"][0]
             formatted_price = f"{close_price:.2f}"
             total_book_value = info.get('bookValue', 'unavailable')
-            div_yield = ticker.info["dividendYield"]*100
-            five_year_div_avg = ticker.info["fiveYearAvgDividendYield"]
+            div_yield = round(ticker.info["dividendYield"]*100,2)
+            avg_yield = ticker.info["fiveYearAvgDividendYield"]
             exDivDate = datetime.datetime.utcfromtimestamp(ticker.info["exDividendDate"] )
             today = datetime.date.today()
             days_difference = (exDivDate.date() - today).days
-            results.append({"Symbol": ogSymbol, "BVPS": total_book_value, "closing_price": formatted_price,"yield": div_yield,"5_yr_avg_yield": five_year_div_avg, "exDivDate":exDivDate,"daysToExDiv": days_difference})
+            results.append({"Symbol": ogSymbol, "BVPS": total_book_value, "closing_price": formatted_price,"div_yield": div_yield,"avg_yield": avg_yield, "exDivDate":exDivDate,"daysToExDiv": days_difference})
         except Exception as e:
             print(f"An error occurred for symbol {symbol}: {str(e)}")
             results.append({"Symbol": ogSymbol, "BVPS": "unavailable","closing_price": "unavailable"})
