@@ -3,7 +3,7 @@ name: Run Graham Script
 on:
   workflow_dispatch:
   schedule:
-    - cron: '55 19 * * 1-5' # 4 AM ET, Monday to Friday
+    - cron: '11 20 * * 1-5' # 4 AM ET, Monday to Friday
 
 jobs:
   build:
