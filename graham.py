@@ -53,7 +53,7 @@ if __name__ == "__main__":
     html_output = template.render(rows=result.itertuples(index=False))
 
     # Write the HTML to a file
-    with open('output.html', 'w') as file:
+    with open('index.html', 'w') as file:
         file.write(html_output)
 
     print("HTML file 'output.html' has been created.")
