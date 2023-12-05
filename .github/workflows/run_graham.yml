@@ -1,0 +1,26 @@
+name: Run Graham Script
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * 1-5" # 4 AM ET, Monday to Friday
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8.12  # Choose your desired Python version
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt  # Replace with your requirements file if needed
+
+    - name: Run Python script
+      run: python graham.py  # Replace with your script filename
