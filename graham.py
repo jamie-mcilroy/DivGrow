@@ -3,6 +3,7 @@ from eps import scrape_average_annual_eps
 from bvps import get_book_value
 from divhist import avg_div_grwth
 import math
+import json
 
 def get_combined_metrics(symbols, years):
     eps_df = scrape_average_annual_eps(symbols, years)
@@ -42,8 +43,22 @@ def get_combined_metrics(symbols, years):
     return combined_df
 
 if __name__ == "__main__":
-    symbols = ["TD", "TOU", "CNQ", "ACO.X", "NA", "ENB", "TRP", "RY", "CM", "BNS","CJ"]
+    with open('symbols.json', 'r') as file:
+        symbols = json.load(file)
+    #symbols = ["TD", "TOU", "CNQ", "ACO.X", "NA", "ENB", "TRP", "RY", "CM", "BNS","CJ"]
     years = 5
     output_format = "csv"
     result = get_combined_metrics(symbols, years)
+    # Convert DataFrame to HTML with custom formatting
+    html_table = result.to_html(
+        classes='table table-striped table-bordered',  # Add CSS classes for styling
+        index=False,  # Remove the DataFrame index column
+        escape=False,  # Disable escaping to allow HTML formatting
+    )
+
+    # Write the HTML to a file
+    with open('output.html', 'w') as file:
+        file.write(html_table)
+
+    print("HTML file 'output.html' has been created.")
     print(result)
