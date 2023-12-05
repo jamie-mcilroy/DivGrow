@@ -3,7 +3,7 @@ name: Run Graham Script
 on:
   workflow_dispatch:
   schedule:
-    - cron: '00 19 * * 1-5' # 4 AM ET, Monday to Friday
+    - cron: '55 19 * * 1-5' # 4 AM ET, Monday to Friday
 
 jobs:
   build:
@@ -24,10 +24,14 @@ jobs:
     - name: Run Python script
       run: python graham.py  # Replace with your script filename
 
-    - name: Commit and push changes
+      - name: Commit and push changes
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add .
-        git commit -m "Update Index HTML"  # You can customize the commit message
+        git commit -m "Update data"  # You can customize the commit message
+        git remote set-url origin https://github.com/${{ github.repository }}
         git push origin main
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}
+    
