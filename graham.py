@@ -5,6 +5,7 @@ from bvps import get_book_value
 from divhist import avg_div_grwth
 import math
 import json
+import requests
 
 def get_combined_metrics(symbols, years):
     eps_df = scrape_average_annual_eps(symbols, years)
@@ -45,16 +46,10 @@ if __name__ == "__main__":
     years = 5
     result = get_combined_metrics(symbols, years)
 
-    # Load the Jinja2 environment
-    env = Environment(loader=FileSystemLoader('.'))
-    template = env.get_template('template.html')
+    json_data = result.to_json(orient='split')
+    parsed_data = json.loads(json_data)
+    url = 'https://script.google.com/macros/s/AKfycbwZgSZVWaT3tgs0n1XoPPeGscK-D9RJwGFm7cXkWL8ylKi0TbG8pimvyg_lh2lwXHMm/exec'
+    response = requests.post(url, json=parsed_data)
 
-    # Render the HTML using the template and DataFrame
-    html_output = template.render(rows=result.itertuples(index=False))
-
-    # Write the HTML to a file
-    with open('index.html', 'w') as file:
-        file.write(html_output)
-
-    print("HTML file 'output.html' has been created.")
-    print (result)
+    # Print the response from the Google Apps Script
+    print(response.text)
