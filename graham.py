@@ -43,12 +43,20 @@ def get_combined_metrics(symbols, years):
 if __name__ == "__main__":
     with open('symbols.json', 'r') as file:
         symbols = json.load(file)
+
+    # Load the configuration from the JSON file
+    with open('config.json', 'r') as config_file:
+        config = json.load(config_file)
+
+    # Retrieve the Google Sheets URL
+    google_sheets_url = config.get('google_sheets_url')
+
     years = 5
     result = get_combined_metrics(symbols, years)
 
     json_data = result.to_json(orient='split')
     parsed_data = json.loads(json_data)
-    url = 'https://script.google.com/macros/s/AKfycbwZgSZVWaT3tgs0n1XoPPeGscK-D9RJwGFm7cXkWL8ylKi0TbG8pimvyg_lh2lwXHMm/exec'
+    url = google_sheets_url
     response = requests.post(url, json=parsed_data)
 
     # Print the response from the Google Apps Script
