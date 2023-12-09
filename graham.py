@@ -6,6 +6,7 @@ from divhist import avg_div_grwth
 import math
 import json
 import requests
+import os
 
 def get_combined_metrics(symbols, years):
     eps_df = scrape_average_annual_eps(symbols, years)
@@ -44,19 +45,13 @@ if __name__ == "__main__":
     with open('symbols.json', 'r') as file:
         symbols = json.load(file)
 
-    # Load the configuration from the JSON file
-    with open('config.json', 'r') as config_file:
-        config = json.load(config_file)
-
-    # Retrieve the Google Sheets URL
-    google_sheets_url = config.get('google_sheets_url')
 
     years = 5
     result = get_combined_metrics(symbols, years)
 
     json_data = result.to_json(orient='split')
     parsed_data = json.loads(json_data)
-    url = google_sheets_url
+    url = os.getenv("GOOGLE_SHEETS_URL")
     response = requests.post(url, json=parsed_data)
 
     # Print the response from the Google Apps Script
