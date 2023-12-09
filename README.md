@@ -14,12 +14,12 @@ Before running the script, make sure you have the following prerequisites instal
 
 Create a `config.json` file in the project directory with the following content:
 
-```json
+
 {
   "google_sheets_url": "your endpoint here"
 }
 
-## Google Sheets Setup
+## Configuration
 
 1. Create a Google Sheets document where you want to publish the financial data.
 
@@ -53,4 +53,5 @@ function doPost(e) {
 
   return ContentService.createTextOutput('Data received and sheet updated successfully.  Secure');
 }
+
 
