@@ -46,7 +46,7 @@ if __name__ == "__main__":
     reinvest_dividends = True  # Set to False if you don't want to reinvest dividends
 
     data = calculate_dividend_and_shares(initial_year, years, initial_dividend, historic_yield, dividend_growth_rate, num_shares, reinvest_dividends)
-
+ 
     # Print the structured data with rounded values
     for year_data in data:
         print(year_data)
