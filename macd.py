@@ -1,7 +1,9 @@
 import yfinance as yf
 import pandas as pd
 import json
+import requests
 from datetime import datetime, timedelta
+import os
 
 # Function to fetch data from Yahoo Finance
 def fetch_data(ticker, days_back):
@@ -40,29 +42,42 @@ def read_symbols(file_path):
         symbols = json.load(file)
     return [symbol.replace('.', '-') + ".TO" for symbol in symbols]
 
-# File containing the symbols
-symbols_file = "symbols.json"
-symbols = read_symbols(symbols_file)
-days_back = 180
 
-# Creating an empty DataFrame to hold the most recent crossovers
-crossovers_df = pd.DataFrame(columns=['Symbol', 'Crossover Type', 'Date'])
+if __name__ == "__main__":
 
-# Iterating through each symbol and finding the most recent crossover
-for ticker in symbols:
-    df = fetch_data(ticker, days_back)
-    df_macd = calculate_macd(df)
-    most_recent_crossover = find_most_recent_crossover(df_macd)
+    # File containing the symbols
+    symbols_file = "symbols.json"
+    symbols = read_symbols(symbols_file)
+    days_back = 180
 
-    # Adding the most recent crossover to the DataFrame using pd.concat
-    if most_recent_crossover:
-        crossover_date, crossover_type = most_recent_crossover
-        new_row = pd.DataFrame({
-            'Symbol': [ticker],
-            'Crossover Type': [crossover_type],
-            'Date': [crossover_date.date()]
-        })
-        crossovers_df = pd.concat([crossovers_df, new_row], ignore_index=True)
+    # Creating an empty DataFrame to hold the most recent crossovers
+    crossovers_df = pd.DataFrame(columns=['Symbol', 'Crossover Type', 'Date'])
 
-# Print the DataFrame
-print(crossovers_df)
+    # Iterating through each symbol and finding the most recent crossover
+    for ticker in symbols:
+        df = fetch_data(ticker, days_back)
+        df_macd = calculate_macd(df)
+        most_recent_crossover = find_most_recent_crossover(df_macd)
+
+        # Adding the most recent crossover to the DataFrame using pd.concat
+        original_symbol = ticker.replace('.TO', '')
+        if most_recent_crossover:
+            crossover_date, crossover_type = most_recent_crossover
+            new_row = pd.DataFrame({
+                'Symbol': [original_symbol],
+                'Crossover Type': [crossover_type],
+                'Date': [crossover_date.timestamp() * 1000]  # Convert to milliseconds
+            })
+            crossovers_df = pd.concat([crossovers_df, new_row], ignore_index=True)
+
+    # Convert dates to a readable format
+    crossovers_df['Date'] = pd.to_datetime(crossovers_df['Date'], unit='ms').dt.strftime('%Y-%m-%d')
+
+    # Convert DataFrame to JSON
+    json_data = crossovers_df.to_json(orient='records')
+    parsed_data = json.loads(json_data)
+    url = os.getenv("GOOGLE_SHEETS_MACD_URL")
+
+    response = requests.post(url, json=parsed_data)
+
+    print(response.text)  # Print response
