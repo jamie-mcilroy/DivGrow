@@ -1,4 +1,4 @@
-name: Run Graham Script
+name: Run MACD Script
 
 on:
   workflow_dispatch:
