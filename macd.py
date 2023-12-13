@@ -44,7 +44,9 @@ def read_symbols(file_path):
 symbols_file = "symbols.json"
 symbols = read_symbols(symbols_file)
 days_back = 180
-max_days_since_crossover = 3  # Maximum days since the last crossover
+
+# Creating an empty DataFrame to hold the most recent crossovers
+crossovers_df = pd.DataFrame(columns=['Symbol', 'Crossover Type', 'Date'])
 
 # Iterating through each symbol and finding the most recent crossover
 for ticker in symbols:
@@ -52,11 +54,15 @@ for ticker in symbols:
     df_macd = calculate_macd(df)
     most_recent_crossover = find_most_recent_crossover(df_macd)
 
-    # Displaying the most recent crossover if it's within the specified days
+    # Adding the most recent crossover to the DataFrame using pd.concat
     if most_recent_crossover:
         crossover_date, crossover_type = most_recent_crossover
-        days_since_crossover = (datetime.now() - crossover_date).days
-        if days_since_crossover <= max_days_since_crossover:
-            print(f"{ticker}: Most recent {crossover_type} crossover was on {crossover_date.date()}, {days_since_crossover} days ago.")
-    else:
-        print(f"{ticker}: No recent crossovers detected within the specified period.")
+        new_row = pd.DataFrame({
+            'Symbol': [ticker],
+            'Crossover Type': [crossover_type],
+            'Date': [crossover_date.date()]
+        })
+        crossovers_df = pd.concat([crossovers_df, new_row], ignore_index=True)
+
+# Print the DataFrame
+print(crossovers_df)
