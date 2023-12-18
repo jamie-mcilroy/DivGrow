@@ -51,6 +51,8 @@ if __name__ == "__main__":
 
     json_data = result.to_json(orient='split')
     parsed_data = json.loads(json_data)
+    parsed_data['payload_type'] = 'div-gro'
+    print(parsed_data)
     url = os.getenv("GOOGLE_SHEETS_URL")
     response = requests.post(url, json=parsed_data)
 
