@@ -68,10 +68,15 @@ if __name__ == "__main__":
 
     crossovers_df['Date'] = pd.to_datetime(crossovers_df['Date'], unit='ms').dt.strftime('%Y-%m-%d')
     json_data = crossovers_df.to_json(orient='records')
-    parsed_data = json.loads(json_data)
-    parsed_data['payload_type'] = 'macd'
-    url = os.getenv("GOOGLE_SHEETS_MACD_URL")
+    records = json.loads(json_data)
 
-    response = requests.post(url, json=parsed_data)
+    # Create a new dictionary to hold the records and the payload type
+    payload = {
+        'data': records,
+        'payload_type': 'macd'
+    }
+    url = os.getenv("GOOGLE_SHEETS_INVESTMENT_SCREEN_URL")
+
+    response = requests.post(url, json=payload)
 
     print(response.text)  

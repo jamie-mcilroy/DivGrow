@@ -1,0 +1,58 @@
+name: Run Investment Screen Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 9 * * 1-5' # 4:10 AM ET, Monday to Friday
+
+jobs:
+  run_graham_script:
+    name: Run Graham Script
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.8.12]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run Graham Python script
+      run: python graham.py
+      env:
+        GOOGLE_SHEETS_INVESTMENT_SCREEN_URL: ${{ secrets.GOOGLE_SHEETS_INVESTMENT_SCREEN_URL }}
+
+  run_macd_script:
+    name: Run MACD Script
+    runs-on: ubuntu-latest
+    needs: run_graham_script
+
+    strategy:
+      matrix:
+        python-version: [3.8.12]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run MACD Python script
+      run: python macd.py
+      env:
+        GOOGLE_SHEETS_INVESTMENT_SCREEN_URL: ${{ secrets.GOOGLE_SHEETS_INVESTMENT_SCREEN_URL }}
