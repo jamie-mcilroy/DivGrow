@@ -13,7 +13,7 @@ def calculate_dividend_and_shares(initial_year, years, initial_dividend, histori
         future_stock_price = round(future_dividend / (historic_yield / 100), 2)
 
         if reinvest_dividends:
-            # Calculate the number of additional shares that can be purchased with the income
+            # Calculate the number of additional shares that can be purchased with the income.
             additional_shares = round(year_income / future_stock_price, 2)
 
             # Update the total number of shares for the next year
