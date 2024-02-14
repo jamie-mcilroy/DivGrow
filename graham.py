@@ -2,7 +2,7 @@ from jinja2 import Environment, FileSystemLoader
 import pandas as pd
 from eps import scrape_average_annual_eps
 from bvps import get_book_value
-from divhist import avg_div_grwth
+from divhist2 import avg_div_grwth
 import math
 import json
 import requests
