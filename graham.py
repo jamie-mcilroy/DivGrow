@@ -9,35 +9,70 @@ import requests
 import os
 
 def get_combined_metrics(symbols, years):
-    eps_df = scrape_average_annual_eps(symbols, years)
-    bvps_df = get_book_value(symbols)
-    avgYield_df = avg_div_grwth(symbols, years)
-    # Merge dataframes on the "Symbol" column
-    combined_df = pd.merge(eps_df, bvps_df, on="Symbol")
-    combined_df = pd.merge(combined_df, avgYield_df, on="Symbol")
+    try:
+        # Try to get EPS data
+        try:
+            eps_df = scrape_average_annual_eps(symbols, years)
+        except Exception as e:
+            print(f"An error occurred while retrieving EPS data: {e}")
+            eps_df = pd.DataFrame()  # Default to an empty DataFrame if EPS retrieval fails
 
-    # Convert "EPS" and "BVPS" columns to numeric, handling non-numeric values as NaN
-    combined_df["EPS"] = pd.to_numeric(combined_df["EPS"], errors="coerce")
-    combined_df["BVPS"] = pd.to_numeric(combined_df["BVPS"], errors="coerce")
-    # Convert the "closing_price" column to a numeric data type (float)
-    combined_df["closing_price"] = pd.to_numeric(combined_df["closing_price"], errors="coerce")
+        # Try to get BVPS data
+        try:
+            bvps_df = get_book_value(symbols)
+        except Exception as e:
+            print(f"An error occurred while retrieving Book Value data: {e}")
+            bvps_df = pd.DataFrame()  # Default to an empty DataFrame if BVPS retrieval fails
 
-    # Calculate the Graham number and add it as a new column, rounded to 2 decimal places
-    combined_df["BG"] = combined_df.apply(
-        lambda row: round(math.sqrt(22.5 * row["EPS"] * row["BVPS"]), 2), axis=1
-    )
-     # Calculate the BG_Perc column
-    combined_df["gr"] = combined_df.apply(
-        lambda row: round(((row["closing_price"]-row["BG"]) / row["closing_price"]) * 100, 2),
-        axis=1
-    )
-    combined_df["chowder"] = combined_df.apply(
-        lambda row: round(row["div_yield"] + row["avg_div_grwth"], 2),
-        axis=1
-    )
-    combined_df = combined_df[["Symbol", "BG", "closing_price", "gr","BVPS", "EPS","div_yield","avg_yield","avg_div_grwth","chowder","exDivDate","daysToExDiv"]]
-    combined_df.sort_values(by="gr", inplace=True)
-    return combined_df
+        # Try to get average dividend growth data
+        try:
+            avgYield_df = avg_div_grwth(symbols, years)
+        except Exception as e:
+            print(f"An error occurred while retrieving Dividend Growth data: {e}")
+            avgYield_df = pd.DataFrame()  # Default to an empty DataFrame if avg_div_grwth retrieval fails
+
+        # Merge dataframes on the "Symbol" column if data is available
+        if not eps_df.empty and not bvps_df.empty and not avgYield_df.empty:
+            combined_df = pd.merge(eps_df, bvps_df, on="Symbol", how="inner")
+            combined_df = pd.merge(combined_df, avgYield_df, on="Symbol", how="inner")
+
+            # Convert columns to numeric, handling non-numeric values as NaN
+            combined_df["EPS"] = pd.to_numeric(combined_df["EPS"], errors="coerce")
+            combined_df["BVPS"] = pd.to_numeric(combined_df["BVPS"], errors="coerce")
+            combined_df["closing_price"] = pd.to_numeric(combined_df["closing_price"], errors="coerce")
+
+            # Calculate the Graham number
+            combined_df["BG"] = combined_df.apply(
+                lambda row: round(math.sqrt(22.5 * row["EPS"] * row["BVPS"]), 2), axis=1
+            )
+
+            # Calculate BG_Perc
+            combined_df["gr"] = combined_df.apply(
+                lambda row: round(((row["closing_price"] - row["BG"]) / row["closing_price"]) * 100, 2),
+                axis=1
+            )
+
+            # Calculate Chowder number
+            combined_df["chowder"] = combined_df.apply(
+                lambda row: round(row["div_yield"] + row["avg_div_grwth"], 2),
+                axis=1
+            )
+
+            # Select and order relevant columns
+            combined_df = combined_df[
+                ["Symbol", "BG", "closing_price", "gr", "BVPS", "EPS", "div_yield", "avg_yield", 
+                 "avg_div_grwth", "chowder", "exDivDate", "daysToExDiv"]
+            ]
+            combined_df.sort_values(by="gr", inplace=True)
+        else:
+            print("One or more data retrievals failed, resulting in an empty DataFrame.")
+            combined_df = pd.DataFrame()  # Empty DataFrame if any retrieval fails completely
+
+        return combined_df
+
+    except Exception as e:
+        print(f"An unexpected error occurred in get_combined_metrics: {e}")
+        return pd.DataFrame()  # Return an empty DataFrame on unexpected failure
 
 
 
