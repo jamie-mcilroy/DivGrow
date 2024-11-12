@@ -31,6 +31,6 @@ def cleanSymbol(input_string):
 
 if __name__ == "__main__":
     symbols = ["BMO","TD"]
-    num_years = 5
+    num_years = 10
     result_df = avg_div_grwth(symbols, num_years)
     print(result_df)

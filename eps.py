@@ -70,7 +70,7 @@ def cleanSymbol(input_string):
 
 if __name__ == "__main__":
     symbols = ["ENB", "ACO.X"]  # Example symbols
-    num_years = 3
+    num_years = 10
     result_df = scrape_average_annual_eps(symbols, num_years)
 
     print(result_df)
