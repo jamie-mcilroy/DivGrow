@@ -54,14 +54,14 @@ def get_combined_metrics(symbols, years):
 
             # Calculate Chowder number
             combined_df["chowder"] = combined_df.apply(
-                lambda row: round(row["div_yield"] + row["avg_div_grwth"], 2),
+                lambda row: round(row["div_yield"] + row["weighted_avg_div_grwth"], 2),
                 axis=1
             )
 
             # Select and order relevant columns
             combined_df = combined_df[
                 ["Symbol", "BG", "closing_price", "gr", "BVPS", "EPS", "div_yield", "avg_yield", 
-                 "avg_div_grwth", "chowder", "exDivDate", "daysToExDiv"]
+                 "weighted_avg_div_grwth", "chowder", "exDivDate", "daysToExDiv"]
             ]
             combined_df.sort_values(by="gr", inplace=True)
         else:
@@ -81,7 +81,7 @@ if __name__ == "__main__":
         symbols = json.load(file)
 
 
-    years = 5
+    years = 10
     result = get_combined_metrics(symbols, years)
 
     json_data = result.to_json(orient='split')

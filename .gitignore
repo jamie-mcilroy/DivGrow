@@ -1,4 +1,5 @@
 /divgrow
+/divgrowvenv
 *.csv
 *.pyc
 __pycache__

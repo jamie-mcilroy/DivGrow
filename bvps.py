@@ -12,7 +12,7 @@ def get_book_value(symbols):
             ticker = yf.Ticker(f"{symbol}.to")
 
             info = ticker.info
-            close_price = ticker.history(period="1d")["Close"][0]
+            close_price = ticker.history(period="1d")["Close"].iloc[0]
             formatted_price = f"{close_price:.2f}"
             total_book_value = info.get('bookValue', 'unavailable')
             div_yield = round(ticker.info["dividendYield"]*100,2)
