@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.9.10]
+        python-version: [3.12.8]
 
     steps:
     - name: Checkout code
@@ -38,7 +38,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.9.10]
+        python-version: [3.12.8]
 
     steps:
     - name: Checkout code
