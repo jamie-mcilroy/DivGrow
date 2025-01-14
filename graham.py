@@ -77,7 +77,7 @@ def get_combined_metrics(symbols, years):
 
 
 if __name__ == "__main__":
-    with open('symbols.json', 'r') as file:
+    with open('configs/symbols.json', 'r') as file:
         symbols = json.load(file)
 
 
