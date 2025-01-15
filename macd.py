@@ -45,7 +45,7 @@ def read_symbols(file_path):
 
 if __name__ == "__main__":
 
-    symbols_file = "symbols.json"
+    symbols_file = "configs/symbols.json"
     symbols = read_symbols(symbols_file)
     days_back = 180
     crossovers_df = pd.DataFrame(columns=['Symbol', 'Crossover Type', 'Date'])
