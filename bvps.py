@@ -15,7 +15,7 @@ def get_book_value(symbols):
             close_price = ticker.history(period="1d")["Close"].iloc[0]
             formatted_price = f"{close_price:.2f}"
             total_book_value = info.get('bookValue', 'unavailable')
-            div_yield = round(ticker.info["dividendYield"]*100,2)
+            div_yield = round(ticker.info["dividendYield"],2)
             avg_yield = ticker.info["fiveYearAvgDividendYield"]
             exDivDate = datetime.datetime.utcfromtimestamp(ticker.info["exDividendDate"] )
             today = datetime.date.today()
@@ -40,6 +40,6 @@ def cleanSymbol(input_string):
 
 
 if __name__ == "__main__":
-    symbols = ["TD", "TOU", "ACO-X"]  # Example list of symbols
+    symbols = ["BIP.UN"]  # Example list of symbols
     result_df = get_book_value(symbols)
     print(result_df)

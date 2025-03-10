@@ -87,6 +87,7 @@ if __name__ == "__main__":
     json_data = result.to_json(orient='split')
     parsed_data = json.loads(json_data)
     parsed_data['payload_type'] = 'div-grow'
-    url = os.getenv("GOOGLE_SHEETS_INVESTMENT_SCREEN_URL")
+    # url = os.getenv("GOOGLE_SHEETS_INVESTMENT_SCREEN_URL")
+    url='https://script.google.com/macros/s/AKfycbx3oVvKoJUAHSuu0sJB7GO5KiFNyo39s5VjoqWDAqQPvr9TafLxpPvW9x2X0fOPQfQkZQ/exec'
     response = requests.post(url, json=parsed_data)
     print(response.text)

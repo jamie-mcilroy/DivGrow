@@ -69,7 +69,7 @@ def cleanSymbol(input_string):
         return input_string
 
 if __name__ == "__main__":
-    symbols = ["ENB", "ACO.X"]  # Example symbols
+    symbols = ["ENB", "ACO.X","BIP"]  # Example symbols
     num_years = 10
     result_df = scrape_average_annual_eps(symbols, num_years)
 
