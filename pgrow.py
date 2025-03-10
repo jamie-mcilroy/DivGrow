@@ -30,5 +30,5 @@ def calculate_stock_performance(ticker):
     return average_annual_change
 
 # Example usage
-ticker = "TD.TO"  # Replace with any Canadian stock symbol
+ticker = "ENB.TO"  # Replace with any Canadian stock symbol
 calculate_stock_performance(ticker)
