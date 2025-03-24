@@ -1,7 +1,10 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Image for Scraper
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main  # ✅ Rebuilds and pushes on every commit to main
+  workflow_dispatch:  # ✅ Still allows manual trigger if needed
 
 jobs:
   build_and_push:
