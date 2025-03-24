@@ -3,8 +3,8 @@ name: Build and Push Docker Image for Scraper
 on:
   push:
     branches:
-      - main  # ✅ Rebuilds and pushes on every commit to main
-  workflow_dispatch:  # ✅ Still allows manual trigger if needed
+      - main
+  workflow_dispatch:
 
 jobs:
   build_and_push:
@@ -24,7 +24,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and Push Docker Image for AMD64
+      - name: Build and Push Docker Image (main.py as entrypoint)
         run: |
           docker buildx build --platform linux/amd64 \
             -t jmcilroydocker/divgroq:latest \
