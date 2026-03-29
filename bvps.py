@@ -1,45 +1,48 @@
-import yfinance as yf
-import pandas as pd
-import datetime
+import json
+import sys
 
-def get_book_value(symbols):
-    results = []
+import requests
 
-    for symbol in symbols:
+
+API_KEY = "VzusVsTSqfGJNssVdkcnPit9WnBEUvlR"
+BASE_URL = "https://financialmodelingprep.com/api/v3"
+
+
+def normalize_symbol(symbol: str) -> str:
+    if symbol.endswith(".TO"):
+        return symbol.replace(".TO", ":TSX")
+    return symbol.upper()
+
+
+def print_endpoint_message(symbols):
+    for original_symbol in symbols:
+        symbol = normalize_symbol(original_symbol)
+        url = f"{BASE_URL}/profile/{symbol}?apikey={API_KEY}"
+
         try:
-            ogSymbol=str(symbol)
-            symbol=cleanSymbol(symbol)
-            ticker = yf.Ticker(f"{symbol}.to")
+            response = requests.get(url, timeout=30)
+            print(f"Symbol: {original_symbol}")
+            print(f"URL: {url}")
+            print(f"Status: {response.status_code}")
 
-            info = ticker.info
-            close_price = ticker.history(period="1d")["Close"].iloc[0]
-            formatted_price = f"{close_price:.2f}"
-            total_book_value = info.get('bookValue', 'unavailable')
-            div_yield = round(ticker.info["dividendYield"],2)
-            avg_yield = ticker.info["fiveYearAvgDividendYield"]
-            exDivDate = datetime.datetime.utcfromtimestamp(ticker.info["exDividendDate"] )
-            today = datetime.date.today()
-            days_difference = (exDivDate.date() - today).days
-            results.append({"Symbol": ogSymbol, "BVPS": total_book_value, "closing_price": formatted_price,"div_yield": div_yield,"avg_yield": avg_yield, "exDivDate":exDivDate,"daysToExDiv": days_difference})
-        except Exception as e:
-            print(f"An error occurred for symbol {symbol}: {str(e)}")
-            results.append({"Symbol": ogSymbol, "BVPS": "unavailable","closing_price": "unavailable"})
+            try:
+                payload = response.json()
+                print(json.dumps(payload, indent=2))
+            except ValueError:
+                print(response.text)
 
-    # Return the results as a DataFrame
-    return pd.DataFrame(results)
+            print("-" * 60)
+        except Exception as exc:
+            print(f"Symbol: {original_symbol}")
+            print(f"URL: {url}")
+            print(f"Request failed: {exc}")
+            print("-" * 60)
 
-def cleanSymbol(input_string):
-    # Check if the string contains a period
-    if "." in input_string:
-        # Replace the period with a hyphen
-        result = input_string.replace(".", "-")
-        return result
-    else:
-        # If no period is found, return the original string
-        return input_string
+
+def main():
+    symbols = sys.argv[1:] if len(sys.argv) > 1 else ["TD.TO", "AAPL"]
+    print_endpoint_message(symbols)
 
 
 if __name__ == "__main__":
-    symbols = ["BIP.UN"]  # Example list of symbols
-    result_df = get_book_value(symbols)
-    print(result_df)
+    main()

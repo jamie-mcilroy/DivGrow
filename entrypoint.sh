@@ -1,10 +1,22 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
-echo "Starting Graham script..."
-python graham.py
+PYTHON_BIN="${PYTHON_BIN:-python3}"
 
-echo "Starting MACD script..."
-python macd.py
+run_step() {
+  local script_name="$1"
+  echo "Running ${script_name}..."
+  "${PYTHON_BIN}" "${script_name}"
+}
 
-echo "All tasks completed."
+run_step "eps.py"
+run_step "bvps_yf.py"
+run_step "ben_graham.py"
+run_step "div_hist_all.py"
+run_step "div_hist_summary.py"
+run_step "div_hist_account_income.py"
+run_step "div_hist_account_shares.py"
+run_step "div_hist_account_drip_income.py"
+run_step "div_hist_account_balance.py"
+
+echo "Investment pipeline completed."

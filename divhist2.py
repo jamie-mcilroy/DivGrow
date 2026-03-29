@@ -1,39 +1,96 @@
-import pandas as pd
+import csv
+import re
+import sys
 import requests
 from bs4 import BeautifulSoup
 
-def avg_div_grwth(tickers, years_back):
-    def fetch_dividend_data(ticker):
-        url = f"https://dividendhistory.org/payout/tsx/{ticker}/"
-        response = requests.get(url)
-        if response.status_code != 200:
-            print(f"Failed to retrieve data for symbol {ticker}. Status code: {response.status_code}")
-            return []
+try:
+    import pandas as pd
+except ModuleNotFoundError:
+    pd = None
 
-        soup = BeautifulSoup(response.text, 'html.parser')
-        table = soup.find('table', id='dividend_table')
-        if not table:
-            print(f"No dividend table found for {ticker}")
-            return []
+def fetch_dividend_data(ticker):
+    url = f"https://dividendhistory.org/payout/tsx/{ticker}/"
+    response = requests.get(url)
+    if response.status_code != 200:
+        print(f"Failed to retrieve data for symbol {ticker}. Status code: {response.status_code}")
+        return []
 
-        dividend_data = []
+    soup = BeautifulSoup(response.text, 'html.parser')
+    dividend_data = []
+    table = soup.find('table', id='dividend_table')
+    if table:
         rows = table.find_all('tr')
         for row in rows[1:]:
             cols = row.find_all('td')
+            if len(cols) < 3:
+                continue
+
             date = cols[0].text.strip()
             dividend_text = cols[2].text.strip()
-
-            # Remove non-numeric characters
             cleaned_dividend = dividend_text.replace("$", "").replace("USD", "").strip()
 
             try:
                 dividend = float(cleaned_dividend)
             except ValueError:
                 print(f"Skipping invalid dividend value '{dividend_text}' for {ticker}")
-                continue  # Skip invalid values
+                continue
 
             dividend_data.append({'Date': date, 'Dividend': dividend})
+
+    if dividend_data:
         return dividend_data
+
+    page_text = soup.get_text("\n")
+    matches = re.findall(
+        r"(\d{4}-\d{2}-\d{2})\s+(\d{4}-\d{2}-\d{2})\$(\d+(?:\.\d+)?)",
+        page_text
+    )
+
+    seen_dates = set()
+    for ex_div_date, _payout_date, amount in matches:
+        if ex_div_date in seen_dates:
+            continue
+        seen_dates.add(ex_div_date)
+        dividend_data.append({'Date': ex_div_date, 'Dividend': float(amount)})
+
+    if not dividend_data:
+        print(f"No dividend history rows found for {ticker}")
+
+    return dividend_data
+
+def write_dividend_csv(ticker, years_back, output_path=None):
+    dividend_data = fetch_dividend_data(ticker)
+    if not dividend_data:
+        print(f"No valid dividend data found for {ticker}.")
+        return None
+
+    dividends_per_year = {}
+    for item in dividend_data:
+        year = item['Date'].split('-')[0]
+        dividends_per_year[year] = dividends_per_year.get(year, 0) + item['Dividend']
+
+    sorted_years = sorted(dividends_per_year.keys(), reverse=True)
+    relevant_years = sorted_years[:years_back]
+
+    rows = [
+        {'Symbol': ticker, 'Year': year, 'Annual Dividend': dividends_per_year[year]}
+        for year in sorted(relevant_years)
+    ]
+    if not rows:
+        print(f"No dividend rows available to write for {ticker}.")
+        return None
+
+    csv_path = output_path or f"{ticker}_dividends_{years_back}y.csv"
+    with open(csv_path, "w", newline="", encoding="utf-8") as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=['Symbol', 'Year', 'Annual Dividend'])
+        writer.writeheader()
+        writer.writerows(rows)
+    return csv_path
+
+def avg_div_grwth(tickers, years_back):
+    if pd is None:
+        raise ModuleNotFoundError("pandas is required for avg_div_grwth")
 
     results = []
 
@@ -75,6 +132,14 @@ def avg_div_grwth(tickers, years_back):
     return results_df
 
 def main():
+    if len(sys.argv) >= 3:
+        ticker = sys.argv[1]
+        years_back = int(sys.argv[2])
+        output_path = sys.argv[3] if len(sys.argv) >= 4 else None
+        csv_path = write_dividend_csv(ticker, years_back, output_path)
+        print(csv_path if csv_path else "CSV export failed.")
+        return
+
     tickers = ['BMO', 'TD', 'ENB', 'LB', 'CWB', 'CCA', 'XTC', 'ACO.X', 'BNS', 'POW', 'CM', 'MFC', 'EMP.A', 'GWO', 
                'CU', 'EMA', 'SU', 'CPX', 'TRP', 'NA', 'RY', 'FTS', 'TOU', 'BCE', 'PPL', 'T', 'FTT', 'IMO', 'MRU', 
                'KEY', 'IFC', 'CNQ', 'SJ', 'L', 'CNR','BIPC']
