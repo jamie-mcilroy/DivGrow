@@ -36,6 +36,13 @@ def extract_dividends(html):
     return [(ex_date, pay_date, float(amount)) for ex_date, pay_date, amount in rows]
 
 
+def build_event_rows(symbol, raw_rows):
+    event_rows = []
+    for ex_date, pay_date, amount in raw_rows:
+        event_rows.append([symbol, ex_date, pay_date, f"{amount:.6f}"])
+    return event_rows
+
+
 def parse_date(date_text):
     return datetime.strptime(date_text, "%Y-%m-%d").date()
 
@@ -145,6 +152,10 @@ def write_dividends_by_year(path, rows):
     write_csv_rows(path, ["Ticker", "Year", "Annual Dividend", "Dividend Growth YoY %"], rows)
 
 
+def write_dividend_events(path, rows):
+    write_csv_rows(path, ["Ticker", "ExDate", "PayDate", "Dividend"], rows)
+
+
 def determine_years(rows, years_back):
     years = sorted({int(row["Year"]) for row in rows})
     return years[-years_back:]
@@ -182,4 +193,3 @@ def build_pivot_rows(pivot, selected_years):
 def write_pivot(path, selected_years, rows):
     header = ["Ticker"] + [str(year) for year in selected_years] + ["Last Growth", "Avg Growth 3Y %", "Avg Growth 5Y %"]
     write_csv_rows(path, header, rows)
-

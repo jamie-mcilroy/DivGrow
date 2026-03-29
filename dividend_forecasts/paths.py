@@ -7,6 +7,8 @@ HOLDINGS_CSV = f"{CONFIGS_DIR}/Holdings.csv"
 
 DIVIDENDS_BY_YEAR_CSV = f"{DATA_DIR}/dividends_by_year.csv"
 DIVIDENDS_10Y_PIVOT_CSV = f"{DATA_DIR}/dividends_10y_pivot.csv"
+DIVIDEND_EVENTS_CSV = f"{DATA_DIR}/dividend_events.csv"
+DIVIDEND_YIELD_SUMMARY_CSV = f"{DATA_DIR}/dividend_yield_summary.csv"
 
 ACCOUNT_INCOME_DIR = f"{OUTPUT_DIR}/account_income_projections"
 ACCOUNT_SHARE_DIR = f"{OUTPUT_DIR}/account_share_projections"
