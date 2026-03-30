@@ -55,7 +55,16 @@ def write_csv(rows, output_path=OUTPUT_CSV):
         raise ValueError("No rows to write.")
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    fieldnames = list(rows[0].keys())
+    priority_fieldnames = [
+        "Ticker",
+        "Ben Graham 3Y",
+        "Ben Graham 5Y",
+        "Ben Graham 10Y",
+        "Avg Yield 5Y",
+        "Avg Growth 5Y %",
+    ]
+    remaining_fieldnames = [field for field in rows[0].keys() if field not in priority_fieldnames]
+    fieldnames = priority_fieldnames + remaining_fieldnames
 
     with open(output_path, "w", newline="", encoding="utf-8") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
