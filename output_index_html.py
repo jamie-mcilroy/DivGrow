@@ -1,0 +1,107 @@
+from datetime import datetime
+import os
+
+
+OUTPUT_HTML = "output/index.html"
+
+
+def render_html():
+    generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DivGrow Reports</title>
+  <style>
+    :root {{
+      --paper: #f6f1e7;
+      --ink: #12161d;
+      --muted: #5a6472;
+      --navy: #16263a;
+      --gold: #b8945b;
+      --line: rgba(18, 22, 29, 0.12);
+      --panel: rgba(255, 255, 255, 0.68);
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184, 148, 91, 0.2), transparent 28%),
+        linear-gradient(180deg, #efe4d0 0%, var(--paper) 35%, #f8f5ee 100%);
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }}
+    .page {{ width: min(1200px, calc(100vw - 48px)); margin: 32px auto 48px; }}
+    .hero {{
+      padding: 36px 40px 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(22, 38, 58, 0.96), rgba(18, 22, 29, 0.96));
+      color: #f7f2e8;
+      border-radius: 24px;
+      box-shadow: 0 24px 70px rgba(14,18,24,0.18);
+    }}
+    .eyebrow {{ font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(247,242,232,0.68); margin-bottom: 14px; }}
+    h1 {{ margin: 0; font-family: "Iowan Old Style", Georgia, serif; font-size: clamp(38px, 5vw, 62px); line-height: 0.95; letter-spacing: -0.03em; }}
+    .subhead {{ margin-top: 16px; max-width: 760px; color: rgba(247,242,232,0.8); font-size: 16px; line-height: 1.6; }}
+    .timestamp {{ margin-top: 18px; color: rgba(247,242,232,0.6); font-size: 13px; }}
+    .grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-top: 24px; }}
+    .report-card {{
+      display: block;
+      padding: 24px;
+      border-radius: 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 40px rgba(26,32,44,0.08);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }}
+    .report-card:hover {{ transform: translateY(-2px); box-shadow: 0 16px 50px rgba(26,32,44,0.12); }}
+    .card-eyebrow {{ text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px; color: var(--muted); }}
+    .card-title {{ margin-top: 10px; font-family: "Iowan Old Style", Georgia, serif; font-size: 34px; color: var(--navy); }}
+    .card-copy {{ margin-top: 12px; color: var(--muted); line-height: 1.6; font-size: 14px; }}
+    .card-link {{ margin-top: 18px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }}
+    @media (max-width: 900px) {{
+      .page {{ width: calc(100vw - 24px); margin: 12px auto 24px; }}
+      .hero {{ padding: 18px; border-radius: 18px; }}
+      h1 {{ font-size: 40px; }}
+    }}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">DivGrow Reports</div>
+      <h1>Research Book</h1>
+      <div class="subhead">Top-level landing page for the generated HTML outputs. Use it to jump into the fundamentals screen or the account-level projection reports.</div>
+      <div class="timestamp">Generated {generated_at}</div>
+    </section>
+    <section class="grid">
+      <a class="report-card" href="fundamentals_summary.html">
+        <div class="card-eyebrow">Market Screen</div>
+        <div class="card-title">Fundamentals</div>
+        <div class="card-copy">Valuation, dividend yield, dividend growth, and the full 10-year dividend table in a report-style HTML view.</div>
+        <div class="card-link">Open fundamentals</div>
+      </a>
+      <a class="report-card" href="account_reports/index.html">
+        <div class="card-eyebrow">Portfolio Planning</div>
+        <div class="card-title">Account Details</div>
+        <div class="card-copy">Account-level income, DRIP income, share count, and balance projections, with a master summary page and drill-down account reports.</div>
+        <div class="card-link">Open account reports</div>
+      </a>
+    </section>
+  </main>
+</body>
+</html>"""
+
+
+def main():
+    os.makedirs(os.path.dirname(OUTPUT_HTML), exist_ok=True)
+    with open(OUTPUT_HTML, "w", encoding="utf-8") as html_file:
+        html_file.write(render_html())
+    print(OUTPUT_HTML)
+
+
+if __name__ == "__main__":
+    main()

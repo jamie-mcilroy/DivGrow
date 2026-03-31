@@ -23,5 +23,6 @@ run_step "div_hist_account_shares.py"
 run_step "div_hist_account_drip_income.py"
 run_step "div_hist_account_balance.py"
 run_step "account_reports_html.py"
+run_step "output_index_html.py"
 
 echo "Investment pipeline completed."
