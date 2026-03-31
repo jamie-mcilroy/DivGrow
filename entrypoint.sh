@@ -12,6 +12,7 @@ run_step() {
 run_step "eps.py"
 run_step "bvps_yf.py"
 run_step "ben_graham.py"
+run_step "current_prices.py"
 run_step "div_hist_all.py"
 run_step "div_hist_yield.py"
 run_step "div_hist_summary.py"
