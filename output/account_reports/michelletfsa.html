@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MichelleTFSA Account Report</title>
+  <style>
+    :root {
+      --paper: #f6f1e7;
+      --ink: #12161d;
+      --muted: #5a6472;
+      --navy: #16263a;
+      --gold: #b8945b;
+      --line: rgba(18, 22, 29, 0.12);
+      --panel: rgba(255, 255, 255, 0.68);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184, 148, 91, 0.2), transparent 28%),
+        linear-gradient(180deg, #efe4d0 0%, var(--paper) 35%, #f8f5ee 100%);
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .page {
+      width: min(1440px, calc(100vw - 48px));
+      margin: 32px auto 48px;
+    }
+    .hero {
+      padding: 36px 40px 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(22, 38, 58, 0.96), rgba(18, 22, 29, 0.96));
+      color: #f7f2e8;
+      border-radius: 24px;
+      box-shadow: 0 24px 70px rgba(14, 18, 24, 0.18);
+    }
+    .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(247,242,232,0.68); margin-bottom: 14px; }
+    h1 { margin: 0; font-family: "Iowan Old Style", Georgia, serif; font-size: clamp(34px, 4vw, 54px); font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; }
+    .subhead { margin-top: 16px; color: rgba(247,242,232,0.8); font-size: 16px; line-height: 1.6; }
+    .timestamp { margin-top: 18px; color: rgba(247,242,232,0.6); font-size: 13px; }
+    .back-link { display: inline-block; margin-top: 18px; color: #f4dcc0; text-decoration: none; border-bottom: 1px solid rgba(244,220,192,0.4); }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 24px; }
+    .metric-card { min-height: 118px; padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); }
+    .metric-label { color: rgba(247,242,232,0.64); text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px; }
+    .metric-value { margin-top: 10px; font-size: 28px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
+    .section { margin-top: 24px; padding: 24px; border-radius: 24px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(26,32,44,0.08); }
+    .section h2 { margin: 0 0 8px; font-family: "Iowan Old Style", Georgia, serif; font-size: 28px; color: var(--navy); }
+    .section-copy { margin-bottom: 16px; color: var(--muted); font-size: 14px; }
+    .table-wrap { overflow: auto; max-height: 72vh; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,0.55); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { position: sticky; top: 0; background: #f4ecdf; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px; z-index: 1; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; position: sticky; background: inherit; }
+    th:first-child, td:first-child { left: 0; }
+    th:nth-child(2), td:nth-child(2) { left: 108px; }
+    tbody tr:nth-child(odd) { background: rgba(255,255,255,0.34); }
+    tbody tr:hover { background: rgba(184,148,91,0.08); }
+    .ticker { font-weight: 700; color: var(--navy); }
+    .total-row { background: rgba(22,38,58,0.08) !important; font-weight: 700; }
+    .empty-state { color: var(--muted); }
+    @media (max-width: 900px) {
+      .page { width: calc(100vw - 24px); margin: 12px auto 24px; }
+      .hero, .section { padding: 18px; border-radius: 18px; }
+      h1 { font-size: 36px; }
+      th:nth-child(2), td:nth-child(2) { left: 88px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">DivGrow Account Report</div>
+      <h1>MichelleTFSA</h1>
+      <div class="subhead">Account-level projection set covering income, shares, DRIP income, and balance outlook over the next 20 years.</div>
+      <div class="timestamp">Generated 2026-03-31 09:41</div>
+      <a class="back-link" href="index.html">Back to account summary</a>
+      <div class="metrics">
+        
+    <div class="metric-card">
+      <div class="metric-label">Holdings</div>
+      <div class="metric-value">6</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">Current Balance</div>
+      <div class="metric-value">101,174.26</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">Current Income</div>
+      <div class="metric-value">4,300.46</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">2033 Balance</div>
+      <div class="metric-value">162,095.17</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">2033 Income</div>
+      <div class="metric-value">6,282.32</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">5Y Income</div>
+      <div class="metric-value">4,540.15</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">20Y Balance</div>
+      <div class="metric-value">402,669.90</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">20Y Income</div>
+      <div class="metric-value">5,672.45</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">20Y DRIP Income</div>
+      <div class="metric-value">14,396.68</div>
+    </div>
+    
+      </div>
+    </section>
+    
+            <section class="section">
+              <h2>Projected Dividend Income</h2>
+              <div class="section-copy">Forward annual dividend income by symbol using the dividend growth model.</div>
+              
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th title='Account name from Holdings.csv.'>Account</th><th title='Holding ticker or TOTAL row.'>Symbol</th><th title='Starting share count.'>Quantity</th><th title='Dividend growth rate shown in the income projection file.'>Growth Rate 5Y</th><th title='Projected value for 2027.'>2027</th><th title='Projected value for 2028.'>2028</th><th title='Projected value for 2029.'>2029</th><th title='Projected value for 2030.'>2030</th><th title='Projected value for 2031.'>2031</th><th title='Projected value for 2032.'>2032</th><th title='Projected value for 2033.'>2033</th><th title='Projected value for 2034.'>2034</th><th title='Projected value for 2035.'>2035</th><th title='Projected value for 2036.'>2036</th><th title='Projected value for 2037.'>2037</th><th title='Projected value for 2038.'>2038</th><th title='Projected value for 2039.'>2039</th><th title='Projected value for 2040.'>2040</th><th title='Projected value for 2041.'>2041</th><th title='Projected value for 2042.'>2042</th><th title='Projected value for 2043.'>2043</th><th title='Projected value for 2044.'>2044</th><th title='Projected value for 2045.'>2045</th><th title='Projected value for 2046.'>2046</th></tr></thead>
+        <tbody>
+          <tr><td>MichelleTFSA</td><td class="ticker">CJ</td><td>3,137</td><td class="percent">0.0%</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td><td>2,258.64</td></tr><tr><td>MichelleTFSA</td><td class="ticker">CNQ</td><td>72</td><td class="percent">7.0%</td><td>193.79</td><td>207.40</td><td>221.96</td><td>237.54</td><td>254.21</td><td>272.06</td><td>291.16</td><td>311.59</td><td>333.47</td><td>356.88</td><td>381.93</td><td>408.74</td><td>437.44</td><td>468.14</td><td>501.01</td><td>536.18</td><td>573.82</td><td>614.10</td><td>657.21</td><td>703.35</td></tr><tr><td>MichelleTFSA</td><td class="ticker">CNR</td><td>88</td><td class="percent">3.5%</td><td>334.78</td><td>346.57</td><td>358.77</td><td>371.40</td><td>384.47</td><td>398.00</td><td>412.01</td><td>426.51</td><td>441.53</td><td>457.07</td><td>473.16</td><td>489.81</td><td>507.06</td><td>524.90</td><td>543.38</td><td>562.51</td><td>582.31</td><td>602.80</td><td>624.02</td><td>645.99</td></tr><tr><td>MichelleTFSA</td><td class="ticker">SOBO</td><td>42</td><td class="percent">0.0%</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td><td>84.00</td></tr><tr><td>MichelleTFSA</td><td class="ticker">TD</td><td>161</td><td class="percent">2.9%</td><td>715.41</td><td>735.87</td><td>756.92</td><td>778.57</td><td>800.83</td><td>823.74</td><td>847.30</td><td>871.53</td><td>896.45</td><td>922.09</td><td>948.47</td><td>975.59</td><td>1,003.49</td><td>1,032.19</td><td>1,061.71</td><td>1,092.08</td><td>1,123.31</td><td>1,155.44</td><td>1,188.48</td><td>1,222.48</td></tr><tr><td>MichelleTFSA</td><td class="ticker">TOU</td><td>379</td><td class="percent">0.0%</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td><td>758.00</td></tr><tr class='total-row'><td>MichelleTFSA</td><td class="ticker total">TOTAL</td><td></td><td></td><td>4,344.63</td><td>4,390.48</td><td>4,438.28</td><td>4,488.14</td><td>4,540.15</td><td>4,594.44</td><td>4,651.10</td><td>4,710.28</td><td>4,772.09</td><td>4,836.68</td><td>4,904.19</td><td>4,974.79</td><td>5,048.62</td><td>5,125.88</td><td>5,206.74</td><td>5,291.40</td><td>5,380.08</td><td>5,472.98</td><td>5,570.36</td><td>5,672.45</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+            </section>
+            
+            <section class="section">
+              <h2>Projected Share Counts</h2>
+              <div class="section-copy">Projected share counts under DRIP assumptions.</div>
+              
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th title='Account name from Holdings.csv.'>Account</th><th title='Holding ticker or TOTAL row.'>Symbol</th><th title='Starting share count before future projections.'>Starting Quantity</th><th title='Current price used in the projection.'>Price</th><th title='Current yield assumption for the holding.'>Yield</th><th title='Dividend growth rate used in the projection.'>Growth Rate Used</th><th title='Projected value for 2027.'>2027</th><th title='Projected value for 2028.'>2028</th><th title='Projected value for 2029.'>2029</th><th title='Projected value for 2030.'>2030</th><th title='Projected value for 2031.'>2031</th><th title='Projected value for 2032.'>2032</th><th title='Projected value for 2033.'>2033</th><th title='Projected value for 2034.'>2034</th><th title='Projected value for 2035.'>2035</th><th title='Projected value for 2036.'>2036</th><th title='Projected value for 2037.'>2037</th><th title='Projected value for 2038.'>2038</th><th title='Projected value for 2039.'>2039</th><th title='Projected value for 2040.'>2040</th><th title='Projected value for 2041.'>2041</th><th title='Projected value for 2042.'>2042</th><th title='Projected value for 2043.'>2043</th><th title='Projected value for 2044.'>2044</th><th title='Projected value for 2045.'>2045</th><th title='Projected value for 2046.'>2046</th></tr></thead>
+        <tbody>
+          <tr><td>MichelleTFSA</td><td class="ticker">CJ</td><td>3,137</td><td>11.30</td><td class="percent">6.4%</td><td class="percent">0.0%</td><td>3,336.83</td><td>3,549.38</td><td>3,775.48</td><td>4,015.98</td><td>4,271.79</td><td>4,543.91</td><td>4,833.35</td><td>5,141.24</td><td>5,468.74</td><td>5,817.09</td><td>6,187.64</td><td>6,581.80</td><td>7,001.06</td><td>7,447.02</td><td>7,921.40</td><td>8,425.99</td><td>8,962.73</td><td>9,533.65</td><td>10,140.95</td><td>10,786.93</td></tr><tr><td>MichelleTFSA</td><td class="ticker">CNQ</td><td>72</td><td>69.46</td><td class="percent">3.6%</td><td class="percent">7.0%</td><td>74.60</td><td>77.29</td><td>80.08</td><td>82.97</td><td>85.97</td><td>89.07</td><td>92.29</td><td>95.62</td><td>99.07</td><td>102.65</td><td>106.35</td><td>110.19</td><td>114.17</td><td>118.29</td><td>122.56</td><td>126.99</td><td>131.57</td><td>136.32</td><td>141.24</td><td>146.34</td></tr><tr><td>MichelleTFSA</td><td class="ticker">CNR</td><td>88</td><td>140.82</td><td class="percent">0.0%</td><td class="percent">3.5%</td><td>90.38</td><td>92.90</td><td>95.59</td><td>98.46</td><td>101.51</td><td>104.77</td><td>108.26</td><td>111.98</td><td>115.97</td><td>120.25</td><td>124.84</td><td>129.78</td><td>135.09</td><td>140.81</td><td>146.98</td><td>153.66</td><td>160.88</td><td>168.70</td><td>177.20</td><td>186.43</td></tr><tr><td>MichelleTFSA</td><td class="ticker">SOBO</td><td>42</td><td>47.49</td><td class="percent">5.8%</td><td class="percent">0.0%</td><td>44.44</td><td>47.02</td><td>49.75</td><td>52.64</td><td>55.70</td><td>58.94</td><td>62.36</td><td>65.99</td><td>69.82</td><td>73.88</td><td>78.17</td><td>82.71</td><td>87.52</td><td>92.60</td><td>97.98</td><td>103.68</td><td>109.70</td><td>116.07</td><td>122.82</td><td>129.95</td></tr><tr><td>MichelleTFSA</td><td class="ticker">TD</td><td>161</td><td>126.87</td><td class="percent">3.4%</td><td class="percent">2.9%</td><td>166.49</td><td>172.17</td><td>178.04</td><td>184.11</td><td>190.39</td><td>196.88</td><td>203.59</td><td>210.54</td><td>217.72</td><td>225.14</td><td>232.82</td><td>240.76</td><td>248.97</td><td>257.45</td><td>266.23</td><td>275.31</td><td>284.70</td><td>294.41</td><td>304.45</td><td>314.83</td></tr><tr><td>MichelleTFSA</td><td class="ticker">TOU</td><td>379</td><td>68.37</td><td class="percent">4.8%</td><td class="percent">0.0%</td><td>397.31</td><td>416.50</td><td>436.61</td><td>457.70</td><td>479.81</td><td>502.98</td><td>527.28</td><td>552.74</td><td>579.44</td><td>607.43</td><td>636.77</td><td>667.52</td><td>699.76</td><td>733.56</td><td>768.99</td><td>806.14</td><td>845.07</td><td>885.89</td><td>928.68</td><td>973.53</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+            </section>
+            
+            <section class="section">
+              <h2>Projected DRIP Income</h2>
+              <div class="section-copy">Forward annual dividend income after reinvestment increases the share base.</div>
+              
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th title='Account name from Holdings.csv.'>Account</th><th title='Holding ticker or TOTAL row.'>Symbol</th><th title='Starting share count before future projections.'>Starting Quantity</th><th title='Current price used in the projection.'>Price</th><th title='Current yield assumption for the holding.'>Yield</th><th title='Dividend growth rate used in the projection.'>Growth Rate Used</th><th title='Projected value for 2027.'>2027</th><th title='Projected value for 2028.'>2028</th><th title='Projected value for 2029.'>2029</th><th title='Projected value for 2030.'>2030</th><th title='Projected value for 2031.'>2031</th><th title='Projected value for 2032.'>2032</th><th title='Projected value for 2033.'>2033</th><th title='Projected value for 2034.'>2034</th><th title='Projected value for 2035.'>2035</th><th title='Projected value for 2036.'>2036</th><th title='Projected value for 2037.'>2037</th><th title='Projected value for 2038.'>2038</th><th title='Projected value for 2039.'>2039</th><th title='Projected value for 2040.'>2040</th><th title='Projected value for 2041.'>2041</th><th title='Projected value for 2042.'>2042</th><th title='Projected value for 2043.'>2043</th><th title='Projected value for 2044.'>2044</th><th title='Projected value for 2045.'>2045</th><th title='Projected value for 2046.'>2046</th></tr></thead>
+        <tbody>
+          <tr><td>MichelleTFSA</td><td class="ticker">CJ</td><td>3,137</td><td>11.30</td><td class="percent">6.4%</td><td class="percent">0.0%</td><td>2,258.64</td><td>2,402.52</td><td>2,555.56</td><td>2,718.34</td><td>2,891.50</td><td>3,075.69</td><td>3,271.61</td><td>3,480.02</td><td>3,701.69</td><td>3,937.49</td><td>4,188.31</td><td>4,455.10</td><td>4,738.89</td><td>5,040.76</td><td>5,361.86</td><td>5,703.41</td><td>6,066.71</td><td>6,453.16</td><td>6,864.23</td><td>7,301.48</td></tr><tr><td>MichelleTFSA</td><td class="ticker">CNQ</td><td>72</td><td>69.46</td><td class="percent">3.6%</td><td class="percent">7.0%</td><td>193.79</td><td>214.88</td><td>238.27</td><td>264.20</td><td>292.96</td><td>324.84</td><td>360.19</td><td>399.39</td><td>442.86</td><td>491.06</td><td>544.50</td><td>603.77</td><td>669.48</td><td>742.34</td><td>823.13</td><td>912.71</td><td>1,012.05</td><td>1,122.19</td><td>1,244.33</td><td>1,379.75</td></tr><tr><td>MichelleTFSA</td><td class="ticker">CNR</td><td>88</td><td>140.82</td><td class="percent">0.0%</td><td class="percent">3.5%</td><td>334.78</td><td>355.93</td><td>378.76</td><td>403.45</td><td>430.17</td><td>459.12</td><td>490.55</td><td>524.70</td><td>561.87</td><td>602.37</td><td>646.57</td><td>694.89</td><td>747.78</td><td>805.78</td><td>869.47</td><td>939.54</td><td>1,016.76</td><td>1,102.01</td><td>1,196.30</td><td>1,300.77</td></tr><tr><td>MichelleTFSA</td><td class="ticker">SOBO</td><td>42</td><td>47.49</td><td class="percent">5.8%</td><td class="percent">0.0%</td><td>84.00</td><td>88.88</td><td>94.04</td><td>99.51</td><td>105.29</td><td>111.41</td><td>117.88</td><td>124.73</td><td>131.98</td><td>139.64</td><td>147.76</td><td>156.34</td><td>165.42</td><td>175.04</td><td>185.21</td><td>195.97</td><td>207.35</td><td>219.40</td><td>232.15</td><td>245.63</td></tr><tr><td>MichelleTFSA</td><td class="ticker">TD</td><td>161</td><td>126.87</td><td class="percent">3.4%</td><td class="percent">2.9%</td><td>715.41</td><td>760.97</td><td>809.42</td><td>860.96</td><td>915.78</td><td>974.10</td><td>1,036.12</td><td>1,102.10</td><td>1,172.27</td><td>1,246.92</td><td>1,326.32</td><td>1,410.77</td><td>1,500.60</td><td>1,596.15</td><td>1,697.79</td><td>1,805.89</td><td>1,920.88</td><td>2,043.20</td><td>2,173.30</td><td>2,311.68</td></tr><tr><td>MichelleTFSA</td><td class="ticker">TOU</td><td>379</td><td>68.37</td><td class="percent">4.8%</td><td class="percent">0.0%</td><td>758.00</td><td>794.61</td><td>832.99</td><td>873.22</td><td>915.40</td><td>959.62</td><td>1,005.96</td><td>1,054.55</td><td>1,105.49</td><td>1,158.88</td><td>1,214.86</td><td>1,273.53</td><td>1,335.05</td><td>1,399.53</td><td>1,467.13</td><td>1,537.99</td><td>1,612.27</td><td>1,690.15</td><td>1,771.78</td><td>1,857.36</td></tr><tr class='total-row'><td>MichelleTFSA</td><td class="ticker total">TOTAL</td><td></td><td></td><td></td><td></td><td>4,344.63</td><td>4,617.79</td><td>4,909.05</td><td>5,219.69</td><td>5,551.10</td><td>5,904.77</td><td>6,282.32</td><td>6,685.49</td><td>7,116.16</td><td>7,576.36</td><td>8,068.31</td><td>8,594.40</td><td>9,157.22</td><td>9,759.59</td><td>10,404.57</td><td>11,095.51</td><td>11,836.04</td><td>12,630.11</td><td>13,482.08</td><td>14,396.68</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+            </section>
+            
+            <section class="section">
+              <h2>Projected Account Balance</h2>
+              <div class="section-copy">Projected account value using DRIP share growth and conservative price appreciation.</div>
+              
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th title='Account name from Holdings.csv.'>Account</th><th title='Holding ticker or TOTAL row.'>Symbol</th><th title='Starting share count before future projections.'>Starting Quantity</th><th title='Current price used in the projection.'>Current Price</th><th title='Current yield assumption for the holding.'>Yield</th><th title='Dividend growth rate used in the projection.'>Growth Rate Used</th><th title='Current market value before future projections.'>Current Balance</th><th title='Annual price appreciation assumption used in balance projections.'>Price Growth Assumption</th><th title='Projected value for 2027.'>2027</th><th title='Projected value for 2028.'>2028</th><th title='Projected value for 2029.'>2029</th><th title='Projected value for 2030.'>2030</th><th title='Projected value for 2031.'>2031</th><th title='Projected value for 2032.'>2032</th><th title='Projected value for 2033.'>2033</th><th title='Projected value for 2034.'>2034</th><th title='Projected value for 2035.'>2035</th><th title='Projected value for 2036.'>2036</th><th title='Projected value for 2037.'>2037</th><th title='Projected value for 2038.'>2038</th><th title='Projected value for 2039.'>2039</th><th title='Projected value for 2040.'>2040</th><th title='Projected value for 2041.'>2041</th><th title='Projected value for 2042.'>2042</th><th title='Projected value for 2043.'>2043</th><th title='Projected value for 2044.'>2044</th><th title='Projected value for 2045.'>2045</th><th title='Projected value for 2046.'>2046</th></tr></thead>
+        <tbody>
+          <tr><td>MichelleTFSA</td><td class="ticker">CJ</td><td>3,137</td><td>11.30</td><td class="percent">6.4%</td><td class="percent">0.0%</td><td>35,448.10</td><td class="percent">2.0%</td><td>38,460.27</td><td>41,728.39</td><td>45,274.22</td><td>49,121.35</td><td>53,295.39</td><td>57,824.11</td><td>62,737.65</td><td>68,068.72</td><td>73,852.80</td><td>80,128.36</td><td>86,937.19</td><td>94,324.59</td><td>102,339.73</td><td>111,035.95</td><td>120,471.11</td><td>130,708.03</td><td>141,814.81</td><td>153,865.38</td><td>166,939.94</td><td>181,125.49</td></tr><tr><td>MichelleTFSA</td><td class="ticker">CNQ</td><td>72</td><td>69.46</td><td class="percent">3.6%</td><td class="percent">7.0%</td><td>5,001.12</td><td class="percent">2.0%</td><td>5,285.29</td><td>5,585.61</td><td>5,903.00</td><td>6,238.42</td><td>6,592.90</td><td>6,967.52</td><td>7,363.43</td><td>7,781.84</td><td>8,224.01</td><td>8,691.32</td><td>9,185.18</td><td>9,707.10</td><td>10,258.67</td><td>10,841.59</td><td>11,457.63</td><td>12,108.68</td><td>12,796.72</td><td>13,523.85</td><td>14,292.31</td><td>15,104.42</td></tr><tr><td>MichelleTFSA</td><td class="ticker">CNR</td><td>88</td><td>140.82</td><td class="percent">0.0%</td><td class="percent">3.5%</td><td>12,392.16</td><td class="percent">2.0%</td><td>12,981.48</td><td>13,611.42</td><td>14,285.60</td><td>15,008.02</td><td>15,783.12</td><td>16,615.83</td><td>17,511.63</td><td>18,476.64</td><td>19,517.65</td><td>20,642.29</td><td>21,859.06</td><td>23,177.53</td><td>24,608.41</td><td>26,163.78</td><td>27,857.25</td><td>29,704.19</td><td>31,721.99</td><td>33,930.37</td><td>36,351.76</td><td>39,011.67</td></tr><tr><td>MichelleTFSA</td><td class="ticker">SOBO</td><td>42</td><td>47.49</td><td class="percent">5.8%</td><td class="percent">0.0%</td><td>1,994.58</td><td class="percent">2.0%</td><td>2,152.67</td><td>2,323.30</td><td>2,507.45</td><td>2,706.19</td><td>2,920.69</td><td>3,152.19</td><td>3,402.04</td><td>3,671.69</td><td>3,962.72</td><td>4,276.81</td><td>4,615.80</td><td>4,981.66</td><td>5,376.52</td><td>5,802.67</td><td>6,262.60</td><td>6,758.99</td><td>7,294.72</td><td>7,872.91</td><td>8,496.94</td><td>9,170.42</td></tr><tr><td>MichelleTFSA</td><td class="ticker">TD</td><td>161</td><td>126.87</td><td class="percent">3.4%</td><td class="percent">2.9%</td><td>20,426.07</td><td class="percent">2.0%</td><td>21,545.05</td><td>22,725.33</td><td>23,970.27</td><td>25,283.41</td><td>26,668.49</td><td>28,129.44</td><td>29,670.43</td><td>31,295.83</td><td>33,010.28</td><td>34,818.65</td><td>36,726.08</td><td>38,738.01</td><td>40,860.16</td><td>43,098.56</td><td>45,459.58</td><td>47,949.95</td><td>50,576.75</td><td>53,347.44</td><td>56,269.92</td><td>59,352.50</td></tr><tr><td>MichelleTFSA</td><td class="ticker">TOU</td><td>379</td><td>68.37</td><td class="percent">4.8%</td><td class="percent">0.0%</td><td>25,912.23</td><td class="percent">2.0%</td><td>27,707.07</td><td>29,626.22</td><td>31,678.31</td><td>33,872.54</td><td>36,218.76</td><td>38,727.49</td><td>41,409.99</td><td>44,278.29</td><td>47,345.27</td><td>50,624.69</td><td>54,131.26</td><td>57,880.71</td><td>61,889.88</td><td>66,176.74</td><td>70,760.54</td><td>75,661.84</td><td>80,902.64</td><td>86,506.44</td><td>92,498.39</td><td>98,905.39</td></tr><tr class='total-row'><td>MichelleTFSA</td><td class="ticker total">TOTAL</td><td></td><td></td><td></td><td></td><td>101,174.26</td><td class="percent">2.0%</td><td>108,131.83</td><td>115,600.28</td><td>123,618.85</td><td>132,229.94</td><td>141,479.34</td><td>151,416.58</td><td>162,095.17</td><td>173,573.01</td><td>185,912.73</td><td>199,182.12</td><td>213,454.58</td><td>228,809.60</td><td>245,333.37</td><td>263,119.29</td><td>282,268.73</td><td>302,891.68</td><td>325,107.62</td><td>349,046.40</td><td>374,849.26</td><td>402,669.90</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+            </section>
+            
+  </main>
+</body>
+</html>

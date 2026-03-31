@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account Projection Reports</title>
+  <style>
+    :root {
+      --paper: #f6f1e7;
+      --ink: #12161d;
+      --muted: #5a6472;
+      --navy: #16263a;
+      --gold: #b8945b;
+      --line: rgba(18, 22, 29, 0.12);
+      --panel: rgba(255, 255, 255, 0.68);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184, 148, 91, 0.2), transparent 28%),
+        linear-gradient(180deg, #efe4d0 0%, var(--paper) 35%, #f8f5ee 100%);
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .page { width: min(1440px, calc(100vw - 48px)); margin: 32px auto 48px; }
+    .hero { padding: 36px 40px 30px; border: 1px solid var(--line); background: linear-gradient(135deg, rgba(22, 38, 58, 0.96), rgba(18, 22, 29, 0.96)); color: #f7f2e8; border-radius: 24px; box-shadow: 0 24px 70px rgba(14,18,24,0.18); }
+    .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(247,242,232,0.68); margin-bottom: 14px; }
+    h1 { margin: 0; font-family: "Iowan Old Style", Georgia, serif; font-size: clamp(36px, 5vw, 58px); line-height: 0.95; letter-spacing: -0.03em; }
+    .subhead { margin-top: 16px; max-width: 820px; color: rgba(247,242,232,0.8); font-size: 16px; line-height: 1.6; }
+    .timestamp { margin-top: 18px; color: rgba(247,242,232,0.6); font-size: 13px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 24px; }
+    .account-card { display: block; padding: 22px; border-radius: 24px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(26,32,44,0.08); text-decoration: none; color: inherit; transition: transform 120ms ease, box-shadow 120ms ease; }
+    .account-card:hover { transform: translateY(-2px); box-shadow: 0 16px 50px rgba(26,32,44,0.12); }
+    .card-top { margin-bottom: 18px; }
+    .card-eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px; color: var(--muted); }
+    .card-title { margin-top: 8px; font-family: "Iowan Old Style", Georgia, serif; font-size: 30px; color: var(--navy); }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+    .card-grid span { display: block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .card-grid strong { display: block; margin-top: 5px; font-size: 22px; letter-spacing: -0.03em; color: var(--ink); }
+    @media (max-width: 900px) {
+      .page { width: calc(100vw - 24px); margin: 12px auto 24px; }
+      .hero { padding: 18px; border-radius: 18px; }
+      h1 { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">DivGrow Account Reports</div>
+      <h1>Projection Book</h1>
+      <div class="subhead">Master summary of the generated account projection files. Each card links into a dedicated account page with income, share, DRIP income, and balance tables.</div>
+      <div class="timestamp">Generated 2026-03-31 09:41</div>
+    </section>
+    <section class="grid">
+      
+            <a class="account-card" href="all-investments.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">All Investments</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>43</strong></div>
+                <div><span>Current Balance</span><strong>$2,629,265</strong></div>
+                <div><span>Current Income</span><strong>$109,927</strong></div>
+                <div><span>2033 Balance</span><strong>$4,080,163</strong></div>
+                <div><span>2033 Income</span><strong>$180,401</strong></div>
+                <div><span>5Y Income</span><strong>$129,387</strong></div>
+                <div><span>20Y Balance</span><strong>$9,342,288</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$512,255</strong></div>
+              </div>
+            </a>
+            
+            <a class="account-card" href="masterretirement.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">MasterRetirement</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>17</strong></div>
+                <div><span>Current Balance</span><strong>$1,735,595</strong></div>
+                <div><span>Current Income</span><strong>$71,669</strong></div>
+                <div><span>2033 Balance</span><strong>$2,685,527</strong></div>
+                <div><span>2033 Income</span><strong>$118,295</strong></div>
+                <div><span>5Y Income</span><strong>$84,942</strong></div>
+                <div><span>20Y Balance</span><strong>$6,107,921</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$339,532</strong></div>
+              </div>
+            </a>
+            
+            <a class="account-card" href="jamiersp.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">JamieRSP</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>9</strong></div>
+                <div><span>Current Balance</span><strong>$1,201,870</strong></div>
+                <div><span>Current Income</span><strong>$49,694</strong></div>
+                <div><span>2033 Balance</span><strong>$1,862,075</strong></div>
+                <div><span>2033 Income</span><strong>$81,223</strong></div>
+                <div><span>5Y Income</span><strong>$58,435</strong></div>
+                <div><span>20Y Balance</span><strong>$4,245,267</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$228,505</strong></div>
+              </div>
+            </a>
+            
+            <a class="account-card" href="michellersp.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">MichelleRSP</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>8</strong></div>
+                <div><span>Current Balance</span><strong>$533,726</strong></div>
+                <div><span>Current Income</span><strong>$21,976</strong></div>
+                <div><span>2033 Balance</span><strong>$823,452</strong></div>
+                <div><span>2033 Income</span><strong>$37,072</strong></div>
+                <div><span>5Y Income</span><strong>$26,507</strong></div>
+                <div><span>20Y Balance</span><strong>$1,862,654</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$111,027</strong></div>
+              </div>
+            </a>
+            
+            <a class="account-card" href="michelletfsa.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">MichelleTFSA</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>6</strong></div>
+                <div><span>Current Balance</span><strong>$101,174</strong></div>
+                <div><span>Current Income</span><strong>$4,300</strong></div>
+                <div><span>2033 Balance</span><strong>$162,095</strong></div>
+                <div><span>2033 Income</span><strong>$6,282</strong></div>
+                <div><span>5Y Income</span><strong>$4,540</strong></div>
+                <div><span>20Y Balance</span><strong>$402,670</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$14,397</strong></div>
+              </div>
+            </a>
+            
+            <a class="account-card" href="resp.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">RESP</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>9</strong></div>
+                <div><span>Current Balance</span><strong>$425,176</strong></div>
+                <div><span>Current Income</span><strong>$18,889</strong></div>
+                <div><span>2033 Balance</span><strong>$663,510</strong></div>
+                <div><span>2033 Income</span><strong>$30,933</strong></div>
+                <div><span>5Y Income</span><strong>$22,153</strong></div>
+                <div><span>20Y Balance</span><strong>$1,528,434</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$85,451</strong></div>
+              </div>
+            </a>
+            
+            <a class="account-card" href="jamiecash.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">JamieCash</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>4</strong></div>
+                <div><span>Current Balance</span><strong>$225,428</strong></div>
+                <div><span>Current Income</span><strong>$7,677</strong></div>
+                <div><span>2033 Balance</span><strong>$335,361</strong></div>
+                <div><span>2033 Income</span><strong>$13,351</strong></div>
+                <div><span>5Y Income</span><strong>$9,643</strong></div>
+                <div><span>20Y Balance</span><strong>$707,103</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$43,376</strong></div>
+              </div>
+            </a>
+            
+            <a class="account-card" href="michellecash.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">MichelleCash</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>2</strong></div>
+                <div><span>Current Balance</span><strong>$19,789</strong></div>
+                <div><span>Current Income</span><strong>$1,251</strong></div>
+                <div><span>2033 Balance</span><strong>$34,976</strong></div>
+                <div><span>2033 Income</span><strong>$1,812</strong></div>
+                <div><span>5Y Income</span><strong>$1,251</strong></div>
+                <div><span>20Y Balance</span><strong>$100,758</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$4,039</strong></div>
+              </div>
+            </a>
+            
+            <a class="account-card" href="jamietfsac.html">
+              <div class="card-top">
+                <div class="card-eyebrow">Account</div>
+                <div class="card-title">JamieTFSAC</div>
+              </div>
+              <div class="card-grid">
+                <div><span>Holdings</span><strong>5</strong></div>
+                <div><span>Current Balance</span><strong>$122,102</strong></div>
+                <div><span>Current Income</span><strong>$6,140</strong></div>
+                <div><span>2033 Balance</span><strong>$198,695</strong></div>
+                <div><span>2033 Income</span><strong>$9,728</strong></div>
+                <div><span>5Y Income</span><strong>$6,858</strong></div>
+                <div><span>20Y Balance</span><strong>$495,402</strong></div>
+                <div><span>20Y DRIP Income</span><strong>$25,460</strong></div>
+              </div>
+            </a>
+            
+    </section>
+  </main>
+</body>
+</html>

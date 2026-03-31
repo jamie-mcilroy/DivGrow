@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JamieRSP Account Report</title>
+  <style>
+    :root {
+      --paper: #f6f1e7;
+      --ink: #12161d;
+      --muted: #5a6472;
+      --navy: #16263a;
+      --gold: #b8945b;
+      --line: rgba(18, 22, 29, 0.12);
+      --panel: rgba(255, 255, 255, 0.68);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184, 148, 91, 0.2), transparent 28%),
+        linear-gradient(180deg, #efe4d0 0%, var(--paper) 35%, #f8f5ee 100%);
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .page {
+      width: min(1440px, calc(100vw - 48px));
+      margin: 32px auto 48px;
+    }
+    .hero {
+      padding: 36px 40px 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(22, 38, 58, 0.96), rgba(18, 22, 29, 0.96));
+      color: #f7f2e8;
+      border-radius: 24px;
+      box-shadow: 0 24px 70px rgba(14, 18, 24, 0.18);
+    }
+    .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(247,242,232,0.68); margin-bottom: 14px; }
+    h1 { margin: 0; font-family: "Iowan Old Style", Georgia, serif; font-size: clamp(34px, 4vw, 54px); font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; }
+    .subhead { margin-top: 16px; color: rgba(247,242,232,0.8); font-size: 16px; line-height: 1.6; }
+    .timestamp { margin-top: 18px; color: rgba(247,242,232,0.6); font-size: 13px; }
+    .back-link { display: inline-block; margin-top: 18px; color: #f4dcc0; text-decoration: none; border-bottom: 1px solid rgba(244,220,192,0.4); }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 24px; }
+    .metric-card { min-height: 118px; padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); }
+    .metric-label { color: rgba(247,242,232,0.64); text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px; }
+    .metric-value { margin-top: 10px; font-size: 28px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
+    .section { margin-top: 24px; padding: 24px; border-radius: 24px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(26,32,44,0.08); }
+    .section h2 { margin: 0 0 8px; font-family: "Iowan Old Style", Georgia, serif; font-size: 28px; color: var(--navy); }
+    .section-copy { margin-bottom: 16px; color: var(--muted); font-size: 14px; }
+    .table-wrap { overflow: auto; max-height: 72vh; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,0.55); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { position: sticky; top: 0; background: #f4ecdf; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px; z-index: 1; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; position: sticky; background: inherit; }
+    th:first-child, td:first-child { left: 0; }
+    th:nth-child(2), td:nth-child(2) { left: 108px; }
+    tbody tr:nth-child(odd) { background: rgba(255,255,255,0.34); }
+    tbody tr:hover { background: rgba(184,148,91,0.08); }
+    .ticker { font-weight: 700; color: var(--navy); }
+    .total-row { background: rgba(22,38,58,0.08) !important; font-weight: 700; }
+    .empty-state { color: var(--muted); }
+    @media (max-width: 900px) {
+      .page { width: calc(100vw - 24px); margin: 12px auto 24px; }
+      .hero, .section { padding: 18px; border-radius: 18px; }
+      h1 { font-size: 36px; }
+      th:nth-child(2), td:nth-child(2) { left: 88px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">DivGrow Account Report</div>
+      <h1>JamieRSP</h1>
+      <div class="subhead">Account-level projection set covering income, shares, DRIP income, and balance outlook over the next 20 years.</div>
+      <div class="timestamp">Generated 2026-03-31 09:41</div>
+      <a class="back-link" href="index.html">Back to account summary</a>
+      <div class="metrics">
+        
+    <div class="metric-card">
+      <div class="metric-label">Holdings</div>
+      <div class="metric-value">9</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">Current Balance</div>
+      <div class="metric-value">1,201,869.67</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">Current Income</div>
+      <div class="metric-value">49,693.58</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">2033 Balance</div>
+      <div class="metric-value">1,862,075.03</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">2033 Income</div>
+      <div class="metric-value">81,222.59</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">5Y Income</div>
+      <div class="metric-value">58,434.52</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">20Y Balance</div>
+      <div class="metric-value">4,245,267.11</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">20Y Income</div>
+      <div class="metric-value">102,611.58</div>
+    </div>
+    
+        
+    <div class="metric-card">
+      <div class="metric-label">20Y DRIP Income</div>
+      <div class="metric-value">228,505.28</div>
+    </div>
+    
+      </div>
+    </section>
+    
+            <section class="section">
+              <h2>Projected Dividend Income</h2>
+              <div class="section-copy">Forward annual dividend income by symbol using the dividend growth model.</div>
+              
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th title='Account name from Holdings.csv.'>Account</th><th title='Holding ticker or TOTAL row.'>Symbol</th><th title='Starting share count.'>Quantity</th><th title='Dividend growth rate shown in the income projection file.'>Growth Rate 5Y</th><th title='Projected value for 2027.'>2027</th><th title='Projected value for 2028.'>2028</th><th title='Projected value for 2029.'>2029</th><th title='Projected value for 2030.'>2030</th><th title='Projected value for 2031.'>2031</th><th title='Projected value for 2032.'>2032</th><th title='Projected value for 2033.'>2033</th><th title='Projected value for 2034.'>2034</th><th title='Projected value for 2035.'>2035</th><th title='Projected value for 2036.'>2036</th><th title='Projected value for 2037.'>2037</th><th title='Projected value for 2038.'>2038</th><th title='Projected value for 2039.'>2039</th><th title='Projected value for 2040.'>2040</th><th title='Projected value for 2041.'>2041</th><th title='Projected value for 2042.'>2042</th><th title='Projected value for 2043.'>2043</th><th title='Projected value for 2044.'>2044</th><th title='Projected value for 2045.'>2045</th><th title='Projected value for 2046.'>2046</th></tr></thead>
+        <tbody>
+          <tr><td>JamieRSP</td><td class="ticker">BNS</td><td>139</td><td class="percent">1.8%</td><td>622.91</td><td>634.44</td><td>646.18</td><td>658.13</td><td>670.31</td><td>682.71</td><td>695.34</td><td>708.20</td><td>721.30</td><td>734.65</td><td>748.24</td><td>762.08</td><td>776.18</td><td>790.54</td><td>805.16</td><td>820.06</td><td>835.23</td><td>850.68</td><td>866.42</td><td>882.45</td></tr><tr><td>JamieRSP</td><td class="ticker">CJ</td><td>8,398</td><td class="percent">0.0%</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td><td>6,046.56</td></tr><tr><td>JamieRSP</td><td class="ticker">CNQ</td><td>4,145</td><td class="percent">7.0%</td><td>11,156.49</td><td>11,939.67</td><td>12,777.84</td><td>13,674.84</td><td>14,634.82</td><td>15,662.18</td><td>16,761.66</td><td>17,938.33</td><td>19,197.60</td><td>20,545.28</td><td>21,987.55</td><td>23,531.08</td><td>25,182.96</td><td>26,950.81</td><td>28,842.75</td><td>30,867.52</td><td>33,034.41</td><td>35,353.43</td><td>37,835.24</td><td>40,491.28</td></tr><tr><td>JamieRSP</td><td class="ticker">CNR</td><td>69</td><td class="percent">3.5%</td><td>262.50</td><td>271.74</td><td>281.31</td><td>291.21</td><td>301.46</td><td>312.07</td><td>323.05</td><td>334.43</td><td>346.20</td><td>358.38</td><td>371.00</td><td>384.06</td><td>397.58</td><td>411.57</td><td>426.06</td><td>441.06</td><td>456.58</td><td>472.65</td><td>489.29</td><td>506.51</td></tr><tr><td>JamieRSP</td><td class="ticker">ENB</td><td>4,175</td><td class="percent">2.9%</td><td>16,672.01</td><td>17,158.83</td><td>17,659.87</td><td>18,175.54</td><td>18,706.27</td><td>19,252.49</td><td>19,814.66</td><td>20,393.25</td><td>20,988.73</td><td>21,601.60</td><td>22,232.37</td><td>22,881.56</td><td>23,549.70</td><td>24,237.35</td><td>24,945.08</td><td>25,673.47</td><td>26,423.14</td><td>27,194.70</td><td>27,988.78</td><td>28,806.05</td></tr><tr><td>JamieRSP</td><td class="ticker">SOBO</td><td>156</td><td class="percent">0.0%</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td><td>312.00</td></tr><tr><td>JamieRSP</td><td class="ticker">TD</td><td>2,190</td><td class="percent">2.9%</td><td>9,731.38</td><td>10,009.70</td><td>10,295.97</td><td>10,590.44</td><td>10,893.33</td><td>11,204.87</td><td>11,525.33</td><td>11,854.96</td><td>12,194.01</td><td>12,542.76</td><td>12,901.48</td><td>13,270.46</td><td>13,650.00</td><td>14,040.39</td><td>14,441.94</td><td>14,854.98</td><td>15,279.84</td><td>15,716.84</td><td>16,166.34</td><td>16,628.70</td></tr><tr><td>JamieRSP</td><td class="ticker">TOU</td><td>1,887</td><td class="percent">0.0%</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td><td>3,774.00</td></tr><tr><td>JamieRSP</td><td class="ticker">TRP</td><td>742</td><td class="percent">3.5%</td><td>2,700.94</td><td>2,794.66</td><td>2,891.63</td><td>2,991.97</td><td>3,095.79</td><td>3,203.22</td><td>3,314.37</td><td>3,429.38</td><td>3,548.38</td><td>3,671.51</td><td>3,798.91</td><td>3,930.73</td><td>4,067.13</td><td>4,208.25</td><td>4,354.28</td><td>4,505.37</td><td>4,661.71</td><td>4,823.47</td><td>4,990.85</td><td>5,164.03</td></tr><tr class='total-row'><td>JamieRSP</td><td class="ticker total">TOTAL</td><td></td><td></td><td>51,278.79</td><td>52,941.60</td><td>54,685.36</td><td>56,514.69</td><td>58,434.52</td><td>60,450.10</td><td>62,566.98</td><td>64,791.10</td><td>67,128.78</td><td>69,586.73</td><td>72,172.11</td><td>74,892.53</td><td>77,756.10</td><td>80,771.47</td><td>83,947.84</td><td>87,295.02</td><td>90,823.47</td><td>94,544.33</td><td>98,469.48</td><td>102,611.58</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+            </section>
+            
+            <section class="section">
+              <h2>Projected Share Counts</h2>
+              <div class="section-copy">Projected share counts under DRIP assumptions.</div>
+              
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th title='Account name from Holdings.csv.'>Account</th><th title='Holding ticker or TOTAL row.'>Symbol</th><th title='Starting share count before future projections.'>Starting Quantity</th><th title='Current price used in the projection.'>Price</th><th title='Current yield assumption for the holding.'>Yield</th><th title='Dividend growth rate used in the projection.'>Growth Rate Used</th><th title='Projected value for 2027.'>2027</th><th title='Projected value for 2028.'>2028</th><th title='Projected value for 2029.'>2029</th><th title='Projected value for 2030.'>2030</th><th title='Projected value for 2031.'>2031</th><th title='Projected value for 2032.'>2032</th><th title='Projected value for 2033.'>2033</th><th title='Projected value for 2034.'>2034</th><th title='Projected value for 2035.'>2035</th><th title='Projected value for 2036.'>2036</th><th title='Projected value for 2037.'>2037</th><th title='Projected value for 2038.'>2038</th><th title='Projected value for 2039.'>2039</th><th title='Projected value for 2040.'>2040</th><th title='Projected value for 2041.'>2041</th><th title='Projected value for 2042.'>2042</th><th title='Projected value for 2043.'>2043</th><th title='Projected value for 2044.'>2044</th><th title='Projected value for 2045.'>2045</th><th title='Projected value for 2046.'>2046</th></tr></thead>
+        <tbody>
+          <tr><td>JamieRSP</td><td class="ticker">BNS</td><td>139</td><td>94.09</td><td class="percent">4.7%</td><td class="percent">1.8%</td><td>145.51</td><td>152.31</td><td>159.44</td><td>166.91</td><td>174.72</td><td>182.89</td><td>191.45</td><td>200.41</td><td>209.79</td><td>219.61</td><td>229.89</td><td>240.65</td><td>251.91</td><td>263.70</td><td>276.04</td><td>288.96</td><td>302.48</td><td>316.64</td><td>331.46</td><td>346.97</td></tr><tr><td>JamieRSP</td><td class="ticker">CJ</td><td>8,398</td><td>11.30</td><td class="percent">6.4%</td><td class="percent">0.0%</td><td>8,932.95</td><td>9,501.98</td><td>10,107.26</td><td>10,751.09</td><td>11,435.93</td><td>12,164.40</td><td>12,939.28</td><td>13,763.51</td><td>14,640.24</td><td>15,572.83</td><td>16,564.82</td><td>17,619.99</td><td>18,742.39</td><td>19,936.28</td><td>21,206.22</td><td>22,557.06</td><td>23,993.94</td><td>25,522.35</td><td>27,148.13</td><td>28,877.46</td></tr><tr><td>JamieRSP</td><td class="ticker">CNQ</td><td>4,145</td><td>69.46</td><td class="percent">3.6%</td><td class="percent">7.0%</td><td>4,294.63</td><td>4,449.67</td><td>4,610.30</td><td>4,776.74</td><td>4,949.18</td><td>5,127.84</td><td>5,312.96</td><td>5,504.75</td><td>5,703.48</td><td>5,909.37</td><td>6,122.70</td><td>6,343.73</td><td>6,572.74</td><td>6,810.01</td><td>7,055.85</td><td>7,310.57</td><td>7,574.48</td><td>7,847.92</td><td>8,131.23</td><td>8,424.77</td></tr><tr><td>JamieRSP</td><td class="ticker">CNR</td><td>69</td><td>140.82</td><td class="percent">2.6%</td><td class="percent">3.5%</td><td>70.79</td><td>72.63</td><td>74.52</td><td>76.46</td><td>78.45</td><td>80.49</td><td>82.58</td><td>84.73</td><td>86.93</td><td>89.19</td><td>91.51</td><td>93.89</td><td>96.33</td><td>98.84</td><td>101.41</td><td>104.04</td><td>106.75</td><td>109.52</td><td>112.37</td><td>115.29</td></tr><tr><td>JamieRSP</td><td class="ticker">ENB</td><td>4,175</td><td>75.83</td><td class="percent">5.1%</td><td class="percent">2.9%</td><td>4,388.76</td><td>4,613.46</td><td>4,849.67</td><td>5,097.98</td><td>5,358.99</td><td>5,633.37</td><td>5,921.80</td><td>6,225.00</td><td>6,543.72</td><td>6,878.76</td><td>7,230.95</td><td>7,601.17</td><td>7,990.35</td><td>8,399.46</td><td>8,829.51</td><td>9,281.58</td><td>9,756.80</td><td>10,256.35</td><td>10,781.47</td><td>11,333.49</td></tr><tr><td>JamieRSP</td><td class="ticker">SOBO</td><td>156</td><td>47.49</td><td class="percent">5.8%</td><td class="percent">0.0%</td><td>165.06</td><td>174.65</td><td>184.80</td><td>195.54</td><td>206.90</td><td>218.92</td><td>231.64</td><td>245.10</td><td>259.34</td><td>274.40</td><td>290.35</td><td>307.22</td><td>325.07</td><td>343.95</td><td>363.94</td><td>385.08</td><td>407.45</td><td>431.13</td><td>456.18</td><td>482.68</td></tr><tr><td>JamieRSP</td><td class="ticker">TD</td><td>2,190</td><td>126.87</td><td class="percent">3.4%</td><td class="percent">2.9%</td><td>2,264.68</td><td>2,341.90</td><td>2,421.76</td><td>2,504.35</td><td>2,589.74</td><td>2,678.05</td><td>2,769.38</td><td>2,863.81</td><td>2,961.47</td><td>3,062.45</td><td>3,166.88</td><td>3,274.87</td><td>3,386.55</td><td>3,502.03</td><td>3,621.45</td><td>3,744.94</td><td>3,872.64</td><td>4,004.70</td><td>4,141.26</td><td>4,282.48</td></tr><tr><td>JamieRSP</td><td class="ticker">TOU</td><td>1,887</td><td>68.37</td><td class="percent">4.8%</td><td class="percent">0.0%</td><td>1,978.14</td><td>2,073.69</td><td>2,173.85</td><td>2,278.84</td><td>2,388.91</td><td>2,504.29</td><td>2,625.25</td><td>2,752.05</td><td>2,884.98</td><td>3,024.32</td><td>3,170.39</td><td>3,323.52</td><td>3,484.05</td><td>3,652.33</td><td>3,828.74</td><td>4,013.67</td><td>4,207.53</td><td>4,410.75</td><td>4,623.79</td><td>4,847.12</td></tr><tr><td>JamieRSP</td><td class="ticker">TRP</td><td>742</td><td>88.15</td><td class="percent">3.9%</td><td class="percent">3.5%</td><td>770.64</td><td>800.39</td><td>831.28</td><td>863.37</td><td>896.70</td><td>931.31</td><td>967.26</td><td>1,004.59</td><td>1,043.37</td><td>1,083.65</td><td>1,125.47</td><td>1,168.92</td><td>1,214.04</td><td>1,260.90</td><td>1,309.57</td><td>1,360.12</td><td>1,412.62</td><td>1,467.15</td><td>1,523.78</td><td>1,582.60</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+            </section>
+            
+            <section class="section">
+              <h2>Projected DRIP Income</h2>
+              <div class="section-copy">Forward annual dividend income after reinvestment increases the share base.</div>
+              
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th title='Account name from Holdings.csv.'>Account</th><th title='Holding ticker or TOTAL row.'>Symbol</th><th title='Starting share count before future projections.'>Starting Quantity</th><th title='Current price used in the projection.'>Price</th><th title='Current yield assumption for the holding.'>Yield</th><th title='Dividend growth rate used in the projection.'>Growth Rate Used</th><th title='Projected value for 2027.'>2027</th><th title='Projected value for 2028.'>2028</th><th title='Projected value for 2029.'>2029</th><th title='Projected value for 2030.'>2030</th><th title='Projected value for 2031.'>2031</th><th title='Projected value for 2032.'>2032</th><th title='Projected value for 2033.'>2033</th><th title='Projected value for 2034.'>2034</th><th title='Projected value for 2035.'>2035</th><th title='Projected value for 2036.'>2036</th><th title='Projected value for 2037.'>2037</th><th title='Projected value for 2038.'>2038</th><th title='Projected value for 2039.'>2039</th><th title='Projected value for 2040.'>2040</th><th title='Projected value for 2041.'>2041</th><th title='Projected value for 2042.'>2042</th><th title='Projected value for 2043.'>2043</th><th title='Projected value for 2044.'>2044</th><th title='Projected value for 2045.'>2045</th><th title='Projected value for 2046.'>2046</th></tr></thead>
+        <tbody>
+          <tr><td>JamieRSP</td><td class="ticker">BNS</td><td>139</td><td>94.09</td><td class="percent">4.7%</td><td class="percent">1.8%</td><td>622.91</td><td>664.13</td><td>708.07</td><td>754.92</td><td>804.87</td><td>858.13</td><td>914.91</td><td>975.44</td><td>1,039.98</td><td>1,108.79</td><td>1,182.16</td><td>1,260.38</td><td>1,343.77</td><td>1,432.68</td><td>1,527.48</td><td>1,628.54</td><td>1,736.30</td><td>1,851.18</td><td>1,973.67</td><td>2,104.26</td></tr><tr><td>JamieRSP</td><td class="ticker">CJ</td><td>8,398</td><td>11.30</td><td class="percent">6.4%</td><td class="percent">0.0%</td><td>6,046.56</td><td>6,431.73</td><td>6,841.43</td><td>7,277.23</td><td>7,740.78</td><td>8,233.87</td><td>8,758.37</td><td>9,316.28</td><td>9,909.73</td><td>10,540.98</td><td>11,212.44</td><td>11,926.67</td><td>12,686.40</td><td>13,494.52</td><td>14,354.12</td><td>15,268.48</td><td>16,241.08</td><td>17,275.64</td><td>18,376.10</td><td>19,546.65</td></tr><tr><td>JamieRSP</td><td class="ticker">CNQ</td><td>4,145</td><td>69.46</td><td class="percent">3.6%</td><td class="percent">7.0%</td><td>11,156.49</td><td>12,370.69</td><td>13,717.05</td><td>15,209.93</td><td>16,865.30</td><td>18,700.82</td><td>20,736.11</td><td>22,992.90</td><td>25,495.32</td><td>28,270.08</td><td>31,346.83</td><td>34,758.44</td><td>38,541.35</td><td>42,735.97</td><td>47,387.10</td><td>52,544.44</td><td>58,263.07</td><td>64,604.09</td><td>71,635.23</td><td>79,431.59</td></tr><tr><td>JamieRSP</td><td class="ticker">CNR</td><td>69</td><td>140.82</td><td class="percent">2.6%</td><td class="percent">3.5%</td><td>262.50</td><td>278.81</td><td>296.12</td><td>314.52</td><td>334.05</td><td>354.80</td><td>376.84</td><td>400.25</td><td>425.11</td><td>451.52</td><td>479.56</td><td>509.35</td><td>540.99</td><td>574.59</td><td>610.29</td><td>648.19</td><td>688.46</td><td>731.22</td><td>776.64</td><td>824.88</td></tr><tr><td>JamieRSP</td><td class="ticker">ENB</td><td>4,175</td><td>75.83</td><td class="percent">5.1%</td><td class="percent">2.9%</td><td>16,672.01</td><td>18,037.37</td><td>19,514.54</td><td>21,112.68</td><td>22,841.70</td><td>24,712.33</td><td>26,736.14</td><td>28,925.70</td><td>31,294.57</td><td>33,857.44</td><td>36,630.20</td><td>39,630.03</td><td>42,875.53</td><td>46,386.83</td><td>50,185.68</td><td>54,295.64</td><td>58,742.18</td><td>63,552.87</td><td>68,757.54</td><td>74,388.44</td></tr><tr><td>JamieRSP</td><td class="ticker">SOBO</td><td>156</td><td>47.49</td><td class="percent">5.8%</td><td class="percent">0.0%</td><td>312.00</td><td>330.13</td><td>349.31</td><td>369.60</td><td>391.08</td><td>413.80</td><td>437.84</td><td>463.28</td><td>490.19</td><td>518.67</td><td>548.81</td><td>580.70</td><td>614.43</td><td>650.13</td><td>687.91</td><td>727.87</td><td>770.16</td><td>814.91</td><td>862.25</td><td>912.35</td></tr><tr><td>JamieRSP</td><td class="ticker">TD</td><td>2,190</td><td>126.87</td><td class="percent">3.4%</td><td class="percent">2.9%</td><td>9,731.38</td><td>10,351.03</td><td>11,010.13</td><td>11,711.20</td><td>12,456.92</td><td>13,250.12</td><td>14,093.82</td><td>14,991.25</td><td>15,945.82</td><td>16,961.17</td><td>18,041.18</td><td>19,189.96</td><td>20,411.88</td><td>21,711.62</td><td>23,094.11</td><td>24,564.63</td><td>26,128.79</td><td>27,792.55</td><td>29,562.25</td><td>31,444.63</td></tr><tr><td>JamieRSP</td><td class="ticker">TOU</td><td>1,887</td><td>68.37</td><td class="percent">4.8%</td><td class="percent">0.0%</td><td>3,774.00</td><td>3,956.28</td><td>4,147.37</td><td>4,347.69</td><td>4,557.68</td><td>4,777.82</td><td>5,008.59</td><td>5,250.50</td><td>5,504.10</td><td>5,769.95</td><td>6,048.64</td><td>6,340.79</td><td>6,647.05</td><td>6,968.10</td><td>7,304.66</td><td>7,657.48</td><td>8,027.33</td><td>8,415.05</td><td>8,821.50</td><td>9,247.58</td></tr><tr><td>JamieRSP</td><td class="ticker">TRP</td><td>742</td><td>88.15</td><td class="percent">3.9%</td><td class="percent">3.5%</td><td>2,700.94</td><td>2,902.53</td><td>3,119.17</td><td>3,351.99</td><td>3,602.18</td><td>3,871.04</td><td>4,159.98</td><td>4,470.47</td><td>4,804.15</td><td>5,162.73</td><td>5,548.07</td><td>5,962.17</td><td>6,407.19</td><td>6,885.42</td><td>7,399.34</td><td>7,951.62</td><td>8,545.13</td><td>9,182.93</td><td>9,868.34</td><td>10,604.90</td></tr><tr class='total-row'><td>JamieRSP</td><td class="ticker total">TOTAL</td><td></td><td></td><td></td><td></td><td>51,278.79</td><td>55,322.69</td><td>59,703.20</td><td>64,449.77</td><td>69,594.57</td><td>75,172.73</td><td>81,222.59</td><td>87,786.08</td><td>94,908.98</td><td>102,641.34</td><td>111,037.89</td><td>120,158.49</td><td>130,068.60</td><td>140,839.86</td><td>152,550.68</td><td>165,286.90</td><td>179,142.50</td><td>194,220.44</td><td>210,633.51</td><td>228,505.28</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+            </section>
+            
+            <section class="section">
+              <h2>Projected Account Balance</h2>
+              <div class="section-copy">Projected account value using DRIP share growth and conservative price appreciation.</div>
+              
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th title='Account name from Holdings.csv.'>Account</th><th title='Holding ticker or TOTAL row.'>Symbol</th><th title='Starting share count before future projections.'>Starting Quantity</th><th title='Current price used in the projection.'>Current Price</th><th title='Current yield assumption for the holding.'>Yield</th><th title='Dividend growth rate used in the projection.'>Growth Rate Used</th><th title='Current market value before future projections.'>Current Balance</th><th title='Annual price appreciation assumption used in balance projections.'>Price Growth Assumption</th><th title='Projected value for 2027.'>2027</th><th title='Projected value for 2028.'>2028</th><th title='Projected value for 2029.'>2029</th><th title='Projected value for 2030.'>2030</th><th title='Projected value for 2031.'>2031</th><th title='Projected value for 2032.'>2032</th><th title='Projected value for 2033.'>2033</th><th title='Projected value for 2034.'>2034</th><th title='Projected value for 2035.'>2035</th><th title='Projected value for 2036.'>2036</th><th title='Projected value for 2037.'>2037</th><th title='Projected value for 2038.'>2038</th><th title='Projected value for 2039.'>2039</th><th title='Projected value for 2040.'>2040</th><th title='Projected value for 2041.'>2041</th><th title='Projected value for 2042.'>2042</th><th title='Projected value for 2043.'>2043</th><th title='Projected value for 2044.'>2044</th><th title='Projected value for 2045.'>2045</th><th title='Projected value for 2046.'>2046</th></tr></thead>
+        <tbody>
+          <tr><td>JamieRSP</td><td class="ticker">BNS</td><td>139</td><td>94.09</td><td class="percent">4.7%</td><td class="percent">1.8%</td><td>13,078.51</td><td class="percent">2.0%</td><td>13,964.40</td><td>14,910.29</td><td>15,920.25</td><td>16,998.63</td><td>18,150.04</td><td>19,379.46</td><td>20,692.14</td><td>22,093.75</td><td>23,590.29</td><td>25,188.20</td><td>26,894.35</td><td>28,716.06</td><td>30,661.17</td><td>32,738.04</td><td>34,955.58</td><td>37,323.33</td><td>39,851.47</td><td>42,550.85</td><td>45,433.07</td><td>48,510.53</td></tr><tr><td>JamieRSP</td><td class="ticker">CJ</td><td>8,398</td><td>11.30</td><td class="percent">6.4%</td><td class="percent">0.0%</td><td>94,897.40</td><td class="percent">2.0%</td><td>102,961.21</td><td>111,710.24</td><td>121,202.70</td><td>131,501.78</td><td>142,676.01</td><td>154,799.77</td><td>167,953.72</td><td>182,225.42</td><td>197,709.84</td><td>214,510.04</td><td>232,737.82</td><td>252,514.48</td><td>273,971.64</td><td>297,252.11</td><td>322,510.81</td><td>349,915.85</td><td>379,649.59</td><td>411,909.94</td><td>446,911.57</td><td>484,887.44</td></tr><tr><td>JamieRSP</td><td class="ticker">CNQ</td><td>4,145</td><td>69.46</td><td class="percent">3.6%</td><td class="percent">7.0%</td><td>287,911.70</td><td class="percent">2.0%</td><td>304,271.42</td><td>321,560.73</td><td>339,832.45</td><td>359,142.41</td><td>379,549.60</td><td>401,116.37</td><td>423,908.60</td><td>447,995.94</td><td>473,451.96</td><td>500,354.45</td><td>528,785.59</td><td>558,832.25</td><td>590,586.21</td><td>624,144.50</td><td>659,609.64</td><td>697,089.98</td><td>736,700.03</td><td>778,560.80</td><td>822,800.18</td><td>869,553.33</td></tr><tr><td>JamieRSP</td><td class="ticker">CNR</td><td>69</td><td>140.82</td><td class="percent">2.6%</td><td class="percent">3.5%</td><td>9,716.58</td><td class="percent">2.0%</td><td>10,168.60</td><td>10,641.64</td><td>11,136.69</td><td>11,654.77</td><td>12,196.95</td><td>12,764.35</td><td>13,358.15</td><td>13,979.57</td><td>14,629.90</td><td>15,310.48</td><td>16,022.72</td><td>16,768.10</td><td>17,548.15</td><td>18,364.49</td><td>19,218.81</td><td>20,112.87</td><td>21,048.52</td><td>22,027.69</td><td>23,052.42</td><td>24,124.82</td></tr><tr><td>JamieRSP</td><td class="ticker">ENB</td><td>4,175</td><td>75.83</td><td class="percent">5.1%</td><td class="percent">2.9%</td><td>316,590.25</td><td class="percent">2.0%</td><td>339,455.66</td><td>363,972.51</td><td>390,260.06</td><td>418,446.20</td><td>448,668.06</td><td>481,072.66</td><td>515,817.66</td><td>553,072.07</td><td>593,017.15</td><td>635,847.22</td><td>681,770.65</td><td>731,010.85</td><td>783,807.38</td><td>840,417.08</td><td>901,115.37</td><td>966,197.52</td><td>1,035,980.17</td><td>1,110,802.80</td><td>1,191,029.43</td><td>1,277,050.34</td></tr><tr><td>JamieRSP</td><td class="ticker">SOBO</td><td>156</td><td>47.49</td><td class="percent">5.8%</td><td class="percent">0.0%</td><td>7,408.44</td><td class="percent">2.0%</td><td>7,995.65</td><td>8,629.40</td><td>9,313.38</td><td>10,051.58</td><td>10,848.29</td><td>11,708.14</td><td>12,636.16</td><td>13,637.72</td><td>14,718.68</td><td>15,885.31</td><td>17,144.41</td><td>18,503.31</td><td>19,969.92</td><td>21,552.77</td><td>23,261.09</td><td>25,104.81</td><td>27,094.67</td><td>29,242.25</td><td>31,560.04</td><td>34,061.56</td></tr><tr><td>JamieRSP</td><td class="ticker">TD</td><td>2,190</td><td>126.87</td><td class="percent">3.4%</td><td class="percent">2.9%</td><td>277,845.30</td><td class="percent">2.0%</td><td>293,066.22</td><td>309,120.97</td><td>326,055.24</td><td>343,917.20</td><td>362,757.67</td><td>382,630.26</td><td>403,591.51</td><td>425,701.06</td><td>449,021.82</td><td>473,620.13</td><td>499,565.99</td><td>526,933.21</td><td>555,799.67</td><td>586,247.49</td><td>618,363.30</td><td>652,238.47</td><td>687,969.40</td><td>725,657.74</td><td>765,410.72</td><td>807,341.45</td></tr><tr><td>JamieRSP</td><td class="ticker">TOU</td><td>1,887</td><td>68.37</td><td class="percent">4.8%</td><td class="percent">0.0%</td><td>129,014.19</td><td class="percent">2.0%</td><td>137,950.49</td><td>147,505.77</td><td>157,722.90</td><td>168,647.73</td><td>180,329.29</td><td>192,819.98</td><td>206,175.84</td><td>220,456.82</td><td>235,726.98</td><td>252,054.85</td><td>269,513.68</td><td>288,181.81</td><td>308,143.02</td><td>329,486.85</td><td>352,309.09</td><td>376,712.13</td><td>402,805.47</td><td>430,706.19</td><td>460,539.49</td><td>492,439.22</td></tr><tr><td>JamieRSP</td><td class="ticker">TRP</td><td>742</td><td>88.15</td><td class="percent">3.9%</td><td class="percent">3.5%</td><td>65,407.30</td><td class="percent">2.0%</td><td>69,290.66</td><td>73,404.59</td><td>77,762.76</td><td>82,379.70</td><td>87,270.74</td><td>92,452.18</td><td>97,941.25</td><td>103,756.22</td><td>109,916.43</td><td>116,442.39</td><td>123,355.81</td><td>130,679.69</td><td>138,438.41</td><td>146,657.77</td><td>155,365.14</td><td>164,589.48</td><td>174,361.48</td><td>184,713.67</td><td>195,680.49</td><td>207,298.43</td></tr><tr class='total-row'><td>JamieRSP</td><td class="ticker total">TOTAL</td><td></td><td></td><td></td><td></td><td>1,201,869.67</td><td class="percent">2.0%</td><td>1,279,124.30</td><td>1,361,456.13</td><td>1,449,206.44</td><td>1,542,740.00</td><td>1,642,446.66</td><td>1,748,743.17</td><td>1,862,075.03</td><td>1,982,918.57</td><td>2,111,783.05</td><td>2,249,213.07</td><td>2,395,791.01</td><td>2,552,139.77</td><td>2,718,925.57</td><td>2,896,861.11</td><td>3,086,708.82</td><td>3,289,284.44</td><td>3,505,460.80</td><td>3,736,171.93</td><td>3,982,417.42</td><td>4,245,267.11</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+            </section>
+            
+  </main>
+</body>
+</html>
