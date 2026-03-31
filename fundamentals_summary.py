@@ -24,6 +24,10 @@ def format_percent(value):
         return value
 
 
+def get_year_columns(row):
+    return sorted(int(key) for key in row.keys() if key.isdigit())
+
+
 def merge_rows():
     dividend_rows = load_csv_rows(DIVIDEND_PIVOT_CSV)
     ben_graham_rows = load_csv_rows(BEN_GRAHAM_CSV)
@@ -43,6 +47,23 @@ def merge_rows():
         current_price_row = current_price_by_symbol.get(symbol, {})
         current_price = current_price_row.get("Current Price", "")
         ben_graham_5y = ben_graham_row.get("Ben Graham 5Y", "")
+        year_columns = get_year_columns(dividend_row)
+        latest_full_year = year_columns[-2] if len(year_columns) >= 2 else None
+        current_year = year_columns[-1] if year_columns else None
+
+        yield_full = ""
+        yield_current = ""
+        if current_price not in ("", None):
+            try:
+                current_price_value = float(current_price)
+                if current_price_value != 0:
+                    if latest_full_year is not None and dividend_row.get(str(latest_full_year), "") not in ("", None):
+                        yield_full = round((float(dividend_row[str(latest_full_year)]) / current_price_value) * 100, 2)
+                    if current_year is not None and dividend_row.get(str(current_year), "") not in ("", None):
+                        yield_current = round((float(dividend_row[str(current_year)]) / current_price_value) * 100, 2)
+            except ValueError:
+                yield_full = ""
+                yield_current = ""
 
         delta_bg5 = ""
         if current_price not in ("", None) and ben_graham_5y not in ("", None):
@@ -57,6 +78,8 @@ def merge_rows():
         merged_row.update(
             {
                 "Current Price": current_price,
+                "YieldFull": yield_full,
+                "YieldCurrent": yield_current,
                 "Δ BG5": delta_bg5,
                 "Growth5": format_percent(dividend_row.get("Avg Growth 5Y %", "")),
                 "BVPS Year": ben_graham_row.get("BVPS Year", ""),
@@ -92,23 +115,35 @@ def write_csv(rows, output_path=OUTPUT_CSV):
         raise ValueError("No rows to write.")
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    year_columns = get_year_columns(rows[0])
+    latest_full_year_label = f"Y{year_columns[-2]}" if len(year_columns) >= 2 else "YieldFull"
+    current_year_label = f"Y{year_columns[-1]}" if year_columns else "YieldCurrent"
     priority_fieldnames = [
         "Ticker",
         "Current Price",
+        "BG5",
         "Δ BG5",
         "BG3",
-        "BG5",
         "BG10",
+        latest_full_year_label,
+        current_year_label,
         "Yield5",
         "Growth5",
     ]
-    remaining_fieldnames = [field for field in rows[0].keys() if field not in priority_fieldnames]
+    renamed_rows = []
+    for row in rows:
+        renamed_row = dict(row)
+        renamed_row[latest_full_year_label] = renamed_row.pop("YieldFull", "")
+        renamed_row[current_year_label] = renamed_row.pop("YieldCurrent", "")
+        renamed_rows.append(renamed_row)
+
+    remaining_fieldnames = [field for field in renamed_rows[0].keys() if field not in priority_fieldnames]
     fieldnames = priority_fieldnames + remaining_fieldnames
 
     with open(output_path, "w", newline="", encoding="utf-8") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(renamed_rows)
 
 
 def main():
