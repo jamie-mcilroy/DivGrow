@@ -1,0 +1,1983 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekly Portfolio Report</title>
+  <style>
+    :root {
+      --paper: #f6f1e7;
+      --ink: #12161d;
+      --muted: #5a6472;
+      --navy: #16263a;
+      --gold: #b8945b;
+      --line: rgba(18, 22, 29, 0.12);
+      --panel: rgba(255, 255, 255, 0.68);
+      --green: #146c43;
+      --red: #9f2d2d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184, 148, 91, 0.2), transparent 28%),
+        linear-gradient(180deg, #efe4d0 0%, var(--paper) 35%, #f8f5ee 100%);
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .page { width: min(1440px, calc(100vw - 48px)); margin: 32px auto 48px; }
+    .hero {
+      padding: 36px 40px 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(22, 38, 58, 0.96), rgba(18, 22, 29, 0.96));
+      color: #f7f2e8;
+      border-radius: 24px;
+      box-shadow: 0 24px 70px rgba(14, 18, 24, 0.18);
+    }
+    .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(247, 242, 232, 0.68); margin-bottom: 14px; }
+    h1 { margin: 0; font-family: "Iowan Old Style", Georgia, serif; font-size: clamp(36px, 5vw, 58px); font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; }
+    .subhead { margin-top: 16px; max-width: 860px; color: rgba(247, 242, 232, 0.8); font-size: 16px; line-height: 1.6; }
+    .timestamp { margin-top: 18px; color: rgba(247, 242, 232, 0.6); font-size: 13px; }
+    .metrics, .mini-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 24px; }
+    .metric-card { min-height: 110px; padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); }
+    .metric-card.positive { box-shadow: inset 0 0 0 1px rgba(20,108,67,0.18); }
+    .metric-card.negative { box-shadow: inset 0 0 0 1px rgba(159,45,45,0.18); }
+    .metric-label { color: rgba(247,242,232,0.64); text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px; }
+    .metric-value { margin-top: 10px; font-size: 28px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
+    .section { margin-top: 24px; padding: 24px; border-radius: 24px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(26,32,44,0.08); }
+    .section h2 { margin: 0 0 12px; font-family: "Iowan Old Style", Georgia, serif; font-size: 28px; color: var(--navy); }
+    .section-copy { margin-bottom: 16px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .table-wrap { overflow: auto; max-height: 72vh; border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,0.55); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { position: sticky; top: 0; background: #f4ecdf; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px; z-index: 1; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+    th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: inherit; }
+    tbody tr:nth-child(odd) { background: rgba(255,255,255,0.34); }
+    tbody tr:hover { background: rgba(184,148,91,0.08); }
+    .ticker { font-weight: 700; color: var(--navy); }
+    .negative { color: var(--red); }
+    .positive { color: var(--green); }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">DivGrow Weekly Close</div>
+      <h1>Weekly Portfolio Report</h1>
+      <div class="subhead">End-of-week account performance from the prior weekly close to the latest available close, based on current holdings and Yahoo Finance market prices.</div>
+      <div class="timestamp">Generated 2026-04-03 07:24</div>
+      <div class="metrics">
+    <div class="metric-card neutral">
+      <div class="metric-label">Week</div>
+      <div class="metric-value">2026-03-26 to 2026-04-02</div>
+    </div>
+    
+
+    <div class="metric-card neutral">
+      <div class="metric-label">Coverage</div>
+      <div class="metric-value">9 accounts</div>
+    </div>
+    
+
+    <div class="metric-card neutral">
+      <div class="metric-label">Aggregate Start</div>
+      <div class="metric-value">$2,644,332</div>
+    </div>
+    
+
+    <div class="metric-card neutral">
+      <div class="metric-label">Aggregate End</div>
+      <div class="metric-value">$2,638,119</div>
+    </div>
+    
+
+    <div class="metric-card negative">
+      <div class="metric-label">Aggregate Change</div>
+      <div class="metric-value">$-6,213</div>
+    </div>
+    
+
+    <div class="metric-card negative">
+      <div class="metric-label">Aggregate Return</div>
+      <div class="metric-value">-0.23%</div>
+    </div>
+    
+
+    <div class="metric-card neutral">
+      <div class="metric-label">Best Account</div>
+      <div class="metric-value">RESP</div>
+    </div>
+    
+
+    <div class="metric-card neutral">
+      <div class="metric-label">Worst Account</div>
+      <div class="metric-value">JamieCash</div>
+    </div>
+    </div>
+    </section>
+    <section class="section">
+      <h2>Account Overview</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th>Start Value</th>
+              <th>End Value</th>
+              <th>Change</th>
+              <th>Return</th>
+              <th>Top Winner</th>
+              <th>Top Loser</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ticker">All Investments</td>
+              <td>$2,644,332</td>
+              <td>$2,638,119</td>
+              <td class="negative">$-6,213</td>
+              <td class="negative">-0.23%</td>
+              <td>TD</td>
+              <td>CNQ</td>
+            </tr>
+            
+
+            <tr>
+              <td class="ticker">MasterRetirement</td>
+              <td>$1,730,044</td>
+              <td>$1,725,285</td>
+              <td class="negative">$-4,759</td>
+              <td class="negative">-0.28%</td>
+              <td>TD</td>
+              <td>CNQ</td>
+            </tr>
+            
+
+            <tr>
+              <td class="ticker">JamieRSP</td>
+              <td>$1,191,200</td>
+              <td>$1,188,703</td>
+              <td class="negative">$-2,497</td>
+              <td class="negative">-0.21%</td>
+              <td>TD</td>
+              <td>CNQ</td>
+            </tr>
+            
+
+            <tr>
+              <td class="ticker">MichelleRSP</td>
+              <td>$538,844</td>
+              <td>$536,582</td>
+              <td class="negative">$-2,262</td>
+              <td class="negative">-0.42%</td>
+              <td>TD</td>
+              <td>CNQ</td>
+            </tr>
+            
+
+            <tr>
+              <td class="ticker">MichelleTFSA</td>
+              <td>$99,729</td>
+              <td>$99,517</td>
+              <td class="negative">$-212</td>
+              <td class="negative">-0.21%</td>
+              <td>TD</td>
+              <td>TOU</td>
+            </tr>
+            
+
+            <tr>
+              <td class="ticker">RESP</td>
+              <td>$424,298</td>
+              <td>$426,397</td>
+              <td class="positive">$2,099</td>
+              <td class="positive">0.49%</td>
+              <td>TD</td>
+              <td>CNQ</td>
+            </tr>
+            
+
+            <tr>
+              <td class="ticker">JamieCash</td>
+              <td>$250,002</td>
+              <td>$246,425</td>
+              <td class="negative">$-3,576</td>
+              <td class="negative">-1.43%</td>
+              <td>CASH</td>
+              <td>CNQ</td>
+            </tr>
+            
+
+            <tr>
+              <td class="ticker">MichelleCash</td>
+              <td>$19,179</td>
+              <td>$19,168</td>
+              <td class="negative">$-11</td>
+              <td class="negative">-0.06%</td>
+              <td>CJ</td>
+              <td>TOU</td>
+            </tr>
+            
+
+            <tr>
+              <td class="ticker">JamieTFSAC</td>
+              <td>$121,079</td>
+              <td>$121,326</td>
+              <td class="positive">$247</td>
+              <td class="positive">0.20%</td>
+              <td>TD</td>
+              <td>TOU</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </section>
+    
+            <section class="section">
+              <h2>All Investments</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$2,644,332</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$2,638,119</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$-6,213</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">-0.23%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>2,190</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$281,765</td>
+                  <td>$290,197</td>
+                  <td class="positive">$8,431</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>869</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$111,806</td>
+                  <td>$115,151</td>
+                  <td class="positive">$3,346</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>844</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$108,589</td>
+                  <td>$111,838</td>
+                  <td class="positive">$3,249</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>161</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$20,714</td>
+                  <td>$21,334</td>
+                  <td class="positive">$620</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>139</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$17,884</td>
+                  <td>$18,419</td>
+                  <td class="positive">$535</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNR</td>
+                  <td>88</td>
+                  <td>$140.64</td>
+                  <td>$144.93</td>
+                  <td>$12,376</td>
+                  <td>$12,754</td>
+                  <td class="positive">$378</td>
+                  <td class="positive">3.05%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">BNS</td>
+                  <td>139</td>
+                  <td>$95.02</td>
+                  <td>$97.64</td>
+                  <td>$13,208</td>
+                  <td>$13,572</td>
+                  <td class="positive">$364</td>
+                  <td class="positive">2.76%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNR</td>
+                  <td>69</td>
+                  <td>$140.64</td>
+                  <td>$144.93</td>
+                  <td>$9,704</td>
+                  <td>$10,000</td>
+                  <td class="positive">$296</td>
+                  <td class="positive">3.05%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">BNS</td>
+                  <td>109</td>
+                  <td>$95.02</td>
+                  <td>$97.64</td>
+                  <td>$10,357</td>
+                  <td>$10,643</td>
+                  <td class="positive">$286</td>
+                  <td class="positive">2.76%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">WMT</td>
+                  <td>30</td>
+                  <td>$122.18</td>
+                  <td>$125.79</td>
+                  <td>$3,665</td>
+                  <td>$3,774</td>
+                  <td class="positive">$108</td>
+                  <td class="positive">2.95%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">KO</td>
+                  <td>30</td>
+                  <td>$74.69</td>
+                  <td>$76.72</td>
+                  <td>$2,241</td>
+                  <td>$2,302</td>
+                  <td class="positive">$61</td>
+                  <td class="positive">2.72%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">BNS</td>
+                  <td>15</td>
+                  <td>$95.02</td>
+                  <td>$97.64</td>
+                  <td>$1,425</td>
+                  <td>$1,465</td>
+                  <td class="positive">$39</td>
+                  <td class="positive">2.76%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNR</td>
+                  <td>3</td>
+                  <td>$140.64</td>
+                  <td>$144.93</td>
+                  <td>$422</td>
+                  <td>$435</td>
+                  <td class="positive">$13</td>
+                  <td class="positive">3.05%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>2,246</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$24,594</td>
+                  <td>$24,594</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>8,398</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$91,958</td>
+                  <td>$91,958</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>3,691</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$40,416</td>
+                  <td>$40,416</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>3,137</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$34,350</td>
+                  <td>$34,350</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>1,727</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$18,911</td>
+                  <td>$18,911</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>400</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$4,380</td>
+                  <td>$4,380</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">PSA</td>
+                  <td>9</td>
+                  <td>$50.08</td>
+                  <td>$50.03</td>
+                  <td>$451</td>
+                  <td>$450</td>
+                  <td class="negative">$-1</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOYB</td>
+                  <td>75</td>
+                  <td>$24.36</td>
+                  <td>$24.35</td>
+                  <td>$1,827</td>
+                  <td>$1,826</td>
+                  <td class="negative">$-1</td>
+                  <td class="negative">-0.04%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>4</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$269</td>
+                  <td>$257</td>
+                  <td class="negative">$-11</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TRP</td>
+                  <td>300</td>
+                  <td>$88.23</td>
+                  <td>$88.16</td>
+                  <td>$26,469</td>
+                  <td>$26,448</td>
+                  <td class="negative">$-21</td>
+                  <td class="negative">-0.08%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">MCD</td>
+                  <td>13</td>
+                  <td>$308.93</td>
+                  <td>$307.14</td>
+                  <td>$4,016</td>
+                  <td>$3,993</td>
+                  <td class="negative">$-23</td>
+                  <td class="negative">-0.58%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CASH</td>
+                  <td>568</td>
+                  <td>$50.03</td>
+                  <td>$49.99</td>
+                  <td>$28,420</td>
+                  <td>$28,394</td>
+                  <td class="negative">$-26</td>
+                  <td class="negative">-0.09%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>397</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$29,970</td>
+                  <td>$29,934</td>
+                  <td class="negative">$-36</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>42</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$1,977</td>
+                  <td>$1,939</td>
+                  <td class="negative">$-38</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>45</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$2,119</td>
+                  <td>$2,078</td>
+                  <td class="negative">$-41</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>17</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$1,142</td>
+                  <td>$1,093</td>
+                  <td class="negative">$-48</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TRP</td>
+                  <td>742</td>
+                  <td>$88.23</td>
+                  <td>$88.16</td>
+                  <td>$65,467</td>
+                  <td>$65,415</td>
+                  <td class="negative">$-52</td>
+                  <td class="negative">-0.08%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">PSA</td>
+                  <td>999</td>
+                  <td>$50.08</td>
+                  <td>$50.03</td>
+                  <td>$50,035</td>
+                  <td>$49,975</td>
+                  <td class="negative">$-60</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>74</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$3,484</td>
+                  <td>$3,417</td>
+                  <td class="negative">$-67</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>55</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$3,714</td>
+                  <td>$3,638</td>
+                  <td class="negative">$-75</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>952</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$71,866</td>
+                  <td>$71,781</td>
+                  <td class="negative">$-86</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>72</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$4,861</td>
+                  <td>$4,763</td>
+                  <td class="negative">$-99</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>45</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$3,022</td>
+                  <td>$2,894</td>
+                  <td class="negative">$-127</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>156</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$7,344</td>
+                  <td>$7,203</td>
+                  <td class="negative">$-142</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>1,696</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$128,031</td>
+                  <td>$127,878</td>
+                  <td class="negative">$-153</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>3,075</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$232,132</td>
+                  <td>$231,855</td>
+                  <td class="negative">$-277</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>4,175</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$315,171</td>
+                  <td>$314,795</td>
+                  <td class="negative">$-376</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>637</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$43,010</td>
+                  <td>$42,138</td>
+                  <td class="negative">$-873</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>379</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$25,450</td>
+                  <td>$24,377</td>
+                  <td class="negative">$-1,073</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>397</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$26,659</td>
+                  <td>$25,535</td>
+                  <td class="negative">$-1,124</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>647</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$43,446</td>
+                  <td>$41,615</td>
+                  <td class="negative">$-1,831</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>1,702</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$114,919</td>
+                  <td>$112,587</td>
+                  <td class="negative">$-2,332</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>2,869</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$193,715</td>
+                  <td>$189,784</td>
+                  <td class="negative">$-3,931</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>1,887</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$126,712</td>
+                  <td>$121,372</td>
+                  <td class="negative">$-5,340</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>4,145</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$279,870</td>
+                  <td>$274,192</td>
+                  <td class="negative">$-5,679</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <section class="section">
+              <h2>MasterRetirement</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$1,730,044</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$1,725,285</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$-4,759</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">-0.28%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>2,190</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$281,765</td>
+                  <td>$290,197</td>
+                  <td class="positive">$8,431</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>844</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$108,589</td>
+                  <td>$111,838</td>
+                  <td class="positive">$3,249</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">BNS</td>
+                  <td>139</td>
+                  <td>$95.02</td>
+                  <td>$97.64</td>
+                  <td>$13,208</td>
+                  <td>$13,572</td>
+                  <td class="positive">$364</td>
+                  <td class="positive">2.76%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNR</td>
+                  <td>69</td>
+                  <td>$140.64</td>
+                  <td>$144.93</td>
+                  <td>$9,704</td>
+                  <td>$10,000</td>
+                  <td class="positive">$296</td>
+                  <td class="positive">3.05%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">BNS</td>
+                  <td>109</td>
+                  <td>$95.02</td>
+                  <td>$97.64</td>
+                  <td>$10,357</td>
+                  <td>$10,643</td>
+                  <td class="positive">$286</td>
+                  <td class="positive">2.76%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">WMT</td>
+                  <td>30</td>
+                  <td>$122.18</td>
+                  <td>$125.79</td>
+                  <td>$3,665</td>
+                  <td>$3,774</td>
+                  <td class="positive">$108</td>
+                  <td class="positive">2.95%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">KO</td>
+                  <td>30</td>
+                  <td>$74.69</td>
+                  <td>$76.72</td>
+                  <td>$2,241</td>
+                  <td>$2,302</td>
+                  <td class="positive">$61</td>
+                  <td class="positive">2.72%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNR</td>
+                  <td>3</td>
+                  <td>$140.64</td>
+                  <td>$144.93</td>
+                  <td>$422</td>
+                  <td>$435</td>
+                  <td class="positive">$13</td>
+                  <td class="positive">3.05%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>8,398</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$91,958</td>
+                  <td>$91,958</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>3,691</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$40,416</td>
+                  <td>$40,416</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOYB</td>
+                  <td>75</td>
+                  <td>$24.36</td>
+                  <td>$24.35</td>
+                  <td>$1,827</td>
+                  <td>$1,826</td>
+                  <td class="negative">$-1</td>
+                  <td class="negative">-0.04%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">MCD</td>
+                  <td>13</td>
+                  <td>$308.93</td>
+                  <td>$307.14</td>
+                  <td>$4,016</td>
+                  <td>$3,993</td>
+                  <td class="negative">$-23</td>
+                  <td class="negative">-0.58%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>45</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$2,119</td>
+                  <td>$2,078</td>
+                  <td class="negative">$-41</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TRP</td>
+                  <td>742</td>
+                  <td>$88.23</td>
+                  <td>$88.16</td>
+                  <td>$65,467</td>
+                  <td>$65,415</td>
+                  <td class="negative">$-52</td>
+                  <td class="negative">-0.08%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>156</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$7,344</td>
+                  <td>$7,203</td>
+                  <td class="negative">$-142</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>1,696</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$128,031</td>
+                  <td>$127,878</td>
+                  <td class="negative">$-153</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>4,175</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$315,171</td>
+                  <td>$314,795</td>
+                  <td class="negative">$-376</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>647</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$43,446</td>
+                  <td>$41,615</td>
+                  <td class="negative">$-1,831</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>2,869</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$193,715</td>
+                  <td>$189,784</td>
+                  <td class="negative">$-3,931</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>1,887</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$126,712</td>
+                  <td>$121,372</td>
+                  <td class="negative">$-5,340</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>4,145</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$279,870</td>
+                  <td>$274,192</td>
+                  <td class="negative">$-5,679</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <section class="section">
+              <h2>JamieRSP</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$1,191,200</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$1,188,703</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$-2,497</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">-0.21%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>2,190</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$281,765</td>
+                  <td>$290,197</td>
+                  <td class="positive">$8,431</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">BNS</td>
+                  <td>139</td>
+                  <td>$95.02</td>
+                  <td>$97.64</td>
+                  <td>$13,208</td>
+                  <td>$13,572</td>
+                  <td class="positive">$364</td>
+                  <td class="positive">2.76%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNR</td>
+                  <td>69</td>
+                  <td>$140.64</td>
+                  <td>$144.93</td>
+                  <td>$9,704</td>
+                  <td>$10,000</td>
+                  <td class="positive">$296</td>
+                  <td class="positive">3.05%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>8,398</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$91,958</td>
+                  <td>$91,958</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TRP</td>
+                  <td>742</td>
+                  <td>$88.23</td>
+                  <td>$88.16</td>
+                  <td>$65,467</td>
+                  <td>$65,415</td>
+                  <td class="negative">$-52</td>
+                  <td class="negative">-0.08%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>156</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$7,344</td>
+                  <td>$7,203</td>
+                  <td class="negative">$-142</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>4,175</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$315,171</td>
+                  <td>$314,795</td>
+                  <td class="negative">$-376</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>1,887</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$126,712</td>
+                  <td>$121,372</td>
+                  <td class="negative">$-5,340</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>4,145</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$279,870</td>
+                  <td>$274,192</td>
+                  <td class="negative">$-5,679</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <section class="section">
+              <h2>MichelleRSP</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$538,844</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$536,582</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$-2,262</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">-0.42%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>844</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$108,589</td>
+                  <td>$111,838</td>
+                  <td class="positive">$3,249</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">BNS</td>
+                  <td>109</td>
+                  <td>$95.02</td>
+                  <td>$97.64</td>
+                  <td>$10,357</td>
+                  <td>$10,643</td>
+                  <td class="positive">$286</td>
+                  <td class="positive">2.76%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">WMT</td>
+                  <td>30</td>
+                  <td>$122.18</td>
+                  <td>$125.79</td>
+                  <td>$3,665</td>
+                  <td>$3,774</td>
+                  <td class="positive">$108</td>
+                  <td class="positive">2.95%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">KO</td>
+                  <td>30</td>
+                  <td>$74.69</td>
+                  <td>$76.72</td>
+                  <td>$2,241</td>
+                  <td>$2,302</td>
+                  <td class="positive">$61</td>
+                  <td class="positive">2.72%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNR</td>
+                  <td>3</td>
+                  <td>$140.64</td>
+                  <td>$144.93</td>
+                  <td>$422</td>
+                  <td>$435</td>
+                  <td class="positive">$13</td>
+                  <td class="positive">3.05%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>3,691</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$40,416</td>
+                  <td>$40,416</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOYB</td>
+                  <td>75</td>
+                  <td>$24.36</td>
+                  <td>$24.35</td>
+                  <td>$1,827</td>
+                  <td>$1,826</td>
+                  <td class="negative">$-1</td>
+                  <td class="negative">-0.04%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">MCD</td>
+                  <td>13</td>
+                  <td>$308.93</td>
+                  <td>$307.14</td>
+                  <td>$4,016</td>
+                  <td>$3,993</td>
+                  <td class="negative">$-23</td>
+                  <td class="negative">-0.58%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>45</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$2,119</td>
+                  <td>$2,078</td>
+                  <td class="negative">$-41</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>1,696</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$128,031</td>
+                  <td>$127,878</td>
+                  <td class="negative">$-153</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>647</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$43,446</td>
+                  <td>$41,615</td>
+                  <td class="negative">$-1,831</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>2,869</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$193,715</td>
+                  <td>$189,784</td>
+                  <td class="negative">$-3,931</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <section class="section">
+              <h2>MichelleTFSA</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$99,729</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$99,517</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$-212</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">-0.21%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>161</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$20,714</td>
+                  <td>$21,334</td>
+                  <td class="positive">$620</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNR</td>
+                  <td>88</td>
+                  <td>$140.64</td>
+                  <td>$144.93</td>
+                  <td>$12,376</td>
+                  <td>$12,754</td>
+                  <td class="positive">$378</td>
+                  <td class="positive">3.05%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>3,137</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$34,350</td>
+                  <td>$34,350</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>42</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$1,977</td>
+                  <td>$1,939</td>
+                  <td class="negative">$-38</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>72</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$4,861</td>
+                  <td>$4,763</td>
+                  <td class="negative">$-99</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>379</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$25,450</td>
+                  <td>$24,377</td>
+                  <td class="negative">$-1,073</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <section class="section">
+              <h2>RESP</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$424,298</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$426,397</div>
+    </div>
+    
+                
+    <div class="metric-card positive">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$2,099</div>
+    </div>
+    
+                
+    <div class="metric-card positive">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">0.49%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>869</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$111,806</td>
+                  <td>$115,151</td>
+                  <td class="positive">$3,346</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">BNS</td>
+                  <td>15</td>
+                  <td>$95.02</td>
+                  <td>$97.64</td>
+                  <td>$1,425</td>
+                  <td>$1,465</td>
+                  <td class="positive">$39</td>
+                  <td class="positive">2.76%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>400</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$4,380</td>
+                  <td>$4,380</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">PSA</td>
+                  <td>9</td>
+                  <td>$50.08</td>
+                  <td>$50.03</td>
+                  <td>$451</td>
+                  <td>$450</td>
+                  <td class="negative">$-1</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TRP</td>
+                  <td>300</td>
+                  <td>$88.23</td>
+                  <td>$88.16</td>
+                  <td>$26,469</td>
+                  <td>$26,448</td>
+                  <td class="negative">$-21</td>
+                  <td class="negative">-0.08%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>17</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$1,142</td>
+                  <td>$1,093</td>
+                  <td class="negative">$-48</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">SOBO</td>
+                  <td>74</td>
+                  <td>$47.08</td>
+                  <td>$46.17</td>
+                  <td>$3,484</td>
+                  <td>$3,417</td>
+                  <td class="negative">$-67</td>
+                  <td class="negative">-1.93%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>3,075</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$232,132</td>
+                  <td>$231,855</td>
+                  <td class="negative">$-277</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>637</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$43,010</td>
+                  <td>$42,138</td>
+                  <td class="negative">$-873</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <section class="section">
+              <h2>JamieCash</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$250,002</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$246,425</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$-3,576</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">-1.43%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">CASH</td>
+                  <td>568</td>
+                  <td>$50.03</td>
+                  <td>$49.99</td>
+                  <td>$28,420</td>
+                  <td>$28,394</td>
+                  <td class="negative">$-26</td>
+                  <td class="negative">-0.09%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>397</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$29,970</td>
+                  <td>$29,934</td>
+                  <td class="negative">$-36</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">PSA</td>
+                  <td>999</td>
+                  <td>$50.08</td>
+                  <td>$50.03</td>
+                  <td>$50,035</td>
+                  <td>$49,975</td>
+                  <td class="negative">$-60</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>397</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$26,659</td>
+                  <td>$25,535</td>
+                  <td class="negative">$-1,124</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>1,702</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$114,919</td>
+                  <td>$112,587</td>
+                  <td class="negative">$-2,332</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <section class="section">
+              <h2>MichelleCash</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$19,179</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$19,168</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$-11</div>
+    </div>
+    
+                
+    <div class="metric-card negative">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">-0.06%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>1,727</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$18,911</td>
+                  <td>$18,911</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>4</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$269</td>
+                  <td>$257</td>
+                  <td class="negative">$-11</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <section class="section">
+              <h2>JamieTFSAC</h2>
+              <div class="section-copy">Weekly mark-to-market change based on holding quantities and Yahoo Finance closing prices.</div>
+              <div class="mini-metrics">
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">Start</div>
+      <div class="metric-value">$121,079</div>
+    </div>
+    
+                
+    <div class="metric-card neutral">
+      <div class="metric-label">End</div>
+      <div class="metric-value">$121,326</div>
+    </div>
+    
+                
+    <div class="metric-card positive">
+      <div class="metric-label">Weekly P/L</div>
+      <div class="metric-value">$247</div>
+    </div>
+    
+                
+    <div class="metric-card positive">
+      <div class="metric-label">Return</div>
+      <div class="metric-value">0.20%</div>
+    </div>
+    
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Symbol</th>
+                      <th>Qty</th>
+                      <th>Start Close</th>
+                      <th>End Close</th>
+                      <th>Start Value</th>
+                      <th>End Value</th>
+                      <th>Change</th>
+                      <th>Return</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                <tr>
+                  <td class="ticker">TD</td>
+                  <td>139</td>
+                  <td>$128.66</td>
+                  <td>$132.51</td>
+                  <td>$17,884</td>
+                  <td>$18,419</td>
+                  <td class="positive">$535</td>
+                  <td class="positive">2.99%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CJ</td>
+                  <td>2,246</td>
+                  <td>$10.95</td>
+                  <td>$10.95</td>
+                  <td>$24,594</td>
+                  <td>$24,594</td>
+                  <td class="positive">$0</td>
+                  <td class="positive">0.00%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">CNQ</td>
+                  <td>55</td>
+                  <td>$67.52</td>
+                  <td>$66.15</td>
+                  <td>$3,714</td>
+                  <td>$3,638</td>
+                  <td class="negative">$-75</td>
+                  <td class="negative">-2.03%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">ENB</td>
+                  <td>952</td>
+                  <td>$75.49</td>
+                  <td>$75.40</td>
+                  <td>$71,866</td>
+                  <td>$71,781</td>
+                  <td class="negative">$-86</td>
+                  <td class="negative">-0.12%</td>
+                </tr>
+                
+                <tr>
+                  <td class="ticker">TOU</td>
+                  <td>45</td>
+                  <td>$67.15</td>
+                  <td>$64.32</td>
+                  <td>$3,022</td>
+                  <td>$2,894</td>
+                  <td class="negative">$-127</td>
+                  <td class="negative">-4.21%</td>
+                </tr>
+                
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+  </main>
+</body>
+</html>

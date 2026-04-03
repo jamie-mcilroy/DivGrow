@@ -84,6 +84,18 @@ def render_html():
         <div class="card-copy">Valuation, dividend yield, dividend growth, and the full 10-year dividend table in a report-style HTML view.</div>
         <div class="card-link">Open fundamentals</div>
       </a>
+      <a class="report-card" href="fundamentals_drip_1000.html">
+        <div class="card-eyebrow">Scenario Analysis</div>
+        <div class="card-title">$1,000 DRIP</div>
+        <div class="card-copy">What a $1,000 investment today could look like in 20 years using current yield, 5-year dividend growth, and full dividend reinvestment.</div>
+        <div class="card-link">Open DRIP scenario</div>
+      </a>
+      <a class="report-card" href="weekly_portfolio_report.html">
+        <div class="card-eyebrow">Weekly Close</div>
+        <div class="card-title">Portfolio Week</div>
+        <div class="card-copy">End-of-week performance for each portfolio, including account-level weekly return, dollar change, and holding-level contributors.</div>
+        <div class="card-link">Open weekly report</div>
+      </a>
       <a class="report-card" href="account_reports/index.html">
         <div class="card-eyebrow">Portfolio Planning</div>
         <div class="card-title">Account Details</div>
