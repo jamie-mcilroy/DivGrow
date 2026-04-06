@@ -9,11 +9,9 @@ import yfinance as yf
 from yfinance.exceptions import YFRateLimitError
 
 from dividend_forecasts.accounts import prepare_accounts
-
-
-HOLDINGS_CSV = "configs/Holdings.csv"
+from dividend_forecasts.paths import HOLDINGS_CSV, OUTPUT_DIR, OUTPUT_INDEX_HTML, WEEKLY_PORTFOLIO_REPORT_HTML
 SYMBOLS_JSON = "configs/symbols.json"
-OUTPUT_HTML = "output/weekly_portfolio_report.html"
+OUTPUT_HTML = WEEKLY_PORTFOLIO_REPORT_HTML
 RETRY_DELAYS = [2, 5, 10]
 ACCOUNT_ORDER = [
     "All Investments",

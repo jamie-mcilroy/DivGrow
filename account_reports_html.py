@@ -3,10 +3,10 @@ import html
 import os
 from collections import defaultdict
 from datetime import datetime
+from dividend_forecasts.paths import ACCOUNT_REPORTS_DIR, OUTPUT_DIR as OUTPUT_ROOT
 
 
-OUTPUT_ROOT = "output"
-REPORT_DIR = os.path.join(OUTPUT_ROOT, "account_reports")
+REPORT_DIR = ACCOUNT_REPORTS_DIR
 CSV_GROUPS = {
     "income": "account_income_projections",
     "shares": "account_share_projections",

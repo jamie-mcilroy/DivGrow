@@ -5,10 +5,11 @@ import time
 
 import yfinance as yf
 from yfinance.exceptions import YFRateLimitError
+from dividend_forecasts.paths import CURRENT_PRICES_CSV
 
 
 SYMBOLS_PATH = "configs/symbols.json"
-OUTPUT_PATH = "data/current_prices.csv"
+OUTPUT_PATH = CURRENT_PRICES_CSV
 RETRY_DELAYS = [2, 5, 10]
 
 

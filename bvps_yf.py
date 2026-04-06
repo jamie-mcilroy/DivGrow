@@ -5,10 +5,11 @@ import time
 
 import yfinance as yf
 from yfinance.exceptions import YFRateLimitError
+from dividend_forecasts.paths import DATA_DIR
 
 
 SYMBOLS_PATH = "configs/symbols.json"
-OUTPUT_DIR = "data"
+OUTPUT_DIR = DATA_DIR
 RETRY_DELAYS = [2, 5, 10]
 EQUITY_LABELS = [
     "Total Stockholder Equity",

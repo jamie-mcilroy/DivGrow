@@ -4,11 +4,13 @@ import math
 import os
 import sys
 
+from dividend_forecasts.paths import DATA_DIR, EPS_10Y_PIVOT_CSV
+from dividend_forecasts.paths import BEN_GRAHAM_PRICES_CSV
 
-DATA_DIR = "data"
-EPS_CSV = os.path.join(DATA_DIR, "eps_10y_pivot.csv")
+
+EPS_CSV = EPS_10Y_PIVOT_CSV
 BVPS_GLOB = os.path.join(DATA_DIR, "bvps_*.csv")
-OUTPUT_CSV = os.path.join(DATA_DIR, "ben_graham_prices.csv")
+OUTPUT_CSV = BEN_GRAHAM_PRICES_CSV
 
 
 def load_csv_rows(path):

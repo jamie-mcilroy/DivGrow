@@ -2,6 +2,11 @@
 set -euo pipefail
 
 PYTHON_BIN="${PYTHON_BIN:-python3}"
+DIVGROW_RUN_DATE="${DIVGROW_RUN_DATE:-$(date +%F)}"
+export DIVGROW_RUN_DATE
+
+echo "Run date: ${DIVGROW_RUN_DATE}"
+echo "Run root: runs/${DIVGROW_RUN_DATE}"
 
 run_step() {
   local script_name="$1"
@@ -18,7 +23,6 @@ run_step "div_hist_yield.py"
 run_step "div_hist_summary.py"
 run_step "fundamentals_summary.py"
 run_step "fundamentals_summary_html.py"
-run_step "fundamentals_drip_1000_html.py"
 run_step "weekly_portfolio_report.py"
 run_step "div_hist_account_income.py"
 run_step "div_hist_account_shares.py"

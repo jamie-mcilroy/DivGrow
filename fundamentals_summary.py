@@ -1,13 +1,19 @@
 import csv
 import os
 import sys
+from dividend_forecasts.paths import (
+    BEN_GRAHAM_PRICES_CSV,
+    CURRENT_PRICES_CSV,
+    DIVIDEND_YIELD_SUMMARY_CSV,
+    DIVIDENDS_10Y_PIVOT_CSV,
+    FUNDAMENTALS_SUMMARY_CSV,
+)
 
 
-DIVIDEND_PIVOT_CSV = "data/dividends_10y_pivot.csv"
-BEN_GRAHAM_CSV = "data/ben_graham_prices.csv"
-YIELD_SUMMARY_CSV = "data/dividend_yield_summary.csv"
-CURRENT_PRICES_CSV = "data/current_prices.csv"
-OUTPUT_CSV = "data/fundamentals_summary.csv"
+DIVIDEND_PIVOT_CSV = DIVIDENDS_10Y_PIVOT_CSV
+BEN_GRAHAM_CSV = BEN_GRAHAM_PRICES_CSV
+YIELD_SUMMARY_CSV = DIVIDEND_YIELD_SUMMARY_CSV
+OUTPUT_CSV = FUNDAMENTALS_SUMMARY_CSV
 
 
 def load_csv_rows(path):

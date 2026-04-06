@@ -8,10 +8,10 @@ import pandas as pd
 import yfinance as yf
 from yfinance.exceptions import YFRateLimitError
 
-from dividend_forecasts.paths import DIVIDEND_EVENTS_CSV, DIVIDEND_YIELD_SUMMARY_CSV
+from dividend_forecasts.paths import DIVIDEND_EVENTS_CSV, DIVIDEND_EVENTS_WITH_PRICES_CSV, DIVIDEND_YIELD_SUMMARY_CSV
 
 
-ENRICHED_EVENTS_CSV = "data/dividend_events_with_prices.csv"
+ENRICHED_EVENTS_CSV = DIVIDEND_EVENTS_WITH_PRICES_CSV
 RETRY_DELAYS = [2, 5, 10]
 WINDOWS = [3, 5, 10]
 

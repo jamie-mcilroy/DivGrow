@@ -1,8 +1,9 @@
 from datetime import datetime
 import os
+from dividend_forecasts.paths import OUTPUT_INDEX_HTML
 
 
-OUTPUT_HTML = "output/index.html"
+OUTPUT_HTML = OUTPUT_INDEX_HTML
 
 
 def render_html():
@@ -83,12 +84,6 @@ def render_html():
         <div class="card-title">Fundamentals</div>
         <div class="card-copy">Valuation, dividend yield, dividend growth, and the full 10-year dividend table in a report-style HTML view.</div>
         <div class="card-link">Open fundamentals</div>
-      </a>
-      <a class="report-card" href="fundamentals_drip_1000.html">
-        <div class="card-eyebrow">Scenario Analysis</div>
-        <div class="card-title">$1,000 DRIP</div>
-        <div class="card-copy">What a $1,000 investment today could look like in 20 years using current yield, 5-year dividend growth, and full dividend reinvestment.</div>
-        <div class="card-link">Open DRIP scenario</div>
       </a>
       <a class="report-card" href="weekly_portfolio_report.html">
         <div class="card-eyebrow">Weekly Close</div>

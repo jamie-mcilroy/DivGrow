@@ -2,10 +2,11 @@ import csv
 import html
 import os
 from datetime import datetime
+from dividend_forecasts.paths import FUNDAMENTALS_SUMMARY_CSV, FUNDAMENTALS_SUMMARY_HTML
 
 
-INPUT_CSV = "data/fundamentals_summary.csv"
-OUTPUT_HTML = "output/fundamentals_summary.html"
+INPUT_CSV = FUNDAMENTALS_SUMMARY_CSV
+OUTPUT_HTML = FUNDAMENTALS_SUMMARY_HTML
 HEADER_TOOLTIPS = {
     "Ticker": "Stock symbol from configs/symbols.json.",
     "Current Price": "Latest market price pulled from Yahoo Finance.",

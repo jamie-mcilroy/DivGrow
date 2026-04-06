@@ -6,10 +6,11 @@ import sys
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from dividend_forecasts.paths import EPS_10Y_PIVOT_CSV
 
 
 SYMBOLS_PATH = "configs/symbols.json"
-OUTPUT_CSV = "data/eps_10y_pivot.csv"
+OUTPUT_CSV = EPS_10Y_PIVOT_CSV
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
